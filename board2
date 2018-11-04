@@ -1,0 +1,3198 @@
+!!!!   12    1    1 1523249975   0000                                         
+!---------------------------------------------------------------------------
+!AGILENT ICT BOARD CONFIGURATION FORMAT          Fri Apr 06, 2018 5:24:40 PM
+!
+! board
+!---------------------------------------------------------------------------
+
+HEADING
+  "HYUNDAI_BI3";
+
+GLOBAL OPTIONS
+  Fixture Type    EXPRESS;
+  Fixture Size    BANK2;
+  Top Probes Allowed  OFF;
+  Confine Transfers To Assigned Modules OFF;
+  Heavy Probe Force      8;
+  Light Probe Force      4;
+  Mechanical Density Threshold    800;
+  Vacuum Density Threshold    104;
+  Test Strategy COMBINATIONAL;
+  WireWrapping MANUAL;
+  Metric Units OFF;
+  Common Lead Resistance      0.5;    ! (ohms) from probe to component.
+  Common Lead Inductance       1u;    ! (Henries) from probe to component.
+  Capacitance Compensation ON;
+  IPG Digital Resistance Threshold       42;    ! (ohms)
+  Preconditioning Levels    1;
+  Additional Board Voltage   20;    ! (volts)
+  Boundary Scan Overdrive  OFF;
+  Boundary Scan Disables  OFF;
+  Probe Type for TJ Devices Added by BC KEEPOUT; ! used only by Board Consultant
+  Ground Bounce Suppression  OFF;
+
+DEVICE OPTIONS
+  Tolerance Multiplier    5;
+  Remote Sensing  ON;
+  Fuse Threshold    10;
+  Diode Current     5m;
+  Zener Current  10m;
+  Adjust  FAST;
+  Upstream Disable  OFF;
+  Upstream Condition  OFF;
+  END
+
+FAMILY OPTIONS
+  TTL
+    Drive High     3.5;
+    Drive Low      0.2;
+    Receive High     2;
+    Receive Low    0.8;
+    Edge Speed     100;
+    Open Input Default  X;
+    Load        UP;
+  CMOS
+    Drive High       4;
+    Drive Low      0.4;
+    Receive High   3.6;
+    Receive Low    0.5;
+    Edge Speed      50;
+    Open Input Default  X;
+    Load        NONE;
+  FLASH_3V3
+    Drive High     3.5;
+    Drive Low      0.2;
+    Receive High     2;
+    Receive Low    0.8;
+    Edge Speed     100;
+    Open Input Default  X;
+    Load        UP;
+  TTL_3V3
+    Drive High     2.5;
+    Drive Low      0.2;
+    Receive High     2;
+    Receive Low    0.3;
+    Edge Speed     100;
+    Open Input Default  X;
+    Load        UP;
+
+CARD OPTIONS
+  TTL
+    HYBRID;
+  CMOS
+    HYBRID;
+  FLASH_3V3
+    HYBRID;
+  TTL_3V3
+    HYBRID;
+
+FIXED NODE OPTIONS
+  EVZ Family ALL is 1;
+  GNDB Family ALL is 0;
+  GNDC Family ALL is 0;
+  IGN Family ALL is 1;
+  SYC_DEVZ Family ALL is X;
+  SYC_SEVZ Family ALL is X;
+  SYC_SVC Family ALL is X;
+  VCC5 Family ALL is 1;
+  VPERI Family ALL is X;
+  VPERI_MUC Family ALL is 1;
+  VZ_C Family ALL is 1;
+  VZ_FA Family ALL is X;
+  GNDB GROUND;
+  IGN Supply   1 At    12 Volts,   1 Amps;
+  VCC5 Supply   2 At     5 Volts, 0.5 Amps;
+  VPERI_MUC Supply   3 At   3.3 Volts, 0.5 Amps;
+
+!vv IGN       Supply   5 At    12 Volts,   1 Amps;   ! Board 2
+!vv VCC5      Supply   6 At     5 Volts, 0.5 Amps;   ! Board 2
+!vv VPERI_MUC Supply   7 At   3.3 Volts, 0.5 Amps;   ! Board 2
+
+GPRELAY OPTIONS
+  GP LPD_RESET, GNDB;
+    CONTROL;
+
+LIBRARY OPTIONS
+  "/sys/tst08ht/dev/library/debug"
+  "/sys/tst08ht/dev/library/released"
+  "custom_lib";
+
+UNCONNECTED PIN NC;
+
+
+CAPACITOR
+  C1141       100n    10    10 f "A2C02318800";
+  C1142       100n    10    10 f "A2C02318800";
+  C1143       100n    10    10 f "A2C02318800";
+  C1144       470n    10    10 f "A2C02318400";
+  C1145       470n    10    10 f "A2C02318400";
+  C1146       470n    10    10 f "A2C02318400";
+  C1171       470n    10    10 f "A2C02318400";
+  C1172       470n    10    10 f "A2C02318400";
+  C1185       100n    10    10 f "A2C02318800";
+  C1186       470n    10    10 f "A2C02318400";
+  C1187       470n    10    10 f "A2C02318400";
+  C1211       100n    10    10 f "A2C02318800";
+  C1212       100n    10    10 f "A2C02318800";
+  C1213       100n    10    10 f "A2C02318800";
+  C1214       470n    10    10 f "A2C02318400";
+  C1215       470n    10    10 f "A2C02318400";
+  C1216       470n    10    10 f "A2C02318400";
+  C1501        47n    10    10 f "A2C02318700";
+  C1503        47n    10    10 f "A2C02318700";
+  C1506        47n    10    10 f "A2C02318700";
+  C1571        47n    10    10 f "A2C02318700";
+  C5111        47n    10    10 f "A2C02318700";
+  C5112        47n    10    10 f "A2C02318700";
+  C5113        47n    10    10 f "A2C02318700";
+  C5114        47n    10    10 f "A2C02318700";
+  C5115        47n    10    10 f "A2C02318700";
+  C5116        47n    10    10 f "A2C02318700";
+  C5117        47n    10    10 f "A2C02318700";
+  C5118        47n    10    10 f "A2C02318700";
+  C5121        47n    10    10 f "A2C02318700";
+  C5122        47n    10    10 f "A2C02318700";
+  C5123        47n    10    10 f "A2C02318700";
+  C5124        47n    10    10 f "A2C02318700";
+  C5125        47n    10    10 f "A2C02318700";
+  C5126        47n    10    10 f "A2C02318700";
+  C5127        47n    10    10 f "A2C02318700";
+  C5128        47n    10    10 f "A2C02318700";
+  C5131        47n    10    10 f "A2C02318700";
+  C5132        47n    10    10 f "A2C02318700";
+  C5133        47n    10    10 f "A2C02318700";
+  C5134        47n    10    10 f "A2C02318700";
+  C5135        47n    10    10 f "A2C02318700";
+  C5136        47n    10    10 f "A2C02318700";
+  C5137        47n    10    10 f "A2C02318700";
+  C5138        47n    10    10 f "A2C02318700";
+  C5155        47n    10    10 f "A2C02318700";
+  C5156        47n    10    10 f "A2C02318700";
+  C5157        47n    10    10 f "A2C02318700";
+  C5158        47n    10    10 f "A2C02318700";
+  C5181        47n    10    10 f "A2C02318700";
+  C5182        10n    10    10 f "A2C02318500";
+  C5221        47n    10    10 f "A2C02318700";
+  C5222        47n    10    10 f "A2C02318700";
+  C5241        10n    10    10 f "A2C02318500";
+  C5281       100n    10    10 f "A2C02318800";
+  C6111       100n    10    10 f "A2C02318800";
+  C6113        47p     5     5 f "A2C00002060";
+  C6114        47p     5     5 f "A2C00002060";
+  C6151       100n    10    10 f "A2C02318800";
+  C6153        47p     5     5 f "A2C00002060";
+  C6154        47p     5     5 f "A2C00002060";
+  C6155       100p     5     5 f "A2C02103400";
+  C6511       2.2n     5     5 f "A2C00061365";
+  C6512        22n    10    10 f "A2C01693000";
+  C6513       2.2n     5     5 f "A2C00061365";
+  C6514        22n    10    10 f "A2C01693000";
+  C6515       2.2n     5     5 f "A2C00061365";
+  C6516        22n    10    10 f "A2C01693000";
+  C6517       2.2n     5     5 f "A2C00061365";
+  C6518        22n    10    10 f "A2C01693000";
+  C6521       2.2n     5     5 f "A2C00061365";
+  C6522        22n    10    10 f "A2C01693000";
+  C6523       2.2n     5     5 f "A2C00061365";
+  C6524        22n    10    10 f "A2C01693000";
+  C6551        10u    10    10 f "A2C01238800";
+  C6561        10u    10    10 f "A2C01238800";
+  C7211       100n    10    10 f "A2C02319500";
+  C7212       100p     5     5 f "A2C40006152";
+  C7224        10n    10    10 f "A2C02318500";
+  C7225        10n    10    10 f "A2C02318500";
+  C7233         1u    10    10 f "A2C00033919";
+  C7235       100u    20    20 f "A2C00051989";
+  C7236         1u    10    10 f "A2C00033919";
+  C7240         1u    10    10 f "A2C00033919";
+  C7243       330u    20    20 f "A2C00389000";
+  C7245         1u    10    10 f "A2C00033919";
+  C7263       100u    20    20 f "A2C00051989";
+  C7318        47n    10    10 f "A2C02318700";
+  C7330        10u    10    10 f "A2C01238800";
+  C7331        10u    10    10 f "A2C01238800";
+  C7335       100n    10    10 f "A2C02318800";
+  C7340        10u    10    10 f "A2C01238800";
+  C7341        10u    10    10 f "A2C01238800";
+  C7349       100n    10    10 f "A2C02318800";
+  C7350        10u    10    10 f "A2C01238800";
+  C7351        10u    10    10 f "A2C01238800";
+  C7359       100n    10    10 f "A2C02318800";
+  C8100        10n    10    10 f "A2C00055720";
+  C8170       100n    10    10 f "A2C02318800";
+  C8171       100n    10    10 f "A2C02318800";
+  C8174       100n    10    10 f "A2C02318800";
+  C8175       100n    10    10 f "A2C02318800";
+  C8178       100n    10    10 f "A2C02318800";
+  C8179       100n    10    10 f "A2C02318800";
+  C8521        22n    10    10 f "A2C01693000";
+  C8601       100n    10    10 f "A2C02318800";
+  C8602       100n    10    10 f "A2C02318800";
+  C8711       100n    10    10 f "A2C02318800";
+  C8712         1u    10    10 f "A2C00033919";
+  C8900        22n    10    10 f "A2C01693000";
+  C8921        22n    10    10 f "A2C01693000";
+  C65612      100n    10    10 f "A2C02318800";
+  C72402        1u    10    10 f "A2C00470200";
+  C72403        1u    10    10 f "A2C00470200";
+
+CONNECTOR
+  MP0001    NT "spec_testpoint";
+  MP0002    NT "spec_testpoint";
+  MP0003    NT "spec_testpoint";
+  MP0004    NT "spec_testpoint";
+  MP0005    NT "spec_testpoint";
+  MP0006    NT "spec_testpoint";
+  MP0007    NT "spec_testpoint";
+  MP0008    NT "spec_testpoint";
+  MP0009    NT "spec_testpoint";
+  MP0010    NT "spec_testpoint";
+  MP0011    NT "spec_testpoint";
+  MP0012    NT "spec_testpoint";
+  MP1144    NT "spec_testpoint";
+  MP1177    NT "spec_testpoint";
+  MP1178    NT "spec_testpoint";
+  MP1184    NT "spec_testpoint";
+  MP1186    NT "spec_testpoint";
+  MP1214    NT "spec_testpoint";
+  MP1501    NT "spec_testpoint";
+  MP1503    NT "spec_testpoint";
+  MP1506    NT "spec_testpoint";
+  MP1571    NT "spec_testpoint";
+  MP1572    NT "spec_testpoint";
+  MP5111    NT "spec_testpoint";
+  MP5112    NT "spec_testpoint";
+  MP5113    NT "spec_testpoint";
+  MP5114    NT "spec_testpoint";
+  MP5115    NT "spec_testpoint";
+  MP5116    NT "spec_testpoint";
+  MP5117    NT "spec_testpoint";
+  MP5118    NT "spec_testpoint";
+  MP5121    NT "spec_testpoint";
+  MP5122    NT "spec_testpoint";
+  MP5123    NT "spec_testpoint";
+  MP5124    NT "spec_testpoint";
+  MP5125    NT "spec_testpoint";
+  MP5126    NT "spec_testpoint";
+  MP5127    NT "spec_testpoint";
+  MP5128    NT "spec_testpoint";
+  MP5131    NT "spec_testpoint";
+  MP5132    NT "spec_testpoint";
+  MP5133    NT "spec_testpoint";
+  MP5134    NT "spec_testpoint";
+  MP5135    NT "spec_testpoint";
+  MP5136    NT "spec_testpoint";
+  MP5137    NT "spec_testpoint";
+  MP5138    NT "spec_testpoint";
+  MP5155    NT "spec_testpoint";
+  MP5156    NT "spec_testpoint";
+  MP5157    NT "spec_testpoint";
+  MP5158    NT "spec_testpoint";
+  MP5181    NT "spec_testpoint";
+  MP5182    NT "spec_testpoint";
+  MP5183    NT "spec_testpoint";
+  MP5187    NT "spec_testpoint";
+  MP5210    NT "spec_testpoint";
+  MP5220    NT "spec_testpoint";
+  MP5221    NT "spec_testpoint";
+  MP5222    NT "spec_testpoint";
+  MP5230    NT "spec_testpoint";
+  MP5241    NT "spec_testpoint";
+  MP5281    NT "spec_testpoint";
+  MP5282    NT "spec_testpoint";
+  MP5283    NT "spec_testpoint";
+  MP5284    NT "spec_testpoint";
+  MP6101    NT "spec_testpoint";
+  MP6102    NT "spec_testpoint";
+  MP6115    NT "spec_testpoint";
+  MP6155    NT "spec_testpoint";
+  MP6501    NT "spec_testpoint";
+  MP6502    NT "spec_testpoint";
+  MP6503    NT "spec_testpoint";
+  MP6504    NT "spec_testpoint";
+  MP6505    NT "spec_testpoint";
+  MP6506    NT "spec_testpoint";
+  MP7110    NT "spec_testpoint";
+  MP7201    NT "spec_testpoint";
+  MP7202    NT "spec_testpoint";
+  MP7211    NT "spec_testpoint";
+  MP7212    NT "spec_testpoint";
+  MP7213    NT "spec_testpoint";
+  MP7225    NT "spec_testpoint";
+  MP7231    NT "spec_testpoint";
+  MP7235    NT "spec_testpoint";
+  MP7241    NT "spec_testpoint";
+  MP7243    NT "spec_testpoint";
+  MP7245    NT "spec_testpoint";
+  MP7261    NT "spec_testpoint";
+  MP7263    NT "spec_testpoint";
+  MP7264    NT "spec_testpoint";
+  MP7318    NT "spec_testpoint";
+  MP7330    NT "spec_testpoint";
+  MP7340    NT "spec_testpoint";
+  MP7350    NT "spec_testpoint";
+  MP7351    NT "spec_testpoint";
+  MP8105    NT "spec_testpoint";
+  MP8174    NT "spec_testpoint";
+  MP8176    NT "spec_testpoint";
+  MP8178    NT "spec_testpoint";
+  MP8211    NT "spec_testpoint";
+  MP8212    NT "spec_testpoint";
+  MP8213    NT "spec_testpoint";
+  MP8311    NT "spec_testpoint";
+  MP8312    NT "spec_testpoint";
+  MP8314    NT "spec_testpoint";
+  MP8315    NT "spec_testpoint";
+  MP8321    NT "spec_testpoint";
+  MP8322    NT "spec_testpoint";
+  MP8501    NT "spec_testpoint";
+  MP8502    NT "spec_testpoint";
+  MP8503    NT "spec_testpoint";
+  MP8508    NT "spec_testpoint";
+  MP8510    NT "spec_testpoint";
+  MP8521    NT "spec_testpoint";
+  MP8610    NT "spec_testpoint";
+  MP8611    NT "spec_testpoint";
+  MP8716    NT "spec_testpoint";
+  MP8801    NT "spec_testpoint";
+  MP8802    NT "spec_testpoint";
+  MP8803    NT "spec_testpoint";
+  MP8804    NT "spec_testpoint";
+  MP8805    NT "spec_testpoint";
+  MP8807    NT "spec_testpoint";
+  MP8809    NT "spec_testpoint";
+  MP8810    NT "spec_testpoint";
+  MP8901    NT "spec_testpoint";
+  MP8921    NT "spec_testpoint";
+  MP11414   NT "spec_testpoint";
+  MP11419   NT "spec_testpoint";
+  MP12114   NT "spec_testpoint";
+  MP12119   NT "spec_testpoint";
+  MP34522   NT "spec_testpoint";
+  MP51811   NT "spec_testpoint";
+  MP51812   NT "spec_testpoint";
+  MP51821   NT "spec_testpoint";
+  MP51823   NT "spec_testpoint";
+  MP52411   NT "spec_testpoint";
+  MP61011   NT "spec_testpoint";
+  MP61012   NT "spec_testpoint";
+  MP64202   NT "spec_testpoint";
+  MP72412   NT "spec_testpoint";
+  MP72413   NT "spec_testpoint";
+  MP72432   NT "spec_testpoint";
+  MP72631   NT "spec_testpoint";
+  MP82111   NT "spec_testpoint";
+  MP82112   NT "spec_testpoint";
+  MP82121   NT "spec_testpoint";
+  MP82122   NT "spec_testpoint";
+  MP82131   NT "spec_testpoint";
+  MP82132   NT "spec_testpoint";
+  MP86094   NT "spec_testpoint";
+  MP86097   NT "spec_testpoint";
+  MP817026  NT "spec_testpoint";
+  MP817061  NT "spec_testpoint";
+
+INDUCTOR
+  L7231         1k    25    50       1 f "A2C00888200";
+
+JUMPER
+  CM1       CLOSED "SPEC_THRU_P_C1000";
+  CP1       CLOSED "SPEC_THRU_P_C1000";
+  R6111     CLOSED "A2C01891600";
+  R6112     CLOSED "A2C01891600";
+  R6151     CLOSED "A2C01891600";
+  R6152     CLOSED "A2C01891600";
+  R15721    CLOSED "A2C00004265";
+  SP5       CLOSED "spec_starpoint_c2";
+  SP6       CLOSED "spec_starpoint_c2";
+  SP7       CLOSED "spec_starpoint_c2";
+  SP8       CLOSED "spec_starpoint_c2";
+
+PIN LIBRARY
+  D5182     PN"BAS321" "A2C00031355";
+  D6511     PN"TPSMP27" "A2C01823800";
+  D6512     PN"PMEG6020ER" "A2C01510000";
+  D6513     PN"TPSMP27" "A2C01823800";
+  D6514     PN"PMEG6020ER" "A2C01510000";
+  D6515     PN"MMBZ27VDA" "A2C40002657";
+  D6521     PN"TPSMP27" "A2C01823800";
+  D6522     PN"PMEG6020ER" "A2C01510000";
+  D6523     PN"TPSMP27" "A2C01823800";
+  D6524     PN"PMEG6020ER" "A2C01510000";
+  D7211     PN"ES2D" "A2C00043037";
+  D7212     PN"SM5S24A" "A2C00010853";
+  D7243     PN"SS26S" "A2C00713300";
+  D7261     PN"BAT165" "A2C02477000";
+  D7263     PN"FS2J" "A2C00054239";
+  D7264     PN"ES2D" "A2C00043037";
+  D7268     PN"BAT165" "A2C02477000";
+  D7350     PN"SS26S" "A2C00713300";
+  H1141     PN"COMBO2_2" TJ LIB AUTO "A2C02182500";
+  H1171     PN"ASG51" "A2C02670800";
+  H1172     PN"ASG51" TJ LIB AUTO "A2C01722900";
+  H1182     PN"ASG52" TJ LIB AUTO "A2C01051701";
+  H1211     PN"COMBO2_2" TJ LIB AUTO "A2C02181500";
+  L6111     PN"51.00u" "A2C00059743";
+  L6151     PN"51.00u" "A2C00059743";
+  L7241     PN"100.00u" "A2C00620000";
+  L7241_P   PN"100.00u" "A2C02234400";
+  L7350     PN"330.00u" "A2C01570700";
+  M5181     PN"IPD30N06" "A2C00052919";
+  Q8151     PN"CSTCE16M" "A2C01875000";
+  SP1551    PN"Star_point" "spec_starpoint_c2";
+  SP1552    PN"Star_point" "spec_starpoint_c2";
+  T5181     PN"BCR183W" "A2C02126700";
+  T5182     PN"BCR135W" "A2C02238700";
+  T5281     PN"BC847S" "A2C00000568";
+  T7330     PN"BCP53-16" "A2C02249700";
+  V6111     PN"TJA1051T" TJ LIB AUTO "A2C00061931";
+  V6151     PN"TJA1051T" "A2C00061931";
+  V8172     PN"R7F7010193AFP" TJ AUTO "A2C02278400";
+  V8601     PN"ATIC155" "A2C01685202";
+  V8608     PN"ATIC155" TJ LIB AUTO "A2C01139902";
+  V8909     PN"FM25CL64" TJ LIB AUTO "A2C01962400";
+  V8928     PN"M95512" TJ LIB AUTO "A2C00511000";
+  V87232    PN"ATIC255_64_8l2" TJ LIB AUTO "A2C01412201";
+  X1        NT PN"SAP" "A2C98748500";
+  X1_27     NT PN"TYCO" "A2C15627800";
+  X1_28     NT PN"TYCO" "A2C17984400";
+  X1_29     NT PN"TYCO" "A2C17983200";
+  X1_30     NT PN"TYCO" "A2C17983600";
+  X1_31     NT PN"TYCO" "A2C17982800";
+  X1_32     NT PN"TYCO" "A2C17982700";
+  X1_33     NT PN"TYCO" "A2C17982300";
+  X1_34     NT PN"TYCO" "A2C17982500";
+  X1_35     NT PN"TYCO" "A2C17981400";
+  X1_36     NT PN"TYCO" "A2C19493800";
+  X1_37     NT PN"TYCO" "A2C19493300";
+  X1_38     NT PN"TYC" "A2C19490900";
+  X1_39     NT PN"TYC" "A2C19491200";
+  X1_40     NT PN"TYC" "A2C19491100";
+  X1_41     NT PN"TYC" "A2C19491300";
+  X1_42     NT PN"TYCO" "A2C19490300";
+  X1_43     NT PN"TYCO" "A2C19490800";
+  X1_A      NT PN"TYCO" "A2C38782000";
+  X1_B      NT PN"TYCO" "A2C38782200";
+  X1_C      NT PN"TYCO" "A2C38783401";
+  X1_D      NT PN"TYCO" "A2C38783300";
+  X1_E      NT PN"TYCO" "A2C99542000";
+  X1_F      NT PN"TYCO" "A2C38782400";
+  X1_G      NT PN"TYCO" "A2C38782300";
+  X1_H      NT PN"TYCO" "A2C99541900";
+  X1_I      NT PN"TYCO" "A2C38782500";
+  X1_J      NT PN"TYCO" "A2C38847400";
+  X1_K      NT PN"TYCO" "A2C38780000";
+  X1_L      NT PN"TYCO" "A2C99542300";
+  X1_M      NT PN"TYCO" "A2C39611801";
+  X1_N      NT PN"TYCO" "A2C99541300";
+  X1_O      NT PN"TYCO" "A2C38779800";
+  X1_P      NT PN"TYCO" "A2C38782800";
+  X1_Q      NT PN"TYCO" "A2C38782100";
+  X1_R      NT PN"TYCO" "A2C99541800";
+  X1_S      NT PN"TYCO" "A2C39611501";
+  X1_T      NT PN"TYCO" "A2C99543700";
+  X1_U      NT PN"TYCO" "A2C99543600";
+  X1_V      NT PN"TYCO" "A2C38849200";
+  X1_W      NT PN"TYCO" "A2C99544100";
+  X1_X      NT PN"TYCO" "A2C99540600";
+  X1_Y      NT PN"TYCO" "A2C38781800";
+  X1_Z      NT PN"TYCO" "A2C38780400";
+  X2        NT PN"SAMTEC" "A2C00227900";
+  Z1572     PN"zener_2_high" "A2C00047538";
+  Z5110     PN"MMBZ27VDA" "A2C40002657";
+  Z5111     PN"MMBZ27VDA" "A2C40002657";
+  Z5120     PN"MMBZ27VDA" "A2C40002657";
+  Z5121     PN"MMBZ27VDA" "A2C40002657";
+  Z5130     PN"MMBZ27VDA" "A2C40002657";
+  Z5131     PN"MMBZ27VDA" "A2C40002657";
+  Z5150     PN"MMBZ27VDA" "A2C40002657";
+  Z5220     PN"MMBZ27VDA" "A2C40002657";
+  Z5241     PN"zener_2_high" "A2C00047538";
+  Z5281     PN"MMBZ27VDA" "A2C40002657";
+  Z6113     PN"SZNUP2105LT1G" "A2C01443000";
+  Z6153     PN"SZNUP2105LT1G" "A2C01443000";
+
+RESISTOR
+  R1149       7.5k     5     5 f "A2C02790700";
+  R1211        240     1     1 f "A2C00044219";
+  R1212        240     1     1 f "A2C00044219";
+  R1219       7.5k     5     5 f "A2C02790700";
+  R1501         47     1     1 f "A2C01951200";
+  R1503         47     1     1 f "A2C01951200";
+  R1506         47     1     1 f "A2C01951200";
+  R1571      15.4k     1     1 f "A2C00004363";
+  R1572         20     5     5 f "A2C00003974";
+  R5181        470     1     1 f "A2C03026400";
+  R5182      15.4k     1     1 f "A2C00004363";
+  R5183        470     1     1 f "A2C03026400";
+  R5184        56k     1     1 f "A2C01951300";
+  R5186      22.1k     1     1 f "A2C02790400";
+  R5187         47     1     1 f "A2C01951200";
+  R5221        2.2     1     1 f "A2C00334200";
+  R5222        2.2     1     1 f "A2C00334200";
+  R5241       82.5     1     1 f "A2C00020588";
+  R5281         47     1     1 f "A2C01951200";
+  R5282      4.12k     1     1 f "A2C00019591";
+  R5284        100     5     5 f "A2C00006609";
+  R6116       7.5k     5     5 f "A2C02790700";
+  R6153       61.9     1     1 f "A2C40012025";
+  R6154       61.9     1     1 f "A2C40012025";
+  R6155       7.5k     5     5 f "A2C02790700";
+  R6511        2.7     1     1 f "A2C00566700";
+  R6512        2.7     1     1 f "A2C00566700";
+  R6513        2.7     1     1 f "A2C00566700";
+  R6514        2.7     1     1 f "A2C00566700";
+  R6515      4.12k     1     1 f "A2C00019591";
+  R6516      4.12k     1     1 f "A2C00019591";
+  R6517      4.12k     1     1 f "A2C00019591";
+  R6518      4.12k     1     1 f "A2C00019591";
+  R6521        2.7     1     1 f "A2C00566700";
+  R6522        2.7     1     1 f "A2C00566700";
+  R6523      4.12k     1     1 f "A2C00019591";
+  R6524      4.12k     1     1 f "A2C00019591";
+  R7221      24.3k     1     1 f "A2C00004537";
+  R7222      4.12k     1     1 f "A2C00019591";
+  R7223      15.4k     1     1 f "A2C00004363";
+  R7224      15.4k     1     1 f "A2C00004363";
+  R7225       7.5k     5     5 f "A2C02790700";
+  R7230        1.2    10    10 f "A2C00065183";
+  R7231        1.2    10    10 f "A2C00065183";
+  R7232        1.2    10    10 f "A2C00065183";
+  R7233        1.2    10    10 f "A2C00065183";
+  R7234        1.2    10    10 f "A2C00065183";
+  R7235        1.2    10    10 f "A2C00065183";
+  R7242         10     1     1 f "A2C01906900";
+  R7261        340     1     1 f "A2C00043144";
+  "R7261-1"     442     1     1 f "A2C00022618";
+  "R7261-2"     442     1     1 f "A2C00022618";
+  "R7261-3"     340     1     1 f "A2C00043144";
+  "R7261-4"     475     1     1 f "A2C00045343";
+  R7269         2k     1     1 f "A2C00714700";
+  R7332      24.3k     1     1 f "A2C00004537";
+  R8100      4.12k     1     1 f "A2C00019591";
+  R8174       7.5k     5     5 f "A2C02790700";
+  R8176        56k     1     1 f "A2C01951300";
+  R8177       100k     1     1 f "A2C02323400";
+  R8178       7.5k     5     5 f "A2C02790700";
+  R8601        5.6     1     1 f "A2C00480800";
+  R8602      4.12k     1     1 f "A2C00019591";
+  R8701        5.6     1     1 f "A2C00480800";
+  R8712      4.12k     1     1 f "A2C00019591";
+  R8928       7.5k     5     5 f "A2C02790700";
+  R8929       7.5k     5     5 f "A2C02790700";
+  R72612       340     1     1 f "A2C00043144";
+  "R72612-1"     442     1     1 f "A2C00022618";
+  "R72612-2"     680     1     1 f "A2C00005721";
+
+CONNECTIONS
+  ACTQ_ST
+    MP34522.1
+    T5182.2
+    V8172.72;
+  ARMQ_SAT
+    MP8508.1
+    V8601.100
+    V8608.100
+    V87232.1;
+  CAN1_H
+    L6111.4
+    R6111.2
+    V6111.7;
+  CAN1_L
+    L6111.3
+    R6112.2
+    V6111.6;
+  CAN2_ENABLEQ
+    MP6155.1
+    R6155.2
+    V6151.8
+    V8172.59;
+  CAN2_H
+    C6153.2
+    L6151.1
+    MP61011.1
+    R6151.1
+    R6153.1
+    X1.A26
+    X1_27.A26
+    X1_30.A26
+    X1_31.A26
+    X1_34.A26
+    X1_35.A26
+    X1_37.A26
+    X1_38.A26
+    X1_39.A26
+    X1_40.A26
+    X1_41.A26
+    X1_42.A26
+    X1_43.A26
+    X1_A.A26
+    X1_B.A26
+    X1_C.A26
+    X1_D.A26
+    X1_I.A26
+    X1_M.A26
+    X1_S.A26
+    X1_Y.A26
+    X1_Z.A26
+    Z6153.2;
+  CAN2_L
+    C6154.1
+    L6151.2
+    MP61012.1
+    R6152.1
+    R6154.2
+    X1.A27
+    X1_27.A27
+    X1_30.A27
+    X1_31.A27
+    X1_34.A27
+    X1_35.A27
+    X1_37.A27
+    X1_38.A27
+    X1_39.A27
+    X1_40.A27
+    X1_41.A27
+    X1_42.A27
+    X1_43.A27
+    X1_A.A27
+    X1_B.A27
+    X1_C.A27
+    X1_D.A27
+    X1_I.A27
+    X1_M.A27
+    X1_S.A27
+    X1_Y.A27
+    X1_Z.A27
+    Z6153.1;
+  CAN2_RXD
+    MP8315.1
+    V6151.4
+    V8172.63;
+  CAN2_TXD
+    MP8314.1
+    V6151.1
+    V8172.64;
+  CAN21_H
+    L6151.4
+    R6151.2
+    V6151.7;
+  CAN21_L
+    L6151.3
+    R6152.2
+    V6151.6;
+  CAN_ENABLEQ
+    MP6115.1
+    R6116.2
+    V6111.8
+    V8172.80;
+  CAN_H
+    C6113.2
+    L6111.1
+    MP6101.1
+    R6111.1
+    X1.A17
+    X1_27.A17
+    X1_28.A17
+    X1_29.A17
+    X1_30.A17
+    X1_31.A17
+    X1_32.A17
+    X1_33.A17
+    X1_34.A17
+    X1_35.A17
+    X1_36.A17
+    X1_37.A17
+    X1_38.A17
+    X1_39.A17
+    X1_40.A17
+    X1_41.A17
+    X1_42.A17
+    X1_43.A17
+    X1_A.A17
+    X1_B.A17
+    X1_C.A17
+    X1_D.A17
+    X1_E.A17
+    X1_F.A17
+    X1_G.A17
+    X1_H.A17
+    X1_I.A17
+    X1_J.A17
+    X1_K.A17
+    X1_L.A17
+    X1_M.A17
+    X1_N.A17
+    X1_O.A17
+    X1_P.A17
+    X1_Q.A17
+    X1_R.A17
+    X1_S.A17
+    X1_T.A17
+    X1_U.A17
+    X1_V.A17
+    X1_W.A17
+    X1_X.A17
+    X1_Y.A17
+    X1_Z.A17
+    Z6113.1;
+  CAN_L
+    C6114.1
+    L6111.2
+    MP6102.1
+    R6112.1
+    X1.A18
+    X1_27.A18
+    X1_28.A18
+    X1_29.A18
+    X1_30.A18
+    X1_31.A18
+    X1_32.A18
+    X1_33.A18
+    X1_34.A18
+    X1_35.A18
+    X1_36.A18
+    X1_37.A18
+    X1_38.A18
+    X1_39.A18
+    X1_40.A18
+    X1_41.A18
+    X1_42.A18
+    X1_43.A18
+    X1_A.A18
+    X1_B.A18
+    X1_C.A18
+    X1_D.A18
+    X1_E.A18
+    X1_F.A18
+    X1_G.A18
+    X1_H.A18
+    X1_I.A18
+    X1_J.A18
+    X1_K.A18
+    X1_L.A18
+    X1_M.A18
+    X1_N.A18
+    X1_O.A18
+    X1_P.A18
+    X1_Q.A18
+    X1_R.A18
+    X1_S.A18
+    X1_T.A18
+    X1_U.A18
+    X1_V.A18
+    X1_W.A18
+    X1_X.A18
+    X1_Y.A18
+    X1_Z.A18
+    Z6113.2;
+  CAN_RXD
+    MP8312.1
+    V6111.4
+    V8172.78;
+  CAN_TXD
+    MP8311.1
+    V6111.1
+    V8172.79;
+  CLK_REF
+    MP8105.1
+    V8172.34
+    V8601.87
+    V8608.87
+    V87232.3;
+  CS1_NVM
+    MP8901.1
+    R8928.2
+    V8172.32
+    V8928.1;
+  CS1_SENS_YCS
+    H1211.14
+    MP12114.1
+    R1219.2
+    V8172.14;
+  CS2_EXC
+    MP8716.1
+    V8172.54
+    V87232.4;
+  CS_NVM_TEDR
+    MP8921.1
+    R8929.2
+    V8172.58
+    V8909.1;
+  CS_SENS_ASG
+    H1171.8
+    MP1177.1
+    V8172.66;
+  CS_SENS_ASG_2
+    H1172.8
+    H1182.4
+    MP1178.1
+    MP1184.1
+    V8172.38;
+  CS_SENS_RCS
+    H1141.14
+    MP11414.1
+    R1149.2
+    V8172.67;
+  CS_SYC
+    MP8610.1
+    V8172.35
+    V8601.88
+    V8608.88;
+  CS_SYC_SAFE
+    MP8611.1
+    V8172.37
+    V8601.98
+    V8608.98;
+  EVZ
+    C7240.2
+    C7243.1
+    C8712.2
+    C72402.2
+    C72403.2
+    D7243.2
+    D7261.2
+    D7268.1
+    MP7243.1
+    MP72432.1
+    R7242.1
+    R7261.1
+    "R7261-1".1
+    "R7261-2".1
+    "R7261-3".1
+    "R7261-4".1
+    R72612.1
+    "R72612-1".1
+    "R72612-2".1
+    V8601.78
+    V8608.78
+    V87232.47;
+  EVZ2
+    C7263.1
+    MP7263.1
+    MP72631.1
+    R7269.1
+    V8601.73
+    V8608.73
+    V87232.16;
+  EXC_SAT1
+    C6522.2
+    R6521.2
+    R6523.2
+    V87232.40;
+  EXC_SAT2
+    C6524.2
+    R6522.2
+    R6524.2
+    V87232.42;
+  FLMD0
+    MP8805.1
+    R8174.1
+    R8177.1
+    V8172.30
+    X2.10;
+  FLMD0_JMP
+    MP8174.1
+    R8174.2
+    V8172.31;
+  GNDB
+    C1141.1
+    C1142.1
+    C1143.1
+    C1144.1
+    C1145.1
+    C1146.1
+    C1171.2
+    C1172.1
+    C1185.1
+    C1186.2
+    C1187.2
+    C1211.1
+    C1212.1
+    C1213.1
+    C1214.1
+    C1215.1
+    C1216.1
+    C1501.1
+    C1503.1
+    C1506.1
+    C1571.1
+    C5111.1
+    C5112.1
+    C5113.2
+    C5114.2
+    C5115.1
+    C5116.1
+    C5117.2
+    C5118.2
+    C5121.1
+    C5122.1
+    C5123.2
+    C5124.1
+    C5125.2
+    C5126.2
+    C5127.2
+    C5128.2
+    C5131.2
+    C5132.2
+    C5133.2
+    C5134.2
+    C5135.1
+    C5136.2
+    C5137.2
+    C5138.2
+    C5155.1
+    C5156.1
+    C5157.1
+    C5158.1
+    C5181.1
+    C5221.1
+    C5222.1
+    C5241.1
+    C5281.1
+    C6111.1
+    C6113.1
+    C6114.2
+    C6151.1
+    C6153.1
+    C6154.2
+    C6155.1
+    C6511.1
+    C6512.1
+    C6513.1
+    C6514.1
+    C6515.1
+    C6516.1
+    C6517.1
+    C6518.1
+    C6521.1
+    C6522.1
+    C6523.1
+    C6524.1
+    C6551.1
+    C6561.1
+    C7211.1
+    C7212.1
+    C7224.2
+    C7225.1
+    C7233.1
+    C7235.2
+    C7236.1
+    C7245.2
+    C7263.2
+    C7318.1
+    C7330.1
+    C7331.1
+    C7335.1
+    C7340.1
+    C7341.1
+    C7349.1
+    C7350.1
+    C7351.1
+    C7359.1
+    C8100.1
+    C8170.1
+    C8171.1
+    C8174.1
+    C8175.1
+    C8178.1
+    C8179.1
+    C8521.1
+    C8601.1
+    C8602.1
+    C8711.1
+    C8712.1
+    C8900.2
+    C8921.2
+    C65612.1
+    C72402.1
+    C72403.1
+    CM1.1
+    D6511.2
+    D6512.1
+    D6513.2
+    D6514.1
+    D6515.3
+    D6521.2
+    D6522.1
+    D6523.2
+    D6524.1
+    D7212.1
+    H1141.1
+    H1141.2
+    H1141.5
+    H1141.7
+    H1141.8
+    H1141.10
+    H1141.11
+    H1141.12
+    H1141.13
+    H1141.18
+    H1141.20
+    H1141.21
+    H1141.22
+    H1171.3
+    H1171.4
+    H1172.3
+    H1172.4
+    H1182.5
+    H1182.8
+    H1211.1
+    H1211.2
+    H1211.5
+    H1211.7
+    H1211.8
+    H1211.10
+    H1211.11
+    H1211.12
+    H1211.13
+    H1211.18
+    H1211.20
+    H1211.21
+    H1211.22
+    MP0001.1
+    MP0002.1
+    MP0003.1
+    MP0004.1
+    MP0005.1
+    MP0006.1
+    MP0007.1
+    MP0008.1
+    MP0009.1
+    MP0010.1
+    MP0011.1
+    MP0012.1
+    MP7202.1
+    Q8151.2
+    R1211.1
+    R1212.1
+    R1571.1
+    R5184.1
+    R5284.1
+    R6515.2
+    R6516.2
+    R6517.2
+    R6518.2
+    R6523.1
+    R6524.1
+    R7222.1
+    R7224.1
+    R8176.2
+    R8177.2
+    R8178.1
+    R8712.2
+    R15721.1
+    SP5.1
+    SP6.1
+    SP1551.2
+    SP1551.3
+    SP1552.2
+    SP1552.3
+    T5281.1
+    V6111.2
+    V6151.2
+    V8172.16
+    V8172.25
+    V8172.41
+    V8172.43
+    V8172.44
+    V8172.45
+    V8172.47
+    V8172.48
+    V8172.49
+    V8172.50
+    V8172.51
+    V8172.52
+    V8172.53
+    V8172.62
+    V8172.77
+    V8601.6
+    V8601.67
+    V8601.81
+    V8601.93
+    V8601.COOL
+    V8608.6
+    V8608.67
+    V8608.81
+    V8608.93
+    V8608.COOL
+    V8909.4
+    V8928.4
+    V87232.8
+    V87232.10
+    V87232.12
+    V87232.20
+    V87232.25
+    V87232.29
+    V87232.39
+    V87232.52
+    V87232.56
+    V87232.61
+    X1.A3
+    X1.A12
+    X1.B1
+    X1.B11
+    X1.B12
+    X1.B24
+    X1.B25
+    X1.B33
+    X1.B34
+    X1_27.A3
+    X1_27.A12
+    X1_27.B1
+    X1_27.B11
+    X1_27.B12
+    X1_27.B24
+    X1_27.B25
+    X1_28.A3
+    X1_28.A12
+    X1_28.B1
+    X1_29.A3
+    X1_29.A12
+    X1_29.B1
+    X1_29.B11
+    X1_29.B12
+    X1_30.A3
+    X1_30.A12
+    X1_30.B1
+    X1_31.A3
+    X1_31.A12
+    X1_31.B1
+    X1_31.B11
+    X1_31.B12
+    X1_32.A3
+    X1_32.A12
+    X1_32.B1
+    X1_33.A3
+    X1_33.A12
+    X1_33.B1
+    X1_33.B11
+    X1_33.B12
+    X1_34.A3
+    X1_34.A12
+    X1_34.B1
+    X1_35.A3
+    X1_35.A12
+    X1_35.B1
+    X1_35.B11
+    X1_35.B12
+    X1_36.A3
+    X1_36.A12
+    X1_37.A3
+    X1_37.A12
+    X1_38.A3
+    X1_38.A12
+    X1_38.B1
+    X1_39.A3
+    X1_39.A12
+    X1_39.B1
+    X1_39.B11
+    X1_39.B12
+    X1_40.A3
+    X1_40.A12
+    X1_40.B1
+    X1_41.A3
+    X1_41.A12
+    X1_41.B1
+    X1_41.B11
+    X1_41.B12
+    X1_42.A3
+    X1_42.A12
+    X1_43.A3
+    X1_43.A12
+    X1_A.A3
+    X1_A.A12
+    X1_A.B1
+    X1_A.B11
+    X1_A.B12
+    X1_A.B24
+    X1_A.B25
+    X1_B.A3
+    X1_B.A12
+    X1_B.B1
+    X1_B.B11
+    X1_B.B12
+    X1_B.B24
+    X1_B.B25
+    X1_C.A3
+    X1_C.A12
+    X1_C.B1
+    X1_C.B11
+    X1_C.B12
+    X1_C.B24
+    X1_C.B25
+    X1_D.A3
+    X1_D.A12
+    X1_D.B1
+    X1_D.B11
+    X1_D.B12
+    X1_D.B24
+    X1_D.B25
+    X1_E.A3
+    X1_E.A12
+    X1_E.B1
+    X1_E.B11
+    X1_E.B12
+    X1_E.B24
+    X1_E.B25
+    X1_F.A3
+    X1_F.A12
+    X1_F.B1
+    X1_F.B11
+    X1_F.B12
+    X1_F.B24
+    X1_F.B25
+    X1_G.A3
+    X1_G.A12
+    X1_G.B1
+    X1_G.B11
+    X1_G.B12
+    X1_G.B24
+    X1_G.B25
+    X1_H.A3
+    X1_H.A12
+    X1_H.B1
+    X1_H.B11
+    X1_H.B12
+    X1_H.B24
+    X1_H.B25
+    X1_I.A3
+    X1_I.A12
+    X1_I.B1
+    X1_I.B11
+    X1_I.B12
+    X1_I.B24
+    X1_I.B25
+    X1_J.A3
+    X1_J.A12
+    X1_J.B1
+    X1_J.B11
+    X1_J.B12
+    X1_J.B24
+    X1_J.B25
+    X1_K.A3
+    X1_K.A12
+    X1_K.B1
+    X1_K.B11
+    X1_K.B12
+    X1_K.B24
+    X1_K.B25
+    X1_L.A3
+    X1_L.A12
+    X1_L.B1
+    X1_L.B11
+    X1_L.B12
+    X1_L.B24
+    X1_L.B25
+    X1_M.A3
+    X1_M.A12
+    X1_M.B1
+    X1_M.B11
+    X1_M.B12
+    X1_M.B24
+    X1_M.B25
+    X1_N.A3
+    X1_N.A12
+    X1_N.B1
+    X1_O.A3
+    X1_O.A12
+    X1_O.B1
+    X1_P.A3
+    X1_P.A12
+    X1_P.B1
+    X1_Q.A3
+    X1_Q.A12
+    X1_Q.B1
+    X1_R.A3
+    X1_R.A12
+    X1_R.B1
+    X1_S.A3
+    X1_S.A12
+    X1_S.B1
+    X1_T.A3
+    X1_T.A12
+    X1_T.B1
+    X1_T.B11
+    X1_T.B12
+    X1_T.B24
+    X1_T.B25
+    X1_U.A3
+    X1_U.A12
+    X1_U.B1
+    X1_U.B11
+    X1_U.B12
+    X1_U.B24
+    X1_U.B25
+    X1_V.A3
+    X1_V.A12
+    X1_V.B1
+    X1_V.B11
+    X1_V.B12
+    X1_V.B24
+    X1_V.B25
+    X1_W.A3
+    X1_W.A12
+    X1_W.B1
+    X1_W.B11
+    X1_W.B12
+    X1_W.B24
+    X1_W.B25
+    X1_X.A3
+    X1_X.A12
+    X1_X.B1
+    X1_Y.A3
+    X1_Y.A12
+    X1_Y.B1
+    X1_Z.A3
+    X1_Z.A12
+    X1_Z.B1
+    X2.2
+    X2.4
+    X2.8
+    Z1572.1
+    Z5110.3
+    Z5111.3
+    Z5120.3
+    Z5121.3
+    Z5130.3
+    Z5131.3
+    Z5150.3
+    Z5220.3
+    Z5241.1
+    Z5281.3
+    Z6113.3
+    Z6153.3;
+  GNDC
+    C7240.1
+    C7243.2
+    D7350.1
+    SP1551.1
+    SP1552.1
+    V8601.75
+    V8608.75;
+  HSENA
+    MP8501.1
+    V8601.1
+    V8608.1
+    V87232.35;
+  HSENB
+    MP8502.1
+    V8601.2
+    V8608.2
+    V87232.34;
+  HSENC
+    MP8503.1
+    V8601.3
+    V8608.3
+    V87232.33;
+  IF_ACT_01_ZPH
+    C5133.1
+    MP5133.1
+    V8601.55
+    V8608.55
+    X1.A4
+    X1_27.A4
+    X1_28.A4
+    X1_29.A4
+    X1_30.A4
+    X1_31.A4
+    X1_32.A4
+    X1_33.A4
+    X1_34.A4
+    X1_35.A4
+    X1_36.A4
+    X1_37.A4
+    X1_38.A4
+    X1_39.A4
+    X1_40.A4
+    X1_41.A4
+    X1_42.A4
+    X1_43.A4
+    X1_A.A4
+    X1_B.A4
+    X1_C.A4
+    X1_D.A4
+    X1_E.A4
+    X1_F.A4
+    X1_G.A4
+    X1_H.A4
+    X1_I.A4
+    X1_J.A4
+    X1_K.A4
+    X1_L.A4
+    X1_M.A4
+    X1_N.A4
+    X1_O.A4
+    X1_P.A4
+    X1_Q.A4
+    X1_R.A4
+    X1_S.A4
+    X1_T.A4
+    X1_U.A4
+    X1_V.A4
+    X1_W.A4
+    X1_X.A4
+    X1_Y.A4
+    X1_Z.A4
+    Z5130.2;
+  IF_ACT_01_ZPL
+    C5134.1
+    MP5134.1
+    V8601.56
+    V8608.56
+    X1.A5
+    X1_27.A5
+    X1_28.A5
+    X1_29.A5
+    X1_30.A5
+    X1_31.A5
+    X1_32.A5
+    X1_33.A5
+    X1_34.A5
+    X1_35.A5
+    X1_36.A5
+    X1_37.A5
+    X1_38.A5
+    X1_39.A5
+    X1_40.A5
+    X1_41.A5
+    X1_42.A5
+    X1_43.A5
+    X1_A.A5
+    X1_B.A5
+    X1_C.A5
+    X1_D.A5
+    X1_E.A5
+    X1_F.A5
+    X1_G.A5
+    X1_H.A5
+    X1_I.A5
+    X1_J.A5
+    X1_K.A5
+    X1_L.A5
+    X1_M.A5
+    X1_N.A5
+    X1_O.A5
+    X1_P.A5
+    X1_Q.A5
+    X1_R.A5
+    X1_S.A5
+    X1_T.A5
+    X1_U.A5
+    X1_V.A5
+    X1_W.A5
+    X1_X.A5
+    X1_Y.A5
+    X1_Z.A5;
+  IF_ACT_02_ZPH
+    C5131.1
+    MP5131.1
+    V8601.46
+    V8608.46
+    X1.A7
+    X1_27.A7
+    X1_28.A7
+    X1_29.A7
+    X1_30.A7
+    X1_31.A7
+    X1_32.A7
+    X1_33.A7
+    X1_34.A7
+    X1_35.A7
+    X1_36.A7
+    X1_37.A7
+    X1_38.A7
+    X1_39.A7
+    X1_40.A7
+    X1_41.A7
+    X1_42.A7
+    X1_43.A7
+    X1_A.A7
+    X1_B.A7
+    X1_C.A7
+    X1_D.A7
+    X1_E.A7
+    X1_F.A7
+    X1_G.A7
+    X1_H.A7
+    X1_I.A7
+    X1_J.A7
+    X1_K.A7
+    X1_L.A7
+    X1_M.A7
+    X1_N.A7
+    X1_O.A7
+    X1_P.A7
+    X1_Q.A7
+    X1_R.A7
+    X1_S.A7
+    X1_T.A7
+    X1_U.A7
+    X1_V.A7
+    X1_W.A7
+    X1_X.A7
+    X1_Y.A7
+    X1_Z.A7
+    Z5130.1;
+  IF_ACT_02_ZPL
+    C5132.1
+    MP5132.1
+    V8601.45
+    V8608.45
+    X1.A6
+    X1_27.A6
+    X1_28.A6
+    X1_29.A6
+    X1_30.A6
+    X1_31.A6
+    X1_32.A6
+    X1_33.A6
+    X1_34.A6
+    X1_35.A6
+    X1_36.A6
+    X1_37.A6
+    X1_38.A6
+    X1_39.A6
+    X1_40.A6
+    X1_41.A6
+    X1_42.A6
+    X1_43.A6
+    X1_A.A6
+    X1_B.A6
+    X1_C.A6
+    X1_D.A6
+    X1_E.A6
+    X1_F.A6
+    X1_G.A6
+    X1_H.A6
+    X1_I.A6
+    X1_J.A6
+    X1_K.A6
+    X1_L.A6
+    X1_M.A6
+    X1_N.A6
+    X1_O.A6
+    X1_P.A6
+    X1_Q.A6
+    X1_R.A6
+    X1_S.A6
+    X1_T.A6
+    X1_U.A6
+    X1_V.A6
+    X1_W.A6
+    X1_X.A6
+    X1_Y.A6
+    X1_Z.A6;
+  IF_ACT_03_ZPH
+    C5137.1
+    MP5137.1
+    V8601.60
+    V8608.60
+    X1.A13
+    X1_27.A13
+    X1_A.A13
+    X1_B.A13
+    X1_C.A13
+    X1_N.A13
+    X1_R.A13
+    X1_T.A13
+    X1_U.A13
+    X1_V.A13
+    X1_W.A13
+    X1_X.A13
+    Z5131.1;
+  IF_ACT_03_ZPL
+    C5138.1
+    MP5138.1
+    V8601.61
+    V8608.61
+    X1.A14
+    X1_27.A14
+    X1_A.A14
+    X1_B.A14
+    X1_C.A14
+    X1_N.A14
+    X1_R.A14
+    X1_T.A14
+    X1_U.A14
+    X1_V.A14
+    X1_W.A14
+    X1_X.A14;
+  IF_ACT_04_ZPH
+    C5135.2
+    MP5135.1
+    V8601.58
+    V8608.58
+    X1.A16
+    X1_27.A16
+    X1_A.A16
+    X1_B.A16
+    X1_C.A16
+    Z5131.2;
+  IF_ACT_04_ZPL
+    C5136.1
+    MP5136.1
+    V8601.57
+    V8608.57
+    X1.A15
+    X1_27.A15
+    X1_A.A15
+    X1_B.A15
+    X1_C.A15;
+  IF_ACT_07_ZPH
+    C5123.1
+    MP5123.1
+    V8601.36
+    V8608.36
+    X1.B2
+    X1_27.B2
+    X1_28.B2
+    X1_29.B2
+    X1_30.B2
+    X1_31.B2
+    X1_32.B2
+    X1_33.B2
+    X1_34.B2
+    X1_35.B2
+    X1_38.B2
+    X1_39.B2
+    X1_40.B2
+    X1_41.B2
+    X1_A.B2
+    X1_B.B2
+    X1_C.B2
+    X1_D.B2
+    X1_E.B2
+    X1_F.B2
+    X1_G.B2
+    X1_H.B2
+    X1_I.B2
+    X1_J.B2
+    X1_K.B2
+    X1_L.B2
+    X1_M.B2
+    X1_N.B2
+    X1_O.B2
+    X1_P.B2
+    X1_Q.B2
+    X1_R.B2
+    X1_S.B2
+    X1_T.B2
+    X1_U.B2
+    X1_V.B2
+    X1_W.B2
+    X1_X.B2
+    X1_Y.B2
+    X1_Z.B2
+    Z5120.1;
+  IF_ACT_07_ZPL
+    C5124.2
+    MP5124.1
+    V8601.37
+    V8608.37
+    X1.B3
+    X1_27.B3
+    X1_28.B3
+    X1_29.B3
+    X1_30.B3
+    X1_31.B3
+    X1_32.B3
+    X1_33.B3
+    X1_34.B3
+    X1_35.B3
+    X1_38.B3
+    X1_39.B3
+    X1_40.B3
+    X1_41.B3
+    X1_A.B3
+    X1_B.B3
+    X1_C.B3
+    X1_D.B3
+    X1_E.B3
+    X1_F.B3
+    X1_G.B3
+    X1_H.B3
+    X1_I.B3
+    X1_J.B3
+    X1_K.B3
+    X1_L.B3
+    X1_M.B3
+    X1_N.B3
+    X1_O.B3
+    X1_P.B3
+    X1_Q.B3
+    X1_R.B3
+    X1_S.B3
+    X1_T.B3
+    X1_U.B3
+    X1_V.B3
+    X1_W.B3
+    X1_X.B3
+    X1_Y.B3
+    X1_Z.B3;
+  IF_ACT_08_ZPH
+    C5111.2
+    MP5111.1
+    V8601.16
+    V8608.16
+    X1.B5
+    X1_27.B5
+    X1_A.B5
+    X1_B.B5
+    X1_C.B5
+    X1_T.B5
+    X1_U.B5
+    X1_V.B5
+    X1_W.B5
+    X1_X.B5
+    Z5110.2;
+  IF_ACT_08_ZPL
+    C5112.2
+    MP5112.1
+    V8601.15
+    V8608.15
+    X1.B4
+    X1_27.B4
+    X1_A.B4
+    X1_B.B4
+    X1_C.B4
+    X1_T.B4
+    X1_U.B4
+    X1_V.B4
+    X1_W.B4
+    X1_X.B4;
+  IF_ACT_09_ZPH
+    C5117.1
+    MP5117.1
+    V8601.30
+    V8608.30
+    X1.B6
+    X1_27.B6
+    X1_29.B6
+    X1_31.B6
+    X1_33.B6
+    X1_35.B6
+    X1_39.B6
+    X1_41.B6
+    X1_A.B6
+    X1_B.B6
+    X1_C.B6
+    X1_D.B6
+    X1_E.B6
+    X1_F.B6
+    X1_G.B6
+    X1_H.B6
+    X1_I.B6
+    X1_J.B6
+    X1_K.B6
+    X1_L.B6
+    X1_M.B6
+    X1_T.B6
+    X1_U.B6
+    X1_V.B6
+    X1_W.B6
+    Z5111.1;
+  IF_ACT_09_ZPL
+    C5118.1
+    MP5118.1
+    V8601.31
+    V8608.31
+    X1.B7
+    X1_27.B7
+    X1_29.B7
+    X1_31.B7
+    X1_33.B7
+    X1_35.B7
+    X1_39.B7
+    X1_41.B7
+    X1_A.B7
+    X1_B.B7
+    X1_C.B7
+    X1_D.B7
+    X1_E.B7
+    X1_F.B7
+    X1_G.B7
+    X1_H.B7
+    X1_I.B7
+    X1_J.B7
+    X1_K.B7
+    X1_L.B7
+    X1_M.B7
+    X1_T.B7
+    X1_U.B7
+    X1_V.B7
+    X1_W.B7;
+  IF_ACT_10_ZPH
+    C5115.2
+    MP5115.1
+    V8601.21
+    V8608.21
+    X1.B9
+    X1_27.B9
+    X1_29.B9
+    X1_31.B9
+    X1_33.B9
+    X1_35.B9
+    X1_39.B9
+    X1_41.B9
+    X1_A.B9
+    X1_B.B9
+    X1_C.B9
+    X1_D.B9
+    X1_E.B9
+    X1_F.B9
+    X1_G.B9
+    X1_H.B9
+    X1_I.B9
+    X1_J.B9
+    X1_K.B9
+    X1_L.B9
+    X1_M.B9
+    X1_T.B9
+    X1_U.B9
+    X1_V.B9
+    X1_W.B9
+    Z5111.2;
+  IF_ACT_10_ZPL
+    C5116.2
+    MP5116.1
+    V8601.20
+    V8608.20
+    X1.B8
+    X1_27.B8
+    X1_29.B8
+    X1_31.B8
+    X1_33.B8
+    X1_35.B8
+    X1_39.B8
+    X1_41.B8
+    X1_A.B8
+    X1_B.B8
+    X1_C.B8
+    X1_D.B8
+    X1_E.B8
+    X1_F.B8
+    X1_G.B8
+    X1_H.B8
+    X1_I.B8
+    X1_J.B8
+    X1_K.B8
+    X1_L.B8
+    X1_M.B8
+    X1_T.B8
+    X1_U.B8
+    X1_V.B8
+    X1_W.B8;
+  IF_ACT_11_ZPH
+    C5125.1
+    MP5125.1
+    V8601.40
+    V8608.40
+    X1.B15
+    X1_27.B15
+    X1_28.B15
+    X1_29.B15
+    X1_30.B15
+    X1_31.B15
+    X1_32.B15
+    X1_33.B15
+    X1_34.B15
+    X1_35.B15
+    X1_38.B15
+    X1_39.B15
+    X1_40.B15
+    X1_41.B15
+    X1_A.B15
+    X1_B.B15
+    X1_C.B15
+    X1_D.B15
+    X1_E.B15
+    X1_F.B15
+    X1_G.B15
+    X1_H.B15
+    X1_I.B15
+    X1_J.B15
+    X1_K.B15
+    X1_L.B15
+    X1_M.B15
+    X1_N.B15
+    X1_O.B15
+    X1_P.B15
+    X1_Q.B15
+    X1_R.B15
+    X1_S.B15
+    X1_T.B15
+    X1_U.B15
+    X1_V.B15
+    X1_W.B15
+    X1_X.B15
+    X1_Y.B15
+    X1_Z.B15
+    Z5121.1;
+  IF_ACT_11_ZPL
+    C5126.1
+    MP5126.1
+    V8601.39
+    V8608.39
+    X1.B16
+    X1_27.B16
+    X1_28.B16
+    X1_29.B16
+    X1_30.B16
+    X1_31.B16
+    X1_32.B16
+    X1_33.B16
+    X1_34.B16
+    X1_35.B16
+    X1_38.B16
+    X1_39.B16
+    X1_40.B16
+    X1_41.B16
+    X1_A.B16
+    X1_B.B16
+    X1_C.B16
+    X1_D.B16
+    X1_E.B16
+    X1_F.B16
+    X1_G.B16
+    X1_H.B16
+    X1_I.B16
+    X1_J.B16
+    X1_K.B16
+    X1_L.B16
+    X1_M.B16
+    X1_N.B16
+    X1_O.B16
+    X1_P.B16
+    X1_Q.B16
+    X1_R.B16
+    X1_S.B16
+    X1_T.B16
+    X1_U.B16
+    X1_V.B16
+    X1_W.B16
+    X1_X.B16
+    X1_Y.B16
+    X1_Z.B16;
+  IF_ACT_13_ZPH
+    C5155.2
+    MP5155.1
+    V87232.59
+    X1.B19
+    X1_27.B19
+    X1_A.B19
+    X1_B.B19
+    X1_C.B19
+    X1_D.B19
+    X1_E.B19
+    X1_F.B19
+    X1_G.B19
+    X1_H.B19
+    X1_I.B19
+    X1_J.B19
+    X1_K.B19
+    X1_L.B19
+    X1_M.B19
+    X1_T.B19
+    X1_U.B19
+    X1_V.B19
+    X1_W.B19
+    Z5150.2;
+  IF_ACT_13_ZPL
+    C5156.2
+    MP5156.1
+    V87232.60
+    X1.B20
+    X1_27.B20
+    X1_A.B20
+    X1_B.B20
+    X1_C.B20
+    X1_D.B20
+    X1_E.B20
+    X1_F.B20
+    X1_G.B20
+    X1_H.B20
+    X1_I.B20
+    X1_J.B20
+    X1_K.B20
+    X1_L.B20
+    X1_M.B20
+    X1_T.B20
+    X1_U.B20
+    X1_V.B20
+    X1_W.B20;
+  IF_ACT_14_ZPH
+    C5157.2
+    MP5157.1
+    V87232.63
+    X1.B22
+    X1_27.B22
+    X1_A.B22
+    X1_B.B22
+    X1_C.B22
+    X1_D.B22
+    X1_E.B22
+    X1_F.B22
+    X1_G.B22
+    X1_H.B22
+    X1_I.B22
+    X1_J.B22
+    X1_K.B22
+    X1_L.B22
+    X1_M.B22
+    X1_T.B22
+    X1_U.B22
+    X1_V.B22
+    X1_W.B22
+    Z5150.1;
+  IF_ACT_14_ZPL
+    C5158.2
+    MP5158.1
+    V87232.62
+    X1.B21
+    X1_27.B21
+    X1_A.B21
+    X1_B.B21
+    X1_C.B21
+    X1_D.B21
+    X1_E.B21
+    X1_F.B21
+    X1_G.B21
+    X1_H.B21
+    X1_I.B21
+    X1_J.B21
+    X1_K.B21
+    X1_L.B21
+    X1_M.B21
+    X1_T.B21
+    X1_U.B21
+    X1_V.B21
+    X1_W.B21;
+  IF_ACT_15_ZPH
+    C5127.1
+    MP5127.1
+    V8601.42
+    V8608.42
+    X1.B28
+    X1_27.B28
+    X1_33.B28
+    X1_35.B28
+    X1_39.B28
+    X1_41.B28
+    X1_A.B28
+    X1_B.B28
+    X1_C.B28
+    X1_D.B28
+    X1_T.B28
+    X1_U.B28
+    X1_V.B28
+    X1_W.B28
+    Z5121.2;
+  IF_ACT_15_ZPL
+    C5128.1
+    MP5128.1
+    V8601.43
+    V8608.43
+    X1.B29
+    X1_27.B29
+    X1_33.B29
+    X1_35.B29
+    X1_39.B29
+    X1_41.B29
+    X1_A.B29
+    X1_B.B29
+    X1_C.B29
+    X1_D.B29
+    X1_T.B29
+    X1_U.B29
+    X1_V.B29
+    X1_W.B29;
+  IF_ACT_16_ZPH
+    C5121.2
+    MP5121.1
+    V8601.34
+    V8608.34
+    X1.B31
+    X1_33.B31
+    X1_35.B31
+    X1_39.B31
+    X1_41.B31
+    X1_A.B31
+    X1_B.B31
+    X1_D.B31
+    X1_T.B31
+    X1_U.B31
+    X1_V.B31
+    X1_W.B31
+    Z5120.2;
+  IF_ACT_16_ZPL
+    C5122.2
+    MP5122.1
+    V8601.33
+    V8608.33
+    X1.B30
+    X1_33.B30
+    X1_35.B30
+    X1_39.B30
+    X1_41.B30
+    X1_A.B30
+    X1_B.B30
+    X1_D.B30
+    X1_T.B30
+    X1_U.B30
+    X1_V.B30
+    X1_W.B30;
+  IF_SWI06
+    C1506.2
+    MP1506.1
+    R1506.2
+    X1.A9
+    X1_32.A9
+    X1_33.A9
+    X1_34.A9
+    X1_35.A9
+    X1_D.A9
+    X1_N.A9
+    X1_R.A9
+    X1_T.A9
+    X1_U.A9
+    X1_V.A9
+    X1_W.A9
+    X1_X.A9
+    X1_Y.A9;
+  IGN
+    C7211.2
+    C7212.2
+    D7211.1
+    D7263.1
+    MP7201.1
+    R7221.1
+    X1.A1
+    X1_27.A1
+    X1_28.A1
+    X1_29.A1
+    X1_30.A1
+    X1_31.A1
+    X1_32.A1
+    X1_33.A1
+    X1_34.A1
+    X1_35.A1
+    X1_36.A1
+    X1_37.A1
+    X1_38.A1
+    X1_39.A1
+    X1_40.A1
+    X1_41.A1
+    X1_42.A1
+    X1_43.A1
+    X1_A.A1
+    X1_B.A1
+    X1_C.A1
+    X1_D.A1
+    X1_E.A1
+    X1_F.A1
+    X1_G.A1
+    X1_H.A1
+    X1_I.A1
+    X1_J.A1
+    X1_K.A1
+    X1_L.A1
+    X1_M.A1
+    X1_N.A1
+    X1_O.A1
+    X1_P.A1
+    X1_Q.A1
+    X1_R.A1
+    X1_S.A1
+    X1_T.A1
+    X1_U.A1
+    X1_V.A1
+    X1_W.A1
+    X1_X.A1
+    X1_Y.A1
+    X1_Z.A1;
+  IND_CO
+    C5241.2
+    MP52411.1
+    R5241.2
+    X1.A10
+    X1_27.A10
+    X1_28.A10
+    X1_29.A10
+    X1_30.A10
+    X1_31.A10
+    X1_32.A10
+    X1_33.A10
+    X1_34.A10
+    X1_35.A10
+    X1_36.A10
+    X1_37.A10
+    X1_38.A10
+    X1_39.A10
+    X1_40.A10
+    X1_41.A10
+    X1_42.A10
+    X1_43.A10
+    X1_A.A10
+    X1_B.A10
+    X1_C.A10
+    X1_D.A10
+    X1_E.A10
+    X1_F.A10
+    X1_G.A10
+    X1_H.A10
+    X1_I.A10
+    X1_J.A10
+    X1_K.A10
+    X1_L.A10
+    X1_M.A10
+    X1_N.A10
+    X1_O.A10
+    X1_P.A10
+    X1_Q.A10
+    X1_R.A10
+    X1_S.A10
+    X1_T.A10
+    X1_U.A10
+    X1_V.A10
+    X1_W.A10
+    X1_X.A10
+    X1_Y.A10
+    X1_Z.A10;
+  IND_PAAL
+    C5222.2
+    MP5210.1
+    R5222.2
+    X1.A21
+    X1_32.A21
+    X1_33.A21
+    X1_34.A21
+    X1_35.A21
+    X1_D.A21
+    X1_N.A21
+    X1_R.A21
+    X1_T.A21
+    X1_U.A21
+    X1_V.A21
+    X1_W.A21
+    X1_X.A21
+    X1_Y.A21;
+  IND_PADL
+    C5221.2
+    MP5220.1
+    R5221.2
+    X1.A20
+    X1_27.A20
+    X1_32.A20
+    X1_33.A20
+    X1_34.A20
+    X1_35.A20
+    X1_A.A20
+    X1_B.A20
+    X1_C.A20
+    X1_D.A20
+    X1_N.A20
+    X1_R.A20
+    X1_T.A20
+    X1_U.A20
+    X1_V.A20
+    X1_W.A20
+    X1_X.A20
+    X1_Y.A20;
+  IND_SBR
+    C5281.2
+    MP5281.1
+    R5281.2
+    X1.A19;
+  JP0_4
+    MP8176.1
+    R8176.1
+    V8172.19;
+  LD_CT
+    MP5230.1
+    V8172.36
+    V8601.53
+    V8608.53;
+  LD_CT_SBR
+    MP8178.1
+    R5282.2
+    R8178.2
+    V8172.65;
+  LPD_RESET
+    C8100.2
+    MP8804.1
+    R8100.2
+    V8172.24
+    X2.9;
+  LPDCLK
+    MP8803.1
+    V8172.21
+    X2.1;
+  LPDCLKOUT
+    MP8807.1
+    V8172.18
+    X2.7;
+  LPDI
+    MP8801.1
+    V8172.23
+    X2.5;
+  LPDO
+    MP8802.1
+    V8172.22
+    X2.3;
+  LSENQ
+    MP8510.1
+    V8172.33
+    V8601.99
+    V8608.99
+    V87232.2;
+  M_IGN
+    C7225.2
+    MP7225.1
+    R7225.2
+    V8172.46;
+  M_ISOVCL
+    C8170.2
+    MP817061.1
+    V8172.60
+    V8172.61;
+  RESQ2
+    MP7110.1
+    V8601.5
+    V8608.5
+    V87232.37;
+  RESQ_MUC
+    MP86097.1
+    R8100.1
+    V8601.97
+    V8608.97;
+  SAT1
+    C6511.2
+    D6511.1
+    D6512.2
+    MP6501.1
+    R6511.1
+    X1.A11
+    X1_27.A11
+    X1_28.A11
+    X1_29.A11
+    X1_30.A11
+    X1_31.A11
+    X1_32.A11
+    X1_33.A11
+    X1_34.A11
+    X1_35.A11
+    X1_36.A11
+    X1_37.A11
+    X1_38.A11
+    X1_39.A11
+    X1_40.A11
+    X1_41.A11
+    X1_42.A11
+    X1_43.A11
+    X1_A.A11
+    X1_B.A11
+    X1_C.A11
+    X1_D.A11
+    X1_E.A11
+    X1_F.A11
+    X1_G.A11
+    X1_H.A11
+    X1_I.A11
+    X1_J.A11
+    X1_K.A11
+    X1_L.A11
+    X1_M.A11
+    X1_N.A11
+    X1_O.A11
+    X1_P.A11
+    X1_Q.A11
+    X1_R.A11
+    X1_S.A11
+    X1_T.A11
+    X1_U.A11
+    X1_V.A11
+    X1_W.A11
+    X1_X.A11
+    X1_Y.A11
+    X1_Z.A11;
+  SAT2
+    C6513.2
+    D6513.1
+    D6514.2
+    MP6502.1
+    R6512.1
+    X1.A2
+    X1_27.A2
+    X1_28.A2
+    X1_29.A2
+    X1_30.A2
+    X1_31.A2
+    X1_32.A2
+    X1_33.A2
+    X1_34.A2
+    X1_35.A2
+    X1_36.A2
+    X1_37.A2
+    X1_38.A2
+    X1_39.A2
+    X1_40.A2
+    X1_41.A2
+    X1_42.A2
+    X1_43.A2
+    X1_A.A2
+    X1_B.A2
+    X1_C.A2
+    X1_D.A2
+    X1_E.A2
+    X1_F.A2
+    X1_G.A2
+    X1_H.A2
+    X1_I.A2
+    X1_J.A2
+    X1_K.A2
+    X1_L.A2
+    X1_M.A2
+    X1_N.A2
+    X1_O.A2
+    X1_P.A2
+    X1_Q.A2
+    X1_R.A2
+    X1_S.A2
+    X1_T.A2
+    X1_U.A2
+    X1_V.A2
+    X1_W.A2
+    X1_X.A2
+    X1_Y.A2
+    X1_Z.A2;
+  SAT3
+    C6515.2
+    D6515.1
+    MP6503.1
+    R6513.1
+    X1.B10
+    X1_27.B10
+    X1_29.B10
+    X1_31.B10
+    X1_33.B10
+    X1_35.B10
+    X1_39.B10
+    X1_41.B10
+    X1_A.B10
+    X1_B.B10
+    X1_C.B10
+    X1_D.B10
+    X1_E.B10
+    X1_F.B10
+    X1_G.B10
+    X1_H.B10
+    X1_I.B10
+    X1_J.B10
+    X1_K.B10
+    X1_L.B10
+    X1_M.B10
+    X1_T.B10
+    X1_U.B10
+    X1_V.B10
+    X1_W.B10;
+  SAT4
+    C6517.2
+    D6515.2
+    MP6504.1
+    R6514.1
+    X1.B13
+    X1_27.B13
+    X1_29.B13
+    X1_31.B13
+    X1_33.B13
+    X1_35.B13
+    X1_39.B13
+    X1_41.B13
+    X1_A.B13
+    X1_B.B13
+    X1_C.B13
+    X1_D.B13
+    X1_E.B13
+    X1_F.B13
+    X1_G.B13
+    X1_H.B13
+    X1_I.B13
+    X1_J.B13
+    X1_K.B13
+    X1_L.B13
+    X1_M.B13
+    X1_T.B13
+    X1_U.B13
+    X1_V.B13
+    X1_W.B13;
+  SAT5
+    C6521.2
+    D6521.1
+    D6522.2
+    MP6505.1
+    R6521.1
+    X1.B23
+    X1_27.B23
+    X1_A.B23
+    X1_B.B23
+    X1_C.B23
+    X1_D.B23
+    X1_E.B23
+    X1_F.B23
+    X1_G.B23
+    X1_H.B23
+    X1_I.B23
+    X1_J.B23
+    X1_K.B23
+    X1_L.B23
+    X1_M.B23
+    X1_T.B23
+    X1_U.B23
+    X1_V.B23
+    X1_W.B23;
+  SAT6
+    C6523.2
+    D6523.1
+    D6524.2
+    MP6506.1
+    R6522.1
+    X1.B26
+    X1_27.B26
+    X1_A.B26
+    X1_B.B26
+    X1_C.B26
+    X1_D.B26
+    X1_E.B26
+    X1_F.B26
+    X1_G.B26
+    X1_H.B26
+    X1_I.B26
+    X1_J.B26
+    X1_K.B26
+    X1_L.B26
+    X1_M.B26
+    X1_T.B26
+    X1_U.B26
+    X1_V.B26
+    X1_W.B26;
+  SDIAG
+    C7318.2
+    D5182.1
+    MP7318.1
+    V8601.10
+    V8608.10;
+  SIGN780
+    R8602.2
+    V8601.96
+    V8608.96;
+  SIGN786
+    R7221.2
+    R7222.2
+    R7225.1;
+  SIGN792
+    C8601.2
+    MP86094.1
+    V8601.94
+    V8608.94;
+  SIGN799
+    Q8151.1
+    V8172.28;
+  SIGN805
+    C1143.2
+    C1144.2
+    H1141.3
+    H1141.4
+    MP1144.1;
+  SIGN808
+    C1145.2
+    C1146.2
+    H1141.19
+    MP11419.1;
+  SIGN810
+    C8174.2
+    MP817026.1
+    V8172.26;
+  SIGN811
+    Q8151.3
+    V8172.29;
+  SIGN813
+    C1213.2
+    C1214.2
+    H1211.3
+    H1211.4
+    MP1214.1;
+  SIGN814
+    C1215.2
+    C1216.2
+    H1211.19
+    MP12119.1;
+  SIGN816
+    C5182.1
+    MP5187.1
+    R5187.1;
+  SIGN817
+    R5186.2
+    T5181.1;
+  SIGN819
+    M5181.1
+    MP51811.1
+    R5181.2;
+  SIGN823
+    C5182.2
+    MP5181.1
+    R5181.1
+    R5182.2
+    R5184.2
+    T5181.3;
+  SIGN824
+    D5182.2
+    MP5182.1
+    R5183.1;
+  SIGN834
+    C1186.1
+    C1187.1
+    H1182.6
+    MP1186.1;
+  SIGN877
+    MP5284.1
+    R5284.2
+    T5281.2
+    T5281.4;
+  SIGN878
+    MP5282.1
+    R5281.1
+    T5281.3
+    Z5281.1
+    Z5281.2;
+  SIGN879
+    MP5283.1
+    R5282.1
+    T5281.5
+    T5281.6;
+  SIGN890
+    C7236.2
+    L7231.2
+    L7241.1
+    L7241_P.2
+    MP7231.1
+    MP7241.1;
+  SIGN906
+    C6155.2
+    R6153.2
+    R6154.1;
+  SIGN927
+    R8701.2
+    V87232.14;
+  SIGN928
+    R8712.1
+    V87232.11;
+  SIGN929
+    R8701.1
+    V87232.13;
+  SIGN930
+    D7268.2
+    R7269.2;
+  SIGN932
+    R7230.2
+    R7231.2
+    R7232.2
+    R7233.1
+    R7234.1
+    R7235.1;
+  SIGN933
+    D7211.2
+    D7212.2
+    MP7212.1
+    MP7213.1
+    R7230.1
+    R7231.1
+    R7232.1;
+  SIGN951
+    R8602.1
+    V8601.95
+    V8608.95;
+  SIGN952
+    V8601.77
+    V8608.77;
+  SIGN953
+    V8601.54
+    V8608.54;
+  SIGN954
+    V8601.38
+    V8608.38;
+  SIGN955
+    R8601.2
+    V8601.24
+    V8608.24;
+  SIGN956
+    R8601.1
+    V8601.23
+    V8608.23;
+  SIGN957
+    V8601.79
+    V8608.79;
+  SIGN958
+    V8601.14
+    V8608.14;
+  SIGN959
+    V8601.26
+    V8608.26;
+  SIGN960
+    V8601.32
+    V8608.32;
+  SIGN961
+    V8601.28
+    V8608.28;
+  SIGN962
+    V8601.62
+    V8608.62;
+  SIGN963
+    V8601.48
+    V8608.48;
+  SIGN964
+    V8601.50
+    V8608.50;
+  SIGN965
+    V8601.44
+    V8608.44;
+  SPI1_MISO
+    H1211.17
+    MP82121.1
+    V8172.11
+    V8928.2;
+  SPI1_MOSI
+    H1211.16
+    MP82131.1
+    V8172.12
+    V8928.5;
+  SPI1_SCLK
+    H1211.15
+    MP82111.1
+    V8172.13
+    V8928.6;
+  SPI2_MISO
+    MP82132.1
+    V8172.75
+    V87232.7;
+  SPI2_MOSI
+    MP82122.1
+    V8172.73
+    V87232.6;
+  SPI2_SCLK
+    MP82112.1
+    V8172.74
+    V87232.5;
+  SPI_MISO
+    H1141.17
+    H1171.5
+    H1172.5
+    H1182.3
+    MP8213.1
+    V8172.7
+    V8601.91
+    V8608.91
+    V8909.2;
+  SPI_MOSI
+    H1141.16
+    H1171.6
+    H1172.6
+    H1182.2
+    MP8212.1
+    V8172.9
+    V8601.90
+    V8608.90
+    V8909.5;
+  SPI_SCLK
+    H1141.15
+    H1171.7
+    H1172.7
+    H1182.1
+    MP8211.1
+    V8172.8
+    V8601.89
+    V8608.89
+    V8909.6;
+  ST_CONTROL
+    MP51823.1
+    R5186.1
+    T5182.3;
+  SUP
+    C7233.2
+    C7235.1
+    L7231.1
+    MP7211.1
+    MP7235.1
+    R7223.1
+    R7233.2
+    R7234.2
+    R7235.2;
+  SWI01
+    C1501.2
+    MP1501.1
+    R1501.2
+    X1.B32;
+  SWI03
+    C1503.2
+    MP1503.1
+    R1503.2
+    X1.B35
+    X1_27.B35
+    X1_A.B35
+    X1_B.B35
+    X1_C.B35;
+  SWI_RT
+    C1571.2
+    MP1571.1
+    R1572.2
+    R15721.2
+    X1.A8
+    X1_32.A8
+    X1_33.A8
+    X1_34.A8
+    X1_35.A8
+    X1_36.A8
+    X1_37.A8
+    X1_42.A8
+    X1_43.A8
+    X1_D.A8
+    X1_N.A8
+    X1_R.A8
+    X1_T.A8
+    X1_U.A8
+    X1_V.A8
+    X1_W.A8
+    X1_X.A8
+    X1_Y.A8;
+  SYC2_ZPH
+    C5113.1
+    MP5113.1
+    V8601.18
+    V8608.18
+    X1.B18
+    X1_27.B18
+    X1_A.B18
+    X1_B.B18
+    X1_C.B18
+    Z5110.1;
+  SYC2_ZPL
+    C5114.1
+    MP5114.1
+    V8601.19
+    V8608.19
+    X1.B17
+    X1_27.B17
+    X1_A.B17
+    X1_B.B17
+    X1_C.B17;
+  SYC_B3V3
+    R7332.2
+    T7330.1
+    V8601.83
+    V8608.83;
+  SYC_DEVZ
+    D7243.1
+    L7241.2
+    L7241_P.1
+    MP72412.1
+    MP72413.1
+    V8601.76
+    V8608.76;
+  SYC_IASG1
+    R1501.1
+    V8601.25
+    V8608.25;
+  SYC_IASG3
+    R1503.1
+    V8601.27
+    V8608.27;
+  SYC_IASG6
+    R1506.1
+    V8601.49
+    V8608.49;
+  SYC_K1_LIN
+    MP1572.1
+    R1571.2
+    R1572.1
+    V8601.68
+    V8608.68
+    Z1572.2;
+  SYC_K2_ACL
+    MP5241.1
+    R5241.1
+    V8601.69
+    V8608.69
+    Z5241.2;
+  SYC_LD1D
+    MP5222.1
+    R5222.1
+    V8601.64
+    V8608.64
+    Z5220.1;
+  SYC_LD1S
+    SP6.2
+    V8601.63
+    V8608.63;
+  SYC_LD2D
+    MP5221.1
+    R5221.1
+    V8601.65
+    V8608.65
+    Z5220.2;
+  SYC_LD2S
+    SP5.2
+    V8601.66
+    V8608.66;
+  SYC_RXD
+    MP8322.1
+    V8172.68
+    V8601.86
+    V8608.86;
+  SYC_SAT1
+    C6512.2
+    R6511.2
+    R6515.1
+    V8601.13
+    V8608.13;
+  SYC_SAT2
+    C6514.2
+    R6512.2
+    R6516.1
+    V8601.11
+    V8608.11;
+  SYC_SAT3
+    C6516.2
+    R6513.2
+    R6517.1
+    V8601.9
+    V8608.9;
+  SYC_SAT4
+    C6518.2
+    R6514.2
+    R6518.1
+    V8601.7
+    V8608.7;
+  SYC_SEVZ
+    C7245.1
+    MP7245.1
+    R7242.2
+    V8601.72
+    V8608.72;
+  SYC_SVC
+    D7350.2
+    L7350.2
+    V8601.80
+    V8608.80;
+  SYC_TXD1
+    MP8321.1
+    V8172.5
+    V8601.52
+    V8608.52;
+  SYC_TXD2
+    MP64202.1
+    V8172.69
+    V8601.51
+    V8608.51;
+  TESTMQ
+    MP51821.1
+    T5182.1
+    V8601.4
+    V8608.4
+    V87232.36;
+  VBDIAG
+    C7224.1
+    R7223.2
+    R7224.2
+    V8601.70
+    V8608.70;
+  VCC5
+    C6111.2
+    C6151.2
+    C7340.2
+    C7341.2
+    C7349.2
+    MP7340.1
+    V6111.3
+    V6151.3
+    V8601.84
+    V8608.84;
+  VD
+    C6551.2
+    C6561.2
+    C7350.2
+    C7351.2
+    C7359.2
+    C65612.2
+    L7350.1
+    MP7350.1
+    MP7351.1
+    R7332.1
+    T7330.3
+    V8601.8
+    V8601.12
+    V8601.82
+    V8608.8
+    V8608.12
+    V8608.82
+    V87232.41
+    V87232.44;
+  VPERI
+    C1141.2
+    C1142.2
+    C1171.1
+    C1172.2
+    C1185.2
+    C1211.2
+    C1212.2
+    C7330.2
+    C7331.2
+    C7335.2
+    C8602.2
+    C8711.2
+    C8921.1
+    H1141.6
+    H1141.9
+    H1171.1
+    H1171.2
+    H1172.1
+    H1172.2
+    H1182.7
+    H1211.6
+    H1211.9
+    MP7330.1
+    MP8809.1
+    MP8810.1
+    R1149.1
+    R1211.2
+    R1212.2
+    R1219.1
+    R6116.1
+    R6155.1
+    R8928.1
+    SP7.2
+    T7330.2
+    T7330.4
+    V6111.5
+    V6151.5
+    V8601.85
+    V8601.92
+    V8608.85
+    V8608.92
+    V8928.3
+    V8928.7
+    V8928.8
+    V87232.9
+    X2.6;
+  VPERI_MUC
+    C8171.2
+    C8175.2
+    C8178.2
+    C8900.1
+    R8929.1
+    SP7.1
+    SP8.2
+    V8172.10
+    V8172.27
+    V8172.76
+    V8909.3
+    V8909.7
+    V8909.8;
+  VPERI_MUC_ADC
+    C8179.2
+    SP8.1
+    V8172.42;
+  VSGC
+    C8521.2
+    MP8521.1
+    T5181.2
+    V8601.74
+    V8608.74;
+  VZ_C
+    CP1.1
+    D7261.1
+    D7264.1
+    MP7261.1
+    MP7264.1
+    R7261.2
+    "R7261-1".2
+    "R7261-2".2
+    "R7261-3".2
+    "R7261-4".2
+    R72612.2
+    "R72612-1".2
+    "R72612-2".2
+    V8601.71
+    V8608.71
+    V87232.48;
+  VZ_F
+    D7263.2
+    D7264.2
+    M5181.2
+    MP51812.1;
+  VZ_FA
+    C5181.2
+    M5181.3
+    MP5183.1
+    R5182.1
+    R5183.2
+    R5187.2
+    V8601.17
+    V8601.22
+    V8601.29
+    V8601.35
+    V8601.41
+    V8601.47
+    V8601.59
+    V8608.17
+    V8608.22
+    V8608.29
+    V8608.35
+    V8608.41
+    V8608.47
+    V8608.59
+    V87232.58
+    V87232.64;
+
+  NC
+    V8172.1
+    V8172.2
+    V8172.3
+    V8172.4
+    V8172.6
+    V8172.15
+    V8172.17
+    V8172.20
+    V8172.39
+    V8172.40
+    V8172.55
+    V8172.56
+    V8172.57
+    V8172.70
+    V8172.71
+    V87232.15
+    V87232.17
+    V87232.18
+    V87232.19
+    V87232.21
+    V87232.22
+    V87232.23
+    V87232.24
+    V87232.26
+    V87232.27
+    V87232.28
+    V87232.30
+    V87232.31
+    V87232.32
+    V87232.38
+    V87232.43
+    V87232.45
+    V87232.46
+    V87232.49
+    V87232.50
+    V87232.51
+    V87232.53
+    V87232.54
+    V87232.55
+    V87232.57;
+
+END

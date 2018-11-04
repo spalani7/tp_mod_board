@@ -1,0 +1,7488 @@
+!!!!   12    1    1 1468999856   0000                                         
+!---------------------------------------------------------------------------
+!AGILENT 3070 BOARD CONFIGURATION FORMAT        Fri Apr 02, 2010 06:15:33 PM
+!
+! board
+!---------------------------------------------------------------------------
+
+HEADING
+  "Continental India Simos11_ECU";
+
+VERSIONS
+  40373465;
+
+GLOBAL OPTIONS
+  Fixture Type    EXPRESS;
+  Fixture Size    BANK2;
+  Top Probes Allowed  OFF;
+  Heavy Probe Force      8;
+  Light Probe Force      4;
+  Mechanical Density Threshold    800;
+  Vacuum Density Threshold    104;
+  Test Strategy COMBINATIONAL;
+  WireWrapping AUTO;
+  Metric Units OFF;
+  Common Lead Resistance      0.1;    ! (ohms) from probe to component.
+  Common Lead Inductance       1u;    ! (Henries) from probe to component.
+  Capacitance Compensation ON;
+  IPG Digital Resistance Threshold       42;    ! (ohms)
+  Preconditioning Levels    1;
+  Additional Board Voltage    0;    ! (volts)
+!vv  IPG TestJet Drive Thru Threshold       1k;    ! (ohms)
+  Boundary Scan Overdrive  OFF;
+  Boundary Scan Disables  ON;
+  Boundary Scan Chain Override  ON;
+  Probe Type for TJ Devices Added by BC KEEPOUT; ! used only by Board Consultant
+  Ground Bounce Suppression  ON;
+
+DEVICE OPTIONS
+  Tolerance Multiplier    5;
+  Remote Sensing  ON;
+  Fuse Threshold    10;
+  Diode Current    10m;
+  Zener Current  10m;
+  Adjust  ACCURATE;
+  Upstream Disable  ON;
+  Upstream Condition  ON;
+  END
+
+FAMILY OPTIONS
+  TTL
+    Drive High     3.3;
+    Drive Low      0.2;
+    Receive High     2;
+    Receive Low    0.8;
+    Edge Speed     100;
+    Open Input Default  X;
+    Load        UP;
+  CMOS
+    Drive High       4;
+    Drive Low      0.4;
+    Receive High   3.6;
+    Receive Low    0.5;
+    Edge Speed      50;
+    Open Input Default  X;
+    Load        NONE;
+  FLASH_3V3
+    Drive High     3.3;
+    Drive Low      0.2;
+    Receive High     2;
+    Receive Low    0.8;
+    Edge Speed     250;
+    Open Input Default  X;
+    Load        UP;
+
+CARD OPTIONS
+  TTL
+    HYBRID;
+  CMOS
+    HYBRID;
+  FLASH_3V3
+    HYBRID;
+
+LIBRARY OPTIONS
+  "custom_lib"
+  "bsdl_files";
+
+UNCONNECTED PIN NC;
+
+
+BOARDS
+  1    simos11_ECU    "Board 1 Failed";
+  2    simos11_ECU    "Board 2 Failed";
+
+BOARD simos11_ECU
+
+FIXED NODE OPTIONS
+  C5V1_A11 Family ALL is 1;
+  C5V1_K Family ALL is 1;
+  C5V1_NGD Family ALL is 1;
+  C5V1_PVS_2 Family ALL is 1;
+  C5V1_TPS Family ALL is 1;
+  C5V2_A Family ALL is 1;
+  C5V2_A1 Family ALL is 1;
+  C5V2_K Family ALL is 1;
+  C5V2_PVS_1 Family ALL is 1;
+  CVB Family ALL is 1;
+  GND_KNK_1 Family ALL is 0;
+  "I$964/N$134303" Family ALL is 1;
+  "I$964/N$135938" Family ALL is 1;
+  "I$964/VDD_SB" Family ALL is 1;
+  V1V5 Family ALL is 1;
+  V3V3 Family ALL is 1;
+  V5V Family ALL is 1;
+  V_EL Family ALL is 1;
+  V_OUT_1 Family ALL is 1;
+  V_OUT_2 Family ALL is 1;
+  V_VB_PROT Family ALL is 1;
+  CVB Supply   4 At    12 Volts,   2 Amps;
+  GND_KNK_1 GROUND;
+
+GPRELAY OPTIONS
+  GP CVB, V_IGK;
+    CONTROL; ACCESS;
+  GP CVB, V_EL;
+    CONTROL; ACCESS;
+  GP PORST, GND_KNK_1;
+    CONTROL; ACCESS;
+  GP WD_RST, GND_KNK_1;
+    CONTROL; ACCESS;
+  GP VEH_SPEED, GND_KNK_1;
+    CONTROL; ACCESS;
+  GP STR_REQ, GND_KNK_1;
+    CONTROL; ACCESS;
+  GP "I$964/N$117500", GND_KNK_1;
+    CONTROL; ACCESS;
+
+CAPACITOR
+  C1000        10u    20    20 f PC 2 KEEPOUT "A2C00002578";
+  C1001        10u    20    20 f PC 2 KEEPOUT "A2C00002578";
+  C1002        22u    10    10 f PC 2 KEEPOUT "A2C00054321";
+  C1003        22u    10    10 f PC 2 KEEPOUT "A2C00054321";
+  C1004         1u    10    10 f "A2C00024522";
+  C1005         1u    10    10 f "A2C00024522";
+  C1006        47n    10    10 f "A2C00020090";
+  C1007        47n    10    10 f "A2C00020090";
+  C1008       100n    10    10 f "A2C00046692";
+  C1009       100n    10    10 f "A2C00046692";
+  C1010       100n    10    10 f "A2C00046692";
+  C1011        47n    10    10 f "A2C00020090";
+  C1012        22u    10    10 f PC 2 KEEPOUT "A2C00054321";
+  C1013         1u    10    10 f "A2C00024522";
+  C1014        10n    20    20 f "A2C00032220";
+  C1015        10n    20    20 f "A2C00032220";
+  C1018        33u    20    20 f PC 2 AUTO "A2C00042403";
+  C1019        22n    10    10 f "A2C00025363";
+  C1020        10n    20    20 f "A2C00032220";
+  C1021        10n    20    20 f "A2C00032220";
+  C1022        10n    20    20 f "A2C00032220";
+  C1023        22n    10    10 f "A2C00025363";
+  C1029        10n    20    20 f "A2C00032220";
+  C1030A       47n    10    10 f "A2C00020090";
+  C1030A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C1031        10n    20    20 f "A2C00032220";
+  C1032        10n    20    20 f "A2C00032220";
+  C1033        10n    20    20 f "A2C00032220";
+  C1034        10n    20    20 f "A2C00032220";
+  C1035        10n    20    20 f "A2C00032220";
+  C1036       4.7u    10    10 f "A2C00033344";
+  C1037        10n    20    20 f "A2C00032220";
+  C1038        82p     5     5 f "A2C00002236";
+  C1038        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C1039        33p     5     5 f "A2C00002236";
+  C1040       4.7u    10    10 f "A2C00033344";
+  C1041       4.7u    10    10 f "A2C00033344";
+  C1042       4.7u    10    10 f "A2C00033344";
+  C1043        10n    20    20 f "A2C00032220";
+  C1049        47n    10    10 f "A2C00020090";
+  C1058         1u    10    10 f "A2C00024522";
+  C1805        22n    10    10 f "A2C00025363";
+  C1806        22n    10    10 f "A2C00025363";
+  C2001        15p     5     5 f "A2C00022976";
+  C2002        15p     5     5 f "A2C00022976";
+  C2003        47n    10    10 f "A2C00020090";
+  C2004       100n    10    10 f "A2C00046692";
+  C2005       100n    10    10 f "A2C00046692";
+  C2007        47n    10    10 f "A2C00020090";
+  C2008        47n    10    10 f "A2C00020090";
+  C2009        47n    10    10 f "A2C00020090";
+  C2010        47n    10    10 f "A2C00020090";
+  C2011        47n    10    10 f "A2C00020090";
+  C2012        47n    10    10 f "A2C00020090";
+  C2013        47n    10    10 f "A2C00020090";
+  C2014        47n    10    10 f "A2C00020090";
+  C2015        47n    10    10 f "A2C00020090";
+  C2016        47n    10    10 f "A2C00020090";
+  C2017        47n    10    10 f "A2C00020090";
+  C2018        47n    10    10 f "A2C00020090";
+  C2019        47n    10    10 f "A2C00020090";
+  C2020        47n    10    10 f "A2C00020090";
+  C2021        47n    10    10 f "A2C00020090";
+  C2022        47n    10    10 f "A2C00020090";
+  C2023        47n    10    10 f "A2C00020090";
+  C2024        47n    10    10 f "A2C00020090";
+  C2025        68u    20    20 f PC 2 AUTO "A2C00007840";
+  C2026        47n    10    10 f "A2C00020090";
+  C2027        47n    10    10 f "A2C00020090";
+  C2028        47n    10    10 f "A2C00020090";
+  C2029        47n    10    10 f "A2C00020090";
+  C2030        47n    10    10 f "A2C00020090";
+  C2031         1u    10    10 f "A2C00024522";
+  C2035        47n    10    10 f "A2C00020090";
+  C2036        47n    10    10 f "A2C00020090";
+  C2060         1u    10    10 f "A2C00024522";
+  C2060        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C2061         1u    10    10 f "A2C00024522";
+  C2061        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C2303        10n    20    20 f "A2C00032220";
+  C2303        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C2304        10n    20    20 f "A2C00032220";
+  C2304        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C2350        47n    10    10 f "A2C00020090";
+  C2351        47n    10    10 f "A2C00020090";
+  C2352        47n    10    10 f "A2C00020090";
+  C2353        47n    10    10 f "A2C00020090";
+  C3301       100n    10    10 f "A2C00034028";
+  C3302       4.7n    10    10 f "A2C00002196";
+  C3303B      100p     5     5 f "A2C00002107";
+  C3303B       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C3304B      100p     5     5 f "A2C00002107";
+  C3304B       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C3320       100n    10    10 f "A2C00046692";
+  C3320        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C3321       100n    10    10 f "A2C00046692";
+  C3321        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C3351       100n    10    10 f "A2C00034028";
+  C3351        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C3352       4.7n    10    10 f "A2C00002196";
+  C3352        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C3353B      100p     5     5 f "A2C00002107";
+  C3353B       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C3354B      100p     5     5 f "A2C00002107";
+  C3354B       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4000        47n    10    10 f "A2C00020090";
+  C4003        10n    20    20 f "A2C00032220";
+  C4010        47n    10    10 f "A2C00020090";
+  C4011        47n    10    10 f "A2C00020090";
+  C4014        10n    20    20 f "A2C00032220";
+  C4020        47n    10    10 f "A2C00020090";
+  C4023        10n    20    20 f "A2C00032220";
+  C4030        47n    10    10 f "A2C00020090";
+  C4033        10n    20    20 f "A2C00032220";
+  C4170        47n    10    10 f "A2C00020090";
+  C4181        47n    10    10 f "A2C00020090";
+  C4301        10n    20    20 f "A2C00032220";
+  C4302        22n    10    10 f "A2C00025363";
+  C4351        10n    20    20 f "A2C00032220";
+  C4355A       22n    10    10 f "A2C00025363";
+  C4355A       22n    10    10 f "A2C00025363"      VERSION 40373465;
+  C4400       100n    10    10 f "A2C00046692";
+  C4400        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4401A       47n    10    10 f "A2C00020090";
+  C4401A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4500        47n    10    10 f "A2C00020090";
+  C4501        10n    20    20 f "A2C00032220";
+  C4502        47n    10    10 f "A2C00020090";
+  C4505        47n    10    10 f "A2C00020090";
+  C4509A       47n    10    10 f "A2C00020090";
+  C4509A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4510        10n    20    20 f "A2C00032220";
+  C4511A       47n    10    10 f "A2C00020090";
+  C4511A       55p    10    10 f "Not Populated"    VERSION 40373465;
+  C4512        10n    20    20 f "A2C00032220";
+  C4513         1n    10    10 f "A2C00001919";
+  C4513        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4514        10n    20    20 f "A2C00032220";
+  C4515        10n    20    20 f "A2C00032220";
+  C4515A       47n    10    10 f "A2C00020090";
+  C4515A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4517        10n    20    20 f "A2C00032220";
+  C4520        10n    20    20 f "A2C00032220";
+  C4521A       47n    10    10 f "A2C00020090";
+  C4521A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4524        10n    20    20 f "A2C00032220";
+  C4529A       47n    10    10 f "A2C00020090";
+  C4529A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C4530        10n    20    20 f "A2C00032220";
+  C5000       100p     5     5 f "A2C00002107";
+  C5001        10n    20    20 f "A2C00032220";
+  C5002        10n    20    20 f "A2C00032220";
+  C5003        10n    20    20 f "A2C00032220";
+  C5004        10n    20    20 f "A2C00032220";
+  C5005        47n    10    10 f "A2C00020090";
+  C5006       2.2n    10    10 f "A2C00002190";
+  C5006        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C5007        47n    10    10 f "A2C00020090";
+  C5008        47n    10    10 f "A2C00020090";
+  C5009        10n    20    20 f "A2C00032220";
+  C5012       1.5n     5     5 f "A2C00031761";
+  C5013       6.8n    10    10 f "A2C00002188";
+  C5015       100p     5     5 f "A2C00002107";
+  C5017        47n    10    10 f "A2C00020090";
+  C5018        10n    20    20 f "A2C00032220";
+  C5024       1.5n     5     5 f "A2C00031761";
+  C5025       1.5n     5     5 f "A2C00031761";
+  C5027        10n    20    20 f "A2C00032220";
+  C5028        47n    10    10 f "A2C00020090";
+  C5028        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C5111        10n    20    20 f "A2C00032220";
+  C5117        47n    10    10 f "A2C00020090";
+  C5211        10n    20    20 f "A2C00032220";
+  C5217       2.2n    10    10 f "A2C00002190";
+  C5311        10n    20    20 f "A2C00032220";
+  C5317        47n    10    10 f "A2C00020090";
+  C5317        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C5411        10n    20    20 f "A2C00032220";
+  C5417        47n    10    10 f "A2C00020090";
+  C5417        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C5511        10n    20    20 f "A2C00032220";
+  C5517        47n    10    10 f "A2C00020090";
+  C5517        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C6401       100n    10    10 f "A2C00034028";
+  C6401        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C6403       100n    10    10 f "A2C00034028";
+  C6403        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C6404       100n    10    10 f "A2C00034028";
+  C6404        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C6405       100n    10    10 f "A2C00046692";
+  C6405        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C6406       100n    10    10 f "A2C00034028";
+  C6406        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C6407        10n    20    20 f "A2C00032220";
+  C6408        10n    20    20 f "A2C00032220";
+  C6409        10n    20    20 f "A2C00032220";
+  C6410        10n    20    20 f "A2C00032220";
+  C6411        10n    20    20 f "A2C00032220";
+  C7000       100n    10    10 f "A2C00034028";
+  C7000        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7001       100n    10    10 f "A2C00034028";
+  C7001        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7002       100n    10    10 f "A2C00034028";
+  C7002        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7003       100n    10    10 f "A2C00046692";
+  C7003        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7005        47n    10    10 f "A2C00020090";
+  C7005        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7006        10n    20    20 f "A2C00032220";
+  C7007        22n    10    10 f "A2C00025363";
+  C7007        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7008A       10n    20    20 f "A2C00032220";
+  C7008A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7008B       10n    20    20 f "A2C00032220";
+  C7009A       10n    20    20 f "A2C00032220";
+  C7009A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7009B       10n    20    20 f "A2C00032220";
+  C7010A       10n    20    20 f "A2C00032220";
+  C7010A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7010B       10n    20    20 f "A2C00032220";
+  C7011A       10n    20    20 f "A2C00032220";
+  C7011A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7011B       10n    20    20 f "A2C00032220";
+  C7012A       10n    20    20 f "A2C00032220";
+  C7012A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7012B       10n    20    20 f "A2C00032220";
+  C7013        10n    20    20 f "A2C00032220";
+  C7014        10n    20    20 f "A2C00032220";
+  C7015A       10n    20    20 f "A2C00032220";
+  C7015A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7015B       10n    20    20 f "A2C00032220";
+  C7016A       10n    20    20 f "A2C00032220";
+  C7016A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7016B       10n    20    20 f "A2C00032220";
+  C7017        10n    20    20 f "A2C00032220";
+  C7018        10n    20    20 f "A2C00032220";
+  C7019        10n    20    20 f "A2C00032220";
+  C7020A       10n    20    20 f "A2C00032220";
+  C7020A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7020B       10n    20    20 f "A2C00032220";
+  C7021        10n    20    20 f "A2C00032220";
+  C7022        10n    20    20 f "A2C00032220";
+  C7023        10n    20    20 f "A2C00032220";
+  C7024        10n    20    20 f "A2C00032220";
+  C7024        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7025        10n    20    20 f "A2C00032220";
+  C7025        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7026        10n    20    20 f "A2C00032220";
+  C7027        10n    20    20 f "A2C00032220";
+  C7027        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7028        22u    10    10 f "A2C00054321";
+  C7028        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7029        10n    20    20 f "A2C00032220";
+  C7029        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7030        47n    10    10 f "A2C00020090";
+  C7030        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7031       4.7n    20    20 f "A2C00002217";
+  C7032       4.7n    20    20 f "A2C00002217";
+  C7032        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7033        10n    20    20 f "A2C00032220";
+  C7033        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7034        47n    10    10 f "A2C00020090";
+  C7034        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7050        47n    10    10 f "A2C00020090";
+  C7050        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7500       100n    10    10 f "A2C00034028";
+  C7501       100n    10    10 f "A2C00034028";
+  C7502       100n    10    10 f "A2C00034028";
+  C7503       100n    10    10 f "A2C00046692";
+  C7505         1n    10    10 f "A2C00001919";
+  C7505        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7506         1n    10    10 f "A2C00001919";
+  C7506        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7525        10n    20    20 f "A2C00032220";
+  C7525        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7602        10n    20    20 f "A2C00032220";
+  C7603        10n    20    20 f "A2C00032220";
+  C7605       100n    10    10 f "A2C00034028";
+  C7606       100n    10    10 f "A2C00034028";
+  C7607       100n    10    10 f "A2C00034028";
+  C7608         1u    10    10 f "A2C00024522";
+  C7609       100u    10    10 f PC 2 AUTO "A2C00056176";
+  C7610       100n    10    10 f "A2C00034028";
+  C7610        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7611        10n    20    20 f "A2C00032220";
+  C7611        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7612        10n    20    20 f "A2C00032220";
+  C7612        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7615         1u    10    10 f "A2C00024522";
+  C7615        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C7901        10n    20    20 f "A2C00032220";
+  C7902        10n    20    20 f "A2C00032220";
+  C7903        10n    20    20 f "A2C00032220";
+  C7904        10n    20    20 f "A2C00032220";
+  C7905       100n    10    10 f "A2C00034028";
+  C7950        47n    10    10 f "A2C00020090";
+  C8200         1u    10    10 f "A2C00024522";
+  C8200        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8201       100n    10    10 f "A2C00034028";
+  C8201        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8205        10n    20    20 f "A2C00032220";
+  C8207       220n    10    10 f "A2C00006969";
+  C8207        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8208        47n    10    10 f "A2C00020090";
+  C8208        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8210       2.2n    10    10 f "A2C00002190";
+  C8210        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8212A       10u    10    10 f "A2C00032451";
+  C8212A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8212B      470n    10    10 f "A2C00039029";
+  C8212B       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8213        10n    20    20 f "A2C00032220";
+  C8214        47n    10    10 f "A2C00020090";
+  C8214        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8216        10n    20    20 f "A2C00032220";
+  C8235        10n    20    20 f "A2C00032220";
+  C8288B      470n    10    10 f "A2C00039029";
+  C8288B       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8289B      470n    10    10 f "A2C00039029";
+  C8289B       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8299A       10n    20    20 f "A2C00032220";
+  C8299A       55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8302       330p    10    10 f "A2C00036465";
+  C8302        55p   100   100 f "not in BOM. Verify part not popd."      VERSION 40373465;
+  C8304       2.2n     5     5 f "A2C00006914";
+  C8305         1n     5     5 f "A2C00002280";
+  C8307       100n    10    10 f "A2C00034028";
+  C8309        47p     5     5 f "A2C00002060";
+  C8311        47n    10    10 f "A2C00020090";
+  R3303A      100n    50    50 f "VARISTOR 17V";
+  R3304A      100n    50    50 f "VARISTOR 17V";
+  R3353A      100n    50    50 f "VARISTOR 17V";
+  R3354A      100n    50    50 f "VARISTOR 17V";
+
+CONNECTOR
+  P1003     NT "NA";
+  P1004     NT "NA";
+  P1005     NT "NA";
+  P1006     NT "NA";
+  P1007     NT "NA";
+  P1010     NT "NA";
+  P1011     NT "NA";
+  P1012     NT "NA";
+  P1013     NT "NA";
+  P1014     NT "NA";
+  P1015     NT "NA";
+  P1016     NT "NA";
+  P1017     NT "NA";
+  P1018     NT "NA";
+  P1019     NT "NA";
+  P1020     NT "NA";
+  P1024     NT "NA";
+  P1025     NT "NA";
+  P1030     NT "NA";
+  P1031     NT "NA";
+  P1033     NT "NA";
+  P1035     NT "NA";
+  P1036     NT "NA";
+  P1037     NT "NA";
+  P1038     NT "NA";
+  P1039     NT "NA";
+  P1040     NT "NA";
+  P1044     NT "NA";
+  P1046     NT "NA";
+  P1047     NT "NA";
+  P1048     NT "NA";
+  P1049     NT "NA";
+  P1050     NT "NA";
+  P1051     NT "NA";
+  P1052     NT "NA";
+  P1053     NT "NA";
+  P1057     NT "NA";
+  P1059     NT "NA";
+  P1060     NT "NA";
+  P1077     NT "NA";
+  P1078     NT "NA";
+  P1079     NT "NA";
+  P1080     NT "NA";
+  P1086     NT "NA";
+  P1094     NT "NA";
+  P1095     NT "NA";
+  P1096     NT "NA";
+  P1097     NT "NA";
+  P1098     NT "NA";
+  P1099     NT "NA";
+  P1802     NT "NA";
+  P1803     NT "NA";
+  P1830     NT "NA";
+  P1831     NT "NA";
+  P1832     NT "NA";
+  P1833     NT "NA";
+  P1834     NT "NA";
+  P1835     NT "NA";
+  P1836     NT "NA";
+  P1837     NT "NA";
+  P1838     NT "NA";
+  P1839     NT "NA";
+  P2001     NT "NA";
+  P2002     NT "NA";
+  P2003     NT "NA";
+  P2008     NT "NA";
+  P2009     NT "NA";
+  P2011     NT "NA";
+  P2012     NT "NA";
+  P2013     NT "NA";
+  P2015     NT "NA";
+  P2016     NT "NA";
+  P2017     NT "NA";
+  P2023     NT "NA";
+  P2024     NT "NA";
+  P2025     NT "NA";
+  P2026     NT "NA";
+  P2030     NT "NA";
+  P2050     NT "NA";
+  P2053     NT "NA";
+  P2054     NT "NA";
+  P2055     NT "NA";
+  P2058     NT "NA";
+  P2059     NT "NA";
+  P2061     NT "NA";
+  P2062     NT "NA";
+  P2093     NT "NA";
+  P2094     NT "NA";
+  P2099     NT "NA";
+  P2300     NT "NA";
+  P2301     NT "NA";
+  P2302     NT "NA";
+  P2304     NT "NA";
+  P2306     NT "NA";
+  P2309     NT "NA";
+  P2310     NT "NA";
+  P2311     NT "NA";
+  P3300     NT "NA";
+  P3301     NT "NA";
+  P3302     NT "NA";
+  P3303     NT "NA";
+  P3307     NT "NA";
+  P3309     NT "NA";
+  P3320     NT "NA";
+  P3321     NT "NA";
+  P3322     NT "NA";
+  P3323     NT "NA";
+  P3324     NT "NA";
+  P3325     NT "NA";
+  P3326     NT "NA";
+  P3327     NT "NA";
+  P3350     NT "NA";
+  P3353     NT "NA";
+  P3354     NT "NA";
+  P3394     NT "NA";
+  P3395     NT "NA";
+  P3396     NT "NA";
+  P3397     NT "NA";
+  P3398     NT "NA";
+  P3399     NT "NA";
+  P4004     NT "NA";
+  P4008     NT "NA";
+  P4011     NT "NA";
+  P4021     NT "NA";
+  P4031     NT "NA";
+  P4080     NT "NA";
+  P4084     NT "NA";
+  P4085     NT "NA";
+  P4086     NT "NA";
+  P4087     NT "NA";
+  P4088     NT "NA";
+  P4089     NT "NA";
+  P4090     NT "NA";
+  P4091     NT "NA";
+  P4092     NT "NA";
+  P4093     NT "NA";
+  P4094     NT "NA";
+  P4095     NT "NA";
+  P4096     NT "NA";
+  P4097     NT "NA";
+  P4098     NT "NA";
+  P4099     NT "NA";
+  P4170     NT "NA";
+  P4181     NT "NA";
+  P4302     NT "NA";
+  P4304     NT "NA";
+  P4310     NT "NA";
+  P4350     NT "NA";
+  P4352     NT "NA";
+  P4354     NT "NA";
+  P4401     NT "NA";
+  P4402     NT "NA";
+  P4501     NT "NA";
+  P4503     NT "NA";
+  P4505     NT "NA";
+  P4511     NT "NA";
+  P4513     NT "NA";
+  P4515     NT "NA";
+  P4525     NT "NA";
+  P4529     NT "NA";
+  P4531     NT "NA";
+  P5001     NT "NA";
+  P5002     NT "NA";
+  P5003     NT "NA";
+  P5004     NT "NA";
+  P5005     NT "NA";
+  P5010     NT "NA";
+  P5012     NT "NA";
+  P5015     NT "NA";
+  P5016     NT "NA";
+  P5017     NT "NA";
+  P5019     NT "NA";
+  P5020     NT "NA";
+  P5023     NT "NA";
+  P5090     NT "NA";
+  P5091     NT "NA";
+  P5092     NT "NA";
+  P5093     NT "NA";
+  P5094     NT "NA";
+  P5095     NT "NA";
+  P5096     NT "NA";
+  P5097     NT "NA";
+  P5098     NT "NA";
+  P5099     NT "NA";
+  P5121     NT "NA";
+  P5123     NT "NA";
+  P5221     NT "NA";
+  P5223     NT "NA";
+  P5311     NT "NA";
+  P5318     NT "NA";
+  P5321     NT "NA";
+  P5323     NT "NA";
+  P5411     NT "NA";
+  P5423     NT "NA";
+  P5518     NT "NA";
+  P5519     NT "NA";
+  P5523     NT "NA";
+  P6401     NT "NA";
+  P6402     NT "NA";
+  P6403     NT "NA";
+  P6404     NT "NA";
+  P6405     NT "NA";
+  P6407     NT "NA";
+  P6408     NT "NA";
+  P6409     NT "NA";
+  P6410     NT "NA";
+  P6411     NT "NA";
+  P6412     NT "NA";
+  P6413     NT "NA";
+  P6414     NT "NA";
+  P6415     NT "NA";
+  P6416     NT "NA";
+  P6495     NT "NA";
+  P6499     NT "NA";
+  P7000     NT "NA";
+  P7002     NT "NA";
+  P7005     NT "NA";
+  P7019     NT "NA";
+  P7026     NT "NA";
+  P7028     NT "NA";
+  P7029     NT "NA";
+  P7030     NT "NA";
+  P7031     NT "NA";
+  P7033     NT "NA";
+  P7040     NT "NA";
+  P7041     NT "NA";
+  P7042     NT "NA";
+  P7043     NT "NA";
+  P7044     NT "NA";
+  P7045     NT "NA";
+  P7046     NT "NA";
+  P7048     NT "NA";
+  P7049     NT "NA";
+  P7050     NT "NA";
+  P7051     NT "NA";
+  P7052     NT "NA";
+  P7053     NT "NA";
+  P7059     NT "NA";
+  P7074     NT "NA";
+  P7075     NT "NA";
+  P7076     NT "NA";
+  P7077     NT "NA";
+  P7078     NT "NA";
+  P7082     NT "NA";
+  P7083     NT "NA";
+  P7084     NT "NA";
+  P7085     NT "NA";
+  P7086     NT "NA";
+  P7087     NT "NA";
+  P7088     NT "NA";
+  P7089     NT "NA";
+  P7090     NT "NA";
+  P7091     NT "NA";
+  P7092     NT "NA";
+  P7093     NT "NA";
+  P7094     NT "NA";
+  P7095     NT "NA";
+  P7096     NT "NA";
+  P7097     NT "NA";
+  P7098     NT "NA";
+  P7099     NT "NA";
+  P7500     NT "NA";
+  P7504     NT "NA";
+  P7505     NT "NA";
+  P7508     NT "NA";
+  P7510     NT "NA";
+  P7511     NT "NA";
+  P7512     NT "NA";
+  P7522     NT "NA";
+  P7523     NT "NA";
+  P7551     NT "NA";
+  P7602     NT "NA";
+  P7605     NT "NA";
+  P7606     NT "NA";
+  P7607     NT "NA";
+  P7608     NT "NA";
+  P7609     NT "NA";
+  P7620     NT "NA";
+  P7900     NT "NA";
+  P7905     NT "NA";
+  P7906     NT "NA";
+  P7919     NT "NA";
+  P7921     NT "NA";
+  P7950     NT "NA";
+  P7951     NT "NA";
+  P7994     NT "NA";
+  P7995     NT "NA";
+  P7996     NT "NA";
+  P7997     NT "NA";
+  P7998     NT "NA";
+  P7999     NT "NA";
+  P8201     NT "NA";
+  P8203     NT "NA";
+  P8206     NT "NA";
+  P8207     NT "NA";
+  P8208     NT "NA";
+  P8209     NT "NA";
+  P8210     NT "NA";
+  P8211     NT "NA";
+  P8212     NT "NA";
+  P8213     NT "NA";
+  P8214     NT "NA";
+  P8215     NT "NA";
+  P8216     NT "NA";
+  P8217     NT "NA";
+  P8218     NT "NA";
+  P8219     NT "NA";
+  P8220     NT "NA";
+  P8221     NT "NA";
+  P8222     NT "NA";
+  P8223     NT "NA";
+  P8224     NT "NA";
+  P8225     NT "NA";
+  P8226     NT "NA";
+  P8227     NT "NA";
+  P8228     NT "NA";
+  P8229     NT "NA";
+  P8230     NT "NA";
+  P8231     NT "NA";
+  P8232     NT "NA";
+  P8233     NT "NA";
+  P8234     NT "NA";
+  P8235     NT "NA";
+  P8236     NT "NA";
+  P8237     NT "NA";
+  P8240     NT "NA";
+  P8274     NT "NA";
+  P8282     NT "NA";
+  P8301     NT "NA";
+  P8302     NT "NA";
+  P8303     NT "NA";
+  P8304     NT "NA";
+  P8306     NT "NA";
+  P8315     NT "NA";
+  P8399     NT "NA";
+  X1        PN"40361851" TJ AUTO "40361851 VDO ConnectOR 115 PIN";
+  X20       PN"A2C53368933" TJ KEEPOUT "ONE_CONTACT_PORT NA NA NA";
+  X20       NT KEEPOUT "not in BOM. Verify part not popd."      VERSION 40373465;
+
+JUMPER
+  R1030B    CLOSED "A2C00004349";
+  R1035     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R1038     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R1039     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R1040     CLOSED "A2C00004349";
+  R1040     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R2011B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R2045     CLOSED "A2C00004349";
+  R2046     CLOSED "A2C00004349";
+  R2046     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R2051     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R2080     CLOSED "A2C00004349";
+  R2080     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R2081     CLOSED "A2C00004349";
+  R2081     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R2082     CLOSED "A2C00004349";
+  R2083     CLOSED "A2C00004349";
+  R3303A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3304A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3307A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3308A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3312     CLOSED "A2C00004349";
+  R3313A    CLOSED "A2C00004349";
+  R3313B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3320     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3321     CLOSED "A2C00004349";
+  R3321     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3322     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3323     CLOSED "A2C00004349";
+  R3323     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3324     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3325     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3353A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3354A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3357A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3357B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3358A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R3358B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4003A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4004     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4013A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4014     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4355B    CLOSED "A2C00004349 5%";
+  R4355B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4400     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4401B    CLOSED "A2C00004349";
+  R4505     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4509B    CLOSED "A2C00004349";
+  R4511B    CLOSED "A2C00004349";
+  R4513     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4514     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4515B    CLOSED "A2C00004349";
+  R4521B    CLOSED "A2C00004349";
+  R4524     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4526     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4528     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4529B    CLOSED "A2C00004349";
+  R4532     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4533     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4534     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R4536     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5002     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5013     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5014     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5028     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5318     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5518     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5519     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R6401     CLOSED "A2C00004349";
+  R6401     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R6402     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R6404     CLOSED "A2C00004345";
+  R6404     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7001     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7002     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7003     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7004     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7005     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7007     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7010     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7011     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7012     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7013     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7015     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7016     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7019     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7020     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7021     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7022A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7022B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7023A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7023B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7025     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7026     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7027     CLOSED "A2C00004349";
+  R7027     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7028     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7029     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7030     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7031     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7032     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7033     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7034     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7035     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7036     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7099     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7501     CLOSED "A2C00004349";
+  R7501     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7502     CLOSED "A2C00004349";
+  R7503     CLOSED "A2C00004345";
+  R7503     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R7504     CLOSED "A2C00004345";
+  R7904     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8202     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8203A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8203B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8204A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8204B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8205     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8206     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8207     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8208     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8209A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8209B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8210     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8212     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8213     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8214A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8214B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8215A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8215B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8217     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8219A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8219B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8220A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8220B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8222A    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8288A    CLOSED "A2C00004349";
+  R8289A    CLOSED "A2C00004349";
+  R8299B    OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8302     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8303     OPEN "not in BOM. Verify part not popd."      VERSION 40373465;
+  R8304     CLOSED "A2C00004349";
+  R8304     CLOSED "not in BOM. Verify part not popd."      VERSION 40373465;
+  S1005     CLOSED "not in BOM. Verify part not popd.";
+  S1006     CLOSED "not in BOM. Verify part not popd.";
+  S1007     CLOSED "not in BOM. Verify part not popd.";
+  S1008     CLOSED "not in BOM. Verify part not popd.";
+  S1009     CLOSED "not in BOM. Verify part not popd.";
+  S1010     CLOSED "not in BOM. Verify part not popd.";
+  S1011     CLOSED "not in BOM. Verify part not popd.";
+  S1012     CLOSED "not in BOM. Verify part not popd.";
+  S1013     CLOSED "not in BOM. Verify part not popd.";
+  S7501     CLOSED "not in BOM. Verify part not popd.";
+  S7502     CLOSED "not in BOM. Verify part not popd.";
+  S7503     CLOSED "not in BOM. Verify part not popd.";
+  S7950     CLOSED "not in BOM. Verify part not popd.";
+  S8301     CLOSED "not in BOM. Verify part not popd.";
+  x1_sp     CLOSED;
+
+PIN LIBRARY
+  D1002     PN"BAT60B" "A2C00044356";
+  D1003     PN"SS26" "A2C00035287";
+  D1004     PN"S1G" "A2C00018230";
+  D1005     PN"TPSMB33A" "A2C00000305";
+  D1006     PN"BAT60B" "A2C00044356";
+  D1007     PN"BAT60B" "A2C00044356";
+  D1007     PN"BAT60B" "A2C00044356"      VERSION 40373465;
+  D1009     PN"BAV70W" "A2C00018819";
+  D1009     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D1010     PN"BAV70W" "A2C00018819";
+  D1010     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D1030     PN"BAW56W" "A2C00020895";
+  D2000     PN"MBR140SF" "A2C00030490";
+  D2000     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D5001     PN"BAW56W" "A2C00020895";
+  D5003     PN"BAW56W" "A2C00020895";
+  D5003     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D5005     PN"BAW56W" "A2C00020895";
+  D5005     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D6402     PN"BAS16S" "A2C00031095";
+  D6402     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D6404     PN"ESH1D" "A2C00044062";
+  D6404     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7000     PN"BAV70W" "A2C00018819";
+  D7000     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7001     PN"BAV70W" "A2C00018819";
+  D7001     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7002     PN"S1J" "A2C00044201";
+  D7003     PN"S1J" "A2C00044201";
+  D7003     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7004     PN"ESH1D" "A2C00044062";
+  D7004     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7005     PN"S1J" "A2C00044201";
+  D7005     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7007     PN"BAV70W" "A2C00018819";
+  D7007     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7008     PN"BAV70W" "A2C00018819";
+  D7009     PN"S1J" "A2C00044201";
+  D7009     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7011     PN"BAV70W" "A2C00018819";
+  D7011     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7032     PN"BAW101" "A2C00025008";
+  D7032     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  D7503     PN"S1J" "A2C00044201";
+  D7601     PN"TPSMB33A" "A2C00000305";
+  D8301     PN"BAV170" "A2C00000415";
+  L3301     PN"inductor" "A2C00042729";
+  M1000     PN"SPD15N06S2L" "A2C00024053";
+  M2000     PN"BSS138" "A2C00000609";
+  M2003     PN"SI2308DS" "A2C00021333";
+  M2003     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  M4003     PN"FDG6301N" "A2C00017717";
+  M4003     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  M7500     PN"SPD15N06S2L" "A2C00024053";
+  M7900     PN"BSP75N" "A2C00020984";
+  M7950     PN"BSP75N" "A2C00020984";
+  Q2000     PN"20MHZ_44894" "A2C00044894";
+  R1016     PN"10K_31015" "A2C00031015";
+  R4005     PN"22k_30942" "A2C00030942";
+  R4025     PN"22k_30942" "A2C00030942";
+  R4525     PN"22k_30942" "A2C00030942";
+  R4525     NP"22k_30942" "A2C00030942"                   VERSION 40373465;
+  R5007     PN"47k_31016" "A2C00031016";
+  R5008     PN"47k_31016" "A2C00031016";
+  R5010     PN"47k_31016" "A2C00031016";
+  R5010     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  R5011     PN"47k_31016" "A2C00031016";
+  R5012     PN"47k_31016" "A2C00031016";
+  R5019     PN"47k_31016" "A2C00031016";
+  R5019     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  T1001     PN"SPD15N06S2L" "A2C00024053";
+  T2004     PN"BCR08PN" "A2C00023423";
+  T2004     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  T3301     PN"BCR22PN" "A2C00021545";
+  T4301     PN"BCR192" "A2C00000576";
+  T4351     PN"BCR192" "A2C00000576";
+  T7000     PN"BCR108S" "A2C00046542";
+  T7000     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  T7001     PN"BCR142" "A2C00000463";
+  T7001     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  T7002     NT "BCR133S DUAL NPN DIGITAL TRANS";
+  T7002     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  T7003     NT "BCR133S DUAL NPN DIGITAL TRANS";
+  T7003     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V1000     PN"ATIC91" TJ LIB KEEPOUT "A2C00043451";
+  V2001     PN"74AHCT244PW" "A2C00031506";
+  V2300A    PN"ATIC81" TJ LIB AUTO "A2C00044268";
+  V2300B    PN"ATIC81" "A2C00044268";
+  V2300B    NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V2500A    PN"TC1767" TJ AUTO TS"1149_1" SCAN BSDL"tc1767_LQFP_176.bsd" PKG"LQFP176" CONNECTMAX 40 "A2C00047916";
+  V2500B    PN"TC1767" TS"1149_1" SCAN BSDL"tc1767_LQFP_176.bsd" PKG"LQFP176" CONNECTMAX 40 "A2C00047916";
+  V2500B    NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V3300     PN"TLE6250GV33" "A2C00047217";
+  V3320     PN"TLE6251G" "A2C00054713";
+  V3320     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V3350     PN"TLE6250GV33" "A2C00047217";
+  V3350     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V4410     PN"SMD288" "A2C00037908";
+  V4410     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V6400     PN"ATIC113" "A2C00044224";
+  V6400     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V7000     PN"ATIC94" "A2C00035276";
+  V7000     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V7002     PN"AD8515" "A2C00035217";
+  V7002     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V7003     PN"AD8515" "A2C00035217";
+  V7003     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V7005     PN"74LVC1G17" "A2C00039680";
+  V7005     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V7500     PN"ATIC92" TJ LIB KEEPOUT "A2C00034367";
+  V7600     PN"ATIC111_LP" TJ LIB KEEPOUT "A2C00045114";
+  V7900     PN"ATIC29" TJ LIB KEEPOUT "A2C00006265";
+  V8200     PN"ATIC42" "A2C00039604";
+  V8200     NT "not in BOM. Verify part not popd."      VERSION 40373465;
+  V8301     PN"AD8515" "A2C00035217";
+
+RESISTOR
+  R1000       2.7k     1     1 f "A2C00022358";
+  R1001        150     5     5 f "A2C00003517";
+  R1002        470     5     5 f "A2C00003724";
+  R1004       2.2k     1     1 f "A2C00019748";
+  R1005       2.2k     1     1 f "A2C00019748";
+  R1010        22k     5     5 f "A2C00003837";
+  R1011A       10k   0.5   0.5 f "A2C00032436";
+  R1012A     6.65k     1     1 f "A2C00005534";
+  R1014       100k     1     1 f "A2C00004368";
+  R1015        10k     1     1 f "A2C00010465";
+  R1026        22k     5     5 f "A2C00003837";
+  R1027        47k     1     1 f "A2C00010473";
+  R1029        47k     1     1 f "A2C00010473";
+  R1030      22.1k     1     1 f "A2C00019595";
+  R1031       4.7k     1     1 f "A2C00004276";
+  R1032      78.7k     1     1 f "A2C00006984";
+  R1033      22.1k     1     1 f "A2C00019595";
+  R1034        22k     5     5 f "A2C00003837";
+  R1035        47k     1     1 f "A2C00010473";
+  R1036         1k     1     1 f "A2C00010442";
+  R1037      3.83k     1     1 f "A2C00040193";
+  R1038       100k     1     1 f "A2C00004368";
+  R1039        22k     5     5 f "A2C00003837";
+  R1041       470k     1     1 f "A2C00004486";
+  R2000        10k     1     1 f "A2C00010465";
+  R2007         1k     1     1 f "A2C00010442";
+  R2010        10k     1     1 f "A2C00010465";
+  R2011A       10k     1     1 f "A2C00010465";
+  R2011B      100k     1     1 f "A2C00004368";
+  R2015        47k     1     1 f "A2C00010473";
+  R2021       2.2k     1     1 f "A2C00019748";
+  R2022       4.7k     5     5 f "A2C00010445";
+  R2023       220k     1     1 f "A2C00049219";
+  R2025       2.2k     1     1 f "A2C00019748";
+  R2030        47k     1     1 f "A2C00010473";
+  R2038         22     5     5 f "A2C00018590";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R2039         22     5     5 f "A2C00018590";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R2050       4.7k     5     5 f "A2C00010445";
+  R2051       4.7k     5     5 f "A2C00010445";
+  R2099        10k     1     1 f "A2C00010465";
+  R2308       4.7k     5     5 f "A2C00010445";
+  R2351        27k     1     1 f "A2C00010458";
+  R2353        27k     1     1 f "A2C00010458";
+  R2355        10k     1     1 f "A2C00010465";
+  R3301       1.3k     1     1 f "A2C00004025";
+  R3302       1.3k     1     1 f "A2C00004025";
+  R3307A      61.9     1     1 f "A2C00004016";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R3307B      33.2     1     1 f "A2C00006181";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R3308A      61.9     1     1 f "A2C00004016";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R3308B      33.2     1     1 f "A2C00006181";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R3313B      4.7k     5     5 f "A2C00010445";
+  R3320         1k     1     1 f "A2C00010442";
+  R3322       4.7k     5     5 f "A2C00010445";
+  R3324        47k     1     1 f "A2C00010473";
+  R3325        47k     1     1 f "A2C00010473";
+  R3357A      61.9     1     1 f "A2C00004016";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R3357B      33.2     1     1 f "A2C00006181";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R3358A      61.9     1     1 f "A2C00004016";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R3358B      33.2     1     1 f "A2C00006181";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R4003A       10k     1     1 f "A2C00049244";
+  R4003B      470k     1     1 f "A2C00004486";
+  R4003B      470k     1     1 f "A2C00004486"      VERSION 40373465;
+  R4004        10k     1     1 f "A2C00049244";
+  R4013A       10k     1     1 f "A2C00049244";
+  R4013B      470k     1     1 f "A2C00004486";
+  R4013B      470k     1     1 f "A2C00004486"      VERSION 40373465;
+  R4014        10k     1     1 f "A2C00049244";
+  R4023       5.6k     1     1 f "A2C00022756";
+  R4036       5.6k     1     1 f "A2C00022756";
+  R4170       100k     1     1 f "A2C00004368";
+  R4171        21k     1     1 f "A2C00006613";
+  R4181       100k     1     1 f "A2C00004368";
+  R4182        21k     1     1 f "A2C00006613";
+  R4301       324k     1     1 f "A2C00004150";
+  R4302      3.74k     1     1 f "A2C00004383";
+  R4303        22k     5     5 f "A2C00003837";
+  R4304        47k     1     1 f "A2C00010473";
+  R4351       324k     1     1 f "A2C00004150";
+  R4352      3.74k     1     1 f "A2C00004383";
+  R4353        22k     5     5 f "A2C00003837";
+  R4354        47k     1     1 f "A2C00010473";
+  R4354        47k     1     1 f "A2C00010473"      VERSION 40373465;
+  R4400        10k     1     1 f "A2C00010465";
+  R4502         1k     1     1 f "A2C00003554";
+  R4505       100k     1     1 f "A2C00004368";
+  R4506         1k     1     1 f "A2C00003554";
+  R4507       100k     1     1 f "A2C00004368";
+  R4513       4.7k     1     1 f "A2C00004276";
+  R4514         1k     1     1 f "A2C00003554";
+  R4524       100k     1     1 f "A2C00004368";
+  R4526        22k     5     5 f "A2C00003837";
+  R4528        10k     1     1 f "A2C00004245";
+  R4532      2.49k     1     1 f "A2C00004259";
+  R4533      2.49k     1     1 f "A2C00004259";
+  R4534        15k     1     1 f "A2C00004446";
+  R4536        22k     5     5 f "A2C00003837";
+  R5000        15k     5     5 f "A2C00003409";
+  R5001         1k     1     1 f "A2C00003554";
+  R5002        10k     1     1 f "A2C00004245";
+  R5003        22k     5     5 f "A2C00003837";
+  R5013        47k     1     1 f "A2C00010473";
+  R5014        47k     1     1 f "A2C00010473";
+  R5017        10k     1     1 f "A2C00004245";
+  R5018        10k     1     1 f "A2C00004245";
+  R5021       1.5k     1     1 f "A2C00004026";
+  R5022       1.5k     1     1 f "A2C00004026";
+  R5023       1.5k     1     1 f "A2C00004026";
+  R5024      3.74k     1     1 f "A2C00004383";
+  R5028       1.5k     1     1 f "A2C00004026";
+  R5030        15k     5     5 f "A2C00003409";
+  R5031         1k     1     1 f "A2C00003554";
+  R5032        22k     5     5 f "A2C00003837";
+  R5047      12.4k     1     1 f "A2C00004225";
+  R5117         3k     5     5 f "A2C00003529";
+  R5217        10k     1     1 f "A2C00004245";
+  R5318      3.74k     1     1 f "A2C00004383";
+  R5518        10k     1     1 f "A2C00004245";
+  R5519        10k     1     1 f "A2C00004245";
+  R6402        10k     1     1 f "A2C00010465";
+  R7001         3k     5     5 f "A2C00003529";
+  R7002         3k     5     5 f "A2C00003529";
+  R7003        10k     1     1 f "A2C00010465";
+  R7004         1k     5     5 f "A2C00010441";
+  R7005        27k     1     1 f "A2C00010458";
+  R7007        27k     1     1 f "A2C00010458";
+  R7010         1k     5     5 f "A2C00010441";
+  R7011      1.82k     1     1 f "A2C00008391";
+  R7012       4.7k     5     5 f "A2C00010445";
+  R7013        10k     1     1 f "A2C00010465";
+  R7015      1.82k     1     1 f "A2C00008391";
+  R7016        10k     1     1 f "A2C00010465";
+  R7019       4.7k     5     5 f "A2C00010445";
+  R7020        68k     1     1 f "A2C00025363";
+  R7021      82.5k     1     1 f "A2C00004347";
+  R7022A       47k     1     1 f "A2C00010473";
+  R7022B     82.5k     1     1 f "A2C00004347";
+  R7023A       47k     1     1 f "A2C00010473";
+  R7023B       20k     1     1 f "A2C00007122";
+  R7025      82.5k     1     1 f "A2C00004347";
+  R7026        15k     1     1 f "A2C00004446";
+  R7028       470k     1     1 f "A2C00004486";
+  R7029         1M     5     5 f "A2C00003690";
+  R7030       150k     1     1 f "A2C00031045";
+  R7031       2.2k     1     1 f "A2C00019748";
+  R7032        15k     1     1 f "A2C00004446";
+  R7033       4.7k     5     5 f "A2C00010445";
+  R7034       4.7k     5     5 f "A2C00010445";
+  R7035       6.8k     5     5 f "A2C00010917";
+  R7036         3k     5     5 f "A2C00003529";
+  R7050       4.7k     5     5 f "A2C00010445";
+  R7099       4.7k     5     5 f "A2C00010445";
+  R7500       4.7k     5     5 f "A2C00010445";
+  R7516        10k     1     1 f "A2C00010465";
+  R7530        22k     5     5 f "A2C00003837";
+  R7531        22m     5     5 f "A2C00040193";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R7550        27k     1     1 f "A2C00010458";
+  R7601        10k     1     1 f "A2C00010465";
+  R7602        10k     1     1 f "A2C00010465";
+  R7603        10k     1     1 f "A2C00010465";
+  R7900       220k     1     1 f "A2C00049219";
+  R7901         15     5     5 f "A2C00003508";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R7902         15     5     5 f "A2C00003508";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R7903         15     5     5 f "A2C00003508";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R7904         15     5     5 f "A2C00003508";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R7906       100k     1     1 f "A2C00004368";
+  R7950       220k     1     1 f "A2C00049219";
+  R7951        10k     1     1 f "A2C00004245";
+  R7952        10k     1     1 f "A2C00004245";
+  R8202        47k     1     1 f "A2C00010473";
+  R8203A     21.5k     1     1 f "A2C00010829";
+  R8203B     82.5k     1     1 f "A2C00004347";
+  R8204A       13k     1     1 f "A2C00007121";
+  R8204B     49.9k     1     1 f "A2C00007529";
+  R8205       2.2k     1     1 f "A2C00019748";
+  R8206       2.2k     1     1 f "A2C00019748";
+  R8207        10k     1     1 f "A2C00004245";
+  R8208        47k     1     1 f "A2C00010473";
+  R8209A      82.5     1     1 f "A2C00003980";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R8209B       300     1     1 f "A2C00008211";
+  R8210        3.3     5     5 f "A2C00003417";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R8212      78.7k     1     1 f "A2C00006984";
+  R8213      49.9k     1     1 f "A2C00007529";
+  R8214A     56.2k     1     1 f "A2C00004500";
+  R8214B     2.55k     1     1 f "A2C00004336";
+  R8215A      43.2     1     1 f "A2C00003601";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R8215B      69.1     1     1 f "A2C00020075";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R8217      6.81k     1     1 f "A2C00004462";
+  R8219A      93.1     1     1 f "A2C00021835";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R8219B       15m     1     1 f "A2C00003590";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R8220A       221     1     1 f "A2C00003946";
+  R8220B       15m     1     1 f "A2C00003590";
+    OVERRIDE
+      Tolerance Multiplier    0.1;
+  R8222A     56.2k     1     1 f "A2C00004500";
+  R8299B      100k     1     1 f "A2C00004368";
+  R8302        22k     5     5 f "A2C00003837";
+  R8303       220k     1     1 f "A2C00049219";
+  R8307      3.83k     1     1 f "A2C00040193";
+  R8308         2k     1     1 f "A2C00004240";
+  R8309      3.48k     1     1 f "A2C00007185";
+  R8310       1.1k     1     1 f "A2C00011010";
+  R8311       100k     1     1 f "A2C00004368";
+  R8312       100k     1     1 f "A2C00004368";
+  R8313       100k     1     1 f "A2C00004368";
+
+CONNECTIONS
+  "$NONE$"
+    D7032.2
+    D7032.3
+    T7002.1
+    T7002.2
+    T7002.6
+    T7003.3
+    T7003.4
+    T7003.5;
+  "/ACC_IN"
+    C5017.1
+    P5012.1
+    R5017.1
+    R5018.1
+    V2500A.146
+    V2500B.146;
+  5V_RESET
+    P1016.1
+    P6401.1
+    P7522.1
+    R1000.2
+    R1026.1
+    V1000.8
+    V2300A.10
+    V2300B.10
+    V6400.4
+    V7000.47
+    V7500.11
+    V7900.3
+    V8200.14;
+  5V_RESET_TO_UC
+    P1044.1
+    R1026.2
+    R1027.1
+    V2500A.137
+    V2500B.137;
+  ACC_IN
+    R5017.2
+    S7503.1;
+  ACIN
+    C5117.1
+    P5123.1
+    R5011.5
+    R5011.6
+    V2500A.151
+    V2500B.151;
+  ACP
+    C5217.1
+    P5223.1
+    R5011.7
+    R5011.8
+    V2500A.150
+    V2500B.150;
+  AMP
+    C4401A.1
+    P4402.1
+    R4400.2
+    R4401B.1
+    V2500A.55
+    V2500B.55;
+  BKB_FB
+    C4521A.1
+    P4529.1
+    R4521B.1
+    R4526.2
+    V2500A.56
+    V2500B.56;
+  BLS
+    P1050.1
+    R1034.2
+    R1035.1
+    V2500A.93
+    V2500B.93;
+  BTS
+    C5008.1
+    P5004.1
+    R5008.1
+    R5008.2
+    V2500A.7
+    V2500B.7;
+  C5V1_A11
+    C1037.1
+    S1012.2
+    X1.84;
+  C5V1_K
+    C1015.1
+    S1009.2
+    X1.70;
+  C5V1_NGD
+    C1043.1
+    S1013.2
+    X1.44;
+  C5V1_PVS_2
+    C1031.1
+    S1010.2
+    X1.19;
+  C5V1_TPS
+    C1035.1
+    P1015.1
+    S1006.2
+    X1.89;
+  C5V2_A
+    C1034.1
+    S1005.2
+    X1.96;
+  C5V2_A1
+    C1033.1
+    S1011.2
+    X1.97;
+  C5V2_K
+    C1014.1
+    S1007.2
+    X1.68;
+  C5V2_PVS_1
+    C1032.2
+    S1008.2
+    X1.18;
+  CACIN
+    C5111.1
+    P5121.1
+    R5011.4
+    R5117.1
+    X1.30;
+  CACP
+    C5211.1
+    P5221.1
+    R5011.1
+    R5217.1
+    X1.81;
+  CAL_WAKEUP
+    D1009.2
+    X20.3;
+  CAM_1
+    C5000.1
+    P5001.1
+    R5000.2
+    R5003.2
+    V2500A.109
+    V2500B.109;
+  CAN_1_RXD
+    P3300.1
+    V2500A.143
+    V2500B.143
+    V3300.4
+    V3320.4;
+  CAN_1_TXD
+    P3303.1
+    V2500A.142
+    V2500B.142
+    V3300.1
+    V3320.1;
+  CAN_2_RXD
+    P3350.1
+    V2500A.134
+    V2500B.134
+    V3350.4;
+  CAN_2_TXD
+    P3353.1
+    V2500A.133
+    V2500B.133
+    V3350.1;
+  CAN_WKU
+    P3326.1
+    R3324.2
+    R3325.1
+    V2500A.1
+    V2500B.1;
+  CAN_WKU_ATIC91
+    D1010.1
+    D1010.2
+    P3325.1
+    R3324.1
+    V3320.7;
+  CAN_WKU_EN
+    P3321.1
+    R3322.1
+    V2500A.73
+    V2500B.73
+    V3320.6;
+  CAN_WKU_ERR
+    P3327.1
+    V2500A.5
+    V2500B.5
+    V3320.8;
+  CAN_WKU_STB
+    P3322.1
+    R3321.1
+    V2500A.72
+    V2500B.72;
+  CBKB_FB
+    C4520.1
+    P4096.1
+    R4526.1
+    R4528.1
+    X1.27;
+  CBLS
+    C1029.1
+    P1098.1
+    R1029.1
+    R1031.2
+    X1.53;
+  CBTS
+    C5003.1
+    P5097.1
+    R5008.8
+    R5022.1
+    X1.63;
+  CCAM_1
+    C5024.1
+    P5093.1
+    R5000.1
+    R5001.2
+    X1.105;
+  CCPS
+    C7015A.1
+    C7015B.1
+    C7505.1
+    P7090.1
+    V7000.13
+    V7500.23
+    X1.111;
+  CCRK
+    C5025.1
+    P5092.1
+    R5030.1
+    R5031.2
+    X1.106;
+  CCRU_MAIN
+    C5001.1
+    P5098.1
+    R5007.6
+    R5023.1
+    X1.69;
+  CCS_1
+    C5004.1
+    P5099.1
+    R5007.7
+    R5021.1
+    X1.65;
+  CDFM
+    C5009.1
+    P5096.1
+    R5008.5
+    R5024.2
+    X1.13;
+  CDT_CAN_1M
+    C3304B.1
+    L3301.2
+    P3394.1
+    P3398.1
+    R3304A.2
+    R3308A.2
+    R3308B.2
+    X1.21;
+  CDT_CAN_1P
+    C3303B.1
+    L3301.1
+    P3395.1
+    P3399.1
+    R3303A.2
+    R3307A.1
+    R3307B.1
+    X1.20;
+  CDT_CAN_2M
+    C3354B.1
+    P3396.1
+    R3354A.2
+    R3358A.2
+    R3358B.2
+    V3350.6
+    X1.59;
+  CDT_CAN_2P
+    C3353B.1
+    P3397.1
+    R3353A.2
+    R3357A.1
+    R3357B.1
+    V3350.7
+    X1.58;
+  CECF_1
+    C7018.1
+    P7087.1
+    R7504.2
+    V7000.61
+    X1.77;
+  CEGR
+    C6408.1
+    D6404.1
+    P6414.1
+    R6404.1
+    V6400.22
+    X1.117;
+  CEGR_FB
+    C4524.1
+    P4088.1
+    R4524.1
+    R4525.8
+    X1.94;
+  CESV_CWP
+    C6410.1
+    P6413.1
+    V6400.15
+    X1.114;
+  CFPS
+    C4512.1
+    P4089.1
+    R4513.2
+    R4525.7
+    X1.82;
+  CHEATER_REG
+    C4514.1
+    P4094.1
+    R4505.1
+    R4525.5
+    X1.26;
+  CHWT
+    C6409.1
+    P6415.1
+    R6404.2
+    V6400.19
+    X1.24;
+  CIGC_0
+    C7901.1
+    P7994.1
+    R7901.2
+    X1.112;
+  CIGC_1
+    C7902.1
+    P7997.1
+    R7902.2
+    X1.113;
+  CIGC_2
+    C7903.1
+    P7996.1
+    R7903.2
+    X1.100;
+  CIGC_3
+    C7904.1
+    P7995.1
+    R7904.2
+    X1.103;
+  CIV_0
+    C7008A.1
+    C7008B.1
+    P7095.1
+    V7000.45
+    V7500.13
+    X1.88;
+  CIV_1
+    C7011A.1
+    C7011B.1
+    P7094.1
+    V7000.44
+    V7500.18
+    X1.87;
+  CIV_2
+    C7012A.1
+    C7012B.1
+    P7093.1
+    V7000.40
+    V7500.19
+    X1.85;
+  CIV_3
+    C7013.1
+    P7092.1
+    V7000.5
+    X1.86;
+  CKNK_1
+    C8305.1
+    P8399.1
+    R8302.1
+    R8303.1
+    R8311.2
+    X1.109;
+  CLED_STS_ACC_PWM
+    C7019.1
+    M7900.2
+    P7086.1
+    S7503.2
+    V7000.64
+    X1.76;
+  CLS_1_RC
+    C8216.1
+    P8237.1
+    P8282.1
+    R8220A.2
+    R8220B.2
+    V8200.26
+    X1.52;
+  CLS_DOWN_1
+    C4301.1
+    P4086.1
+    R4301.2
+    R4302.2
+    R4303.1
+    R4304.1
+    X1.37;
+  CLS_UP
+    C8200.1
+    C8205.1
+    P8218.1
+    P8220.1
+    R8213.2
+    V8200.22
+    X1.38;
+  CLS_UP_1
+    C4351.1
+    P4087.1
+    R4351.2
+    R4352.2
+    R4353.1
+    R4354.1
+    X1.12;
+  CLS_UP_1_IP
+    C8213.1
+    P8234.1
+    P8235.1
+    R8207.2
+    R8215A.1
+    R8215B.1
+    V8200.24
+    X1.54;
+  CLSH_DOWN_1
+    C7010A.1
+    C7010B.1
+    P7097.1
+    V7000.57
+    V7000.60
+    V7500.2
+    V7500.3
+    X1.5;
+  CLSH_UP_1
+    C7009A.1
+    C7009B.1
+    D7002.1
+    M7500.2
+    P7096.1
+    S7501.2
+    V7000.25
+    V7000.28
+    X1.4;
+  CMAP
+    C4517.1
+    P4090.1
+    R4025.5
+    R4507.1
+    X1.95;
+  CMTCM
+    C7603.1
+    C7612.1
+    P7608.1
+    V7600.16
+    X1.121;
+  CMTCP
+    C7602.1
+    C7611.1
+    P7607.1
+    V7600.9
+    X1.119;
+  CNGD_1
+    C4530.1
+    P5090.1
+    R4532.2
+    R4533.2
+    R4534.1
+    X1.39;
+  COILP
+    C6411.1
+    P6412.1
+    V6400.18
+    X1.116;
+  CPN
+    C7006.1
+    P7099.1
+    R7001.2
+    R7002.2
+    R7020.1
+    X1.43;
+  CPOEL_1
+    C5511.1
+    P5321.1
+    R5010.5
+    R5518.2
+    X1.41;
+  CPOEL_2
+    C5411.1
+    P5411.1
+    R5010.8
+    R5519.2
+    X1.120;
+  CPS
+    V2500A.148
+    V2500B.148
+    V7000.14
+    V7500.25;
+  CPVS_1
+    C4003.1
+    P4099.1
+    R4003A.1
+    R4003B.1
+    R4004.1
+    R4005.6
+    X1.51;
+  CPVS_2
+    C4014.1
+    P4098.1
+    R4005.5
+    R4005.8
+    R4013A.1
+    R4013B.1
+    R4014.1
+    X1.64;
+  CRK
+    C5015.1
+    P5019.1
+    R5030.2
+    R5032.2
+    V2500A.3
+    V2500B.3;
+  CRLY_AF
+    C7017.1
+    P7088.1
+    V7000.29
+    X1.61;
+  CRLY_BKB
+    C7021.1
+    P7084.1
+    V7000.53
+    V7000.54
+    X1.71;
+  CRLY_EFP_PWM
+    C7020A.1
+    C7020B.1
+    M7950.2
+    P7085.1
+    R7503.2
+    S7950.1
+    V7000.49
+    X1.80;
+  CRLY_MAIN
+    C7016A.1
+    C7016B.1
+    C7024.2
+    C7025.2
+    C7525.1
+    D7003.1
+    D7005.1
+    D7503.1
+    P7089.1
+    R7013.2
+    R7016.2
+    R7516.1
+    X1.23;
+  CRLY_ST_1
+    C7022.1
+    P7083.1
+    V7000.18
+    X1.57;
+  CRLY_ST_2
+    C7023.1
+    C7029.2
+    D7009.1
+    P7082.1
+    R7003.2
+    X1.60;
+  CRU_MAIN
+    C5007.1
+    P5003.1
+    R5007.3
+    R5007.4
+    V2500A.13
+    V2500B.13;
+  CS_1
+    C5005.1
+    P5005.1
+    R5007.1
+    R5007.2
+    V2500A.2
+    V2500B.2;
+  CS_ATIC29
+    P7999.1
+    V2001.3
+    V7900.5;
+  CS_ATIC42
+    P8201.1
+    V2500A.175
+    V2500B.175
+    V8200.13;
+  CS_ATIC92_94
+    P7523.1
+    V2500A.164
+    V2500B.164
+    V7000.10
+    V7500.20;
+  CS_ATIC113
+    P6404.1
+    V2500A.131
+    V2500B.131
+    V6400.12;
+  CS_MTC
+    P7620.1
+    V2500A.126
+    V2500B.126
+    V7600.5;
+  CSHIELD_KNK_1
+    S8301.1
+    X1.102;
+  CSP_SWI
+    C5311.1
+    P5311.1
+    R5012.4
+    R5318.2
+    X1.29;
+  CSPARE_HEAT
+    C6407.1
+    P6416.1
+    V6400.36
+    X1.79;
+  CSTR_FB
+    C7031.1
+    C7032.1
+    D7032.4
+    P7098.1
+    X1.67;
+  CSTR_SWI
+    C7026.1
+    D1009.1
+    P1095.1
+    P7059.1
+    R1040.2
+    R7011.1
+    R7015.1
+    R7022A.1
+    R7022B.1
+    X1.55;
+  CSTS_SWI
+    C5027.1
+    P5091.1
+    R5019.1
+    R5028.1
+    X1.40;
+  CTCO_1
+    C4501.1
+    P4097.1
+    R4005.7
+    R4502.2
+    X1.104;
+  CTCO_2
+    C4510.1
+    P4093.1
+    R4514.2
+    R4525.6
+    X1.25;
+  CTIA
+    C4515.1
+    P4095.1
+    R4025.6
+    R4506.2
+    X1.93;
+  CTOG
+    C5002.1
+    P5094.1
+    R5002.2
+    R5013.1
+    X1.110;
+  CTPS_1
+    C4023.1
+    P4092.1
+    R4023.1
+    R4025.7
+    X1.90;
+  CTPS_2
+    C4033.1
+    P4091.1
+    R4025.8
+    R4036.1
+    X1.92;
+  CVB
+    C1019.1
+    D1003.1
+    D1004.2
+    P1097.1
+    X1.73;
+  CVEH_SPEED
+    C5018.1
+    P5095.1
+    R5012.1
+    R5047.2
+    X1.9;
+  CVGND_LS_UP_1
+    C8235.1
+    P8223.1
+    P8224.1
+    R8209A.1
+    R8209B.1
+    R8210.1
+    R8213.1
+    X1.56;
+  CVVT_IN_1
+    C7014.1
+    D7004.1
+    P7091.1
+    V7000.12
+    X1.115;
+  DFM
+    C5012.1
+    P5010.1
+    R5008.3
+    R5008.4
+    V2500A.166
+    V2500B.166;
+  DI_MTC
+    P7605.1
+    R7602.2
+    V2500A.80
+    V2500B.80
+    V7600.10;
+  DIS_ATIC92_94
+    P7051.1
+    R7050.2
+    V2500A.169
+    V2500B.169
+    V7000.38
+    V7500.15;
+  ECF_1
+    P7512.1
+    R7502.1
+    V2500A.149
+    V2500B.149
+    V7000.62;
+  EGR
+    P6408.1
+    R6401.1
+    V2500A.87
+    V2500B.87
+    V6400.27;
+  EGR_FB
+    C4529A.1
+    P4525.1
+    R4525.1
+    R4529B.1
+    V2500A.57
+    V2500B.57;
+  EN_ATIC29
+    V2001.5
+    V7900.4;
+  EN_MTC
+    C2303.1
+    P2310.1
+    R7603.1
+    V2300A.8
+    V2300B.8
+    V7600.15;
+  ESV_CWP
+    V2500A.4
+    V2500B.4
+    V6400.14;
+  FPS
+    C4515A.1
+    P4511.1
+    R4515B.1
+    R4525.2
+    V2500A.63
+    V2500B.63;
+  GND_KNK_1
+    C1000.2
+    C1001.2
+    C1002.2
+    C1003.2
+    C1004.2
+    C1005.2
+    C1006.2
+    C1007.2
+    C1008.2
+    C1009.1
+    C1010.2
+    C1011.2
+    C1012.2
+    C1013.2
+    C1014.2
+    C1015.2
+    C1018.2
+    C1020.2
+    C1021.2
+    C1022.2
+    C1023.2
+    C1029.2
+    C1030A.2
+    C1031.2
+    C1032.1
+    C1033.2
+    C1034.2
+    C1035.2
+    C1037.2
+    C1038.2
+    C1039.1
+    C1041.1
+    C1042.2
+    C1043.2
+    C1049.1
+    C1058.2
+    C1805.2
+    C2001.2
+    C2002.2
+    C2003.1
+    C2004.2
+    C2005.2
+    C2007.1
+    C2008.1
+    C2009.1
+    C2010.2
+    C2011.2
+    C2012.1
+    C2013.1
+    C2014.1
+    C2015.1
+    C2016.1
+    C2017.1
+    C2018.1
+    C2019.1
+    C2020.1
+    C2021.1
+    C2022.1
+    C2023.1
+    C2024.1
+    C2025.2
+    C2026.1
+    C2027.2
+    C2028.2
+    C2029.1
+    C2030.2
+    C2031.1
+    C2035.1
+    C2036.2
+    C2060.2
+    C2061.2
+    C2303.2
+    C2304.2
+    C2350.2
+    C2351.2
+    C2352.2
+    C2353.2
+    C3301.2
+    C3302.1
+    C3303B.2
+    C3304B.2
+    C3320.2
+    C3321.2
+    C3351.2
+    C3352.1
+    C3353B.2
+    C3354B.2
+    C4000.2
+    C4003.2
+    C4010.2
+    C4011.2
+    C4014.2
+    C4020.2
+    C4023.2
+    C4030.2
+    C4033.2
+    C4170.2
+    C4181.2
+    C4301.2
+    C4302.2
+    C4351.2
+    C4355A.2
+    C4400.2
+    C4401A.2
+    C4500.2
+    C4501.2
+    C4502.2
+    C4505.2
+    C4509A.2
+    C4510.2
+    C4511A.2
+    C4512.2
+    C4513.2
+    C4514.2
+    C4515.2
+    C4515A.2
+    C4517.2
+    C4520.2
+    C4521A.2
+    C4524.2
+    C4529A.2
+    C4530.2
+    C5000.2
+    C5001.2
+    C5002.2
+    C5003.2
+    C5004.2
+    C5005.2
+    C5006.2
+    C5007.2
+    C5008.2
+    C5009.2
+    C5012.2
+    C5013.2
+    C5015.2
+    C5017.2
+    C5018.2
+    C5024.2
+    C5025.2
+    C5027.2
+    C5028.2
+    C5111.2
+    C5117.2
+    C5211.2
+    C5217.2
+    C5311.2
+    C5317.2
+    C5411.2
+    C5417.2
+    C5511.2
+    C5517.2
+    C6403.2
+    C6404.2
+    C6405.2
+    C6406.2
+    C6407.2
+    C6408.2
+    C6409.2
+    C6410.2
+    C6411.2
+    C7000.2
+    C7001.2
+    C7002.2
+    C7003.2
+    C7005.2
+    C7006.2
+    C7007.2
+    C7008A.2
+    C7008B.2
+    C7009A.2
+    C7009B.2
+    C7010A.2
+    C7010B.2
+    C7011A.2
+    C7011B.2
+    C7012A.2
+    C7012B.2
+    C7013.2
+    C7014.2
+    C7015A.2
+    C7015B.2
+    C7016A.2
+    C7016B.2
+    C7017.2
+    C7018.2
+    C7019.2
+    C7020A.2
+    C7020B.2
+    C7021.2
+    C7022.2
+    C7023.2
+    C7026.2
+    C7027.2
+    C7028.2
+    C7030.2
+    C7031.2
+    C7032.2
+    C7033.2
+    C7034.2
+    C7050.2
+    C7500.2
+    C7501.2
+    C7502.2
+    C7503.2
+    C7505.2
+    C7506.2
+    C7602.2
+    C7603.2
+    C7605.2
+    C7607.2
+    C7608.2
+    C7609.2
+    C7610.2
+    C7611.2
+    C7612.2
+    C7615.2
+    C7901.2
+    C7902.2
+    C7903.2
+    C7904.2
+    C7905.2
+    C7950.2
+    C8205.2
+    C8208.1
+    C8213.2
+    C8214.1
+    C8216.2
+    C8235.2
+    C8288B.2
+    C8289B.2
+    C8302.2
+    C8304.2
+    C8305.2
+    C8307.2
+    C8311.1
+    D1005.2
+    D7601.1
+    M4003.1
+    M4003.4
+    M7900.3
+    M7900.4
+    M7950.3
+    M7950.4
+    P1830.1
+    P1831.1
+    P1832.1
+    P1833.1
+    P1834.1
+    P1835.1
+    P1836.1
+    P1837.1
+    P1838.1
+    P1839.1
+    P6407.1
+    R1001.2
+    R1002.2
+    R1004.2
+    R1011A.2
+    R1014.2
+    R1015.2
+    R1016.1
+    R1016.4
+    R1027.2
+    R1030.2
+    R1030B.2
+    R1033.2
+    R1035.2
+    R1037.2
+    R1038.2
+    R2011A.1
+    R2011B.1
+    R2022.2
+    R2023.1
+    R2050.2
+    R2051.2
+    R2099.2
+    R2308.2
+    R2353.2
+    R2355.1
+    R3303A.1
+    R3304A.1
+    R3313A.1
+    R3313B.2
+    R3322.2
+    R3325.2
+    R3353A.1
+    R3354A.1
+    R4003A.2
+    R4003B.2
+    R4013A.2
+    R4013B.2
+    R4023.2
+    R4036.2
+    R4171.1
+    R4182.1
+    R4304.2
+    R4354.2
+    R4355B.2
+    R4401B.2
+    R4505.2
+    R4507.2
+    R4509B.2
+    R4511B.2
+    R4515B.2
+    R4521B.2
+    R4524.2
+    R4528.2
+    R4529B.2
+    R4536.2
+    R5003.1
+    R5007.5
+    R5007.8
+    R5008.6
+    R5008.7
+    R5010.6
+    R5010.7
+    R5011.2
+    R5011.3
+    R5012.2
+    R5012.3
+    R5014.2
+    R5018.2
+    R5019.6
+    R5019.7
+    R5021.2
+    R5022.2
+    R5023.2
+    R5028.2
+    R5032.1
+    R5117.2
+    R5217.2
+    R6402.2
+    R7005.2
+    R7007.2
+    R7011.2
+    R7012.2
+    R7015.2
+    R7021.2
+    R7023A.2
+    R7023B.2
+    R7026.2
+    R7034.2
+    R7036.2
+    R7530.2
+    R7531.2
+    R7550.2
+    R7601.2
+    R7603.2
+    R7900.1
+    R7906.1
+    R7950.1
+    R7951.2
+    R8202.2
+    R8208.2
+    R8212.2
+    R8288A.2
+    R8289A.2
+    R8303.2
+    R8307.2
+    R8309.2
+    S8301.2
+    T2004.1
+    T3301.1
+    T3301.5
+    T7000.1
+    T7000.4
+    T7001.2
+    T7002.4
+    T7003.1
+    V1000.6
+    V1000.12
+    V1000.14
+    V1000.21
+    V1000.22
+    V1000.23
+    V1000.32
+    V1000.33
+    V1000.35
+    V1000.36
+    V1000.44
+    V1000.COOL
+    V2001.1
+    V2001.10
+    V2001.19
+    V2300A.1
+    V2300B.1
+    V2500A.12
+    V2500A.22
+    V2500A.25
+    V2500A.27
+    V2500A.28
+    V2500A.29
+    V2500A.30
+    V2500A.33
+    V2500A.34
+    V2500A.36
+    V2500A.41
+    V2500A.45
+    V2500A.46
+    V2500A.48
+    V2500A.49
+    V2500A.51
+    V2500A.53
+    V2500A.61
+    V2500A.70
+    V2500A.82
+    V2500A.85
+    V2500A.92
+    V2500A.101
+    V2500A.104
+    V2500A.125
+    V2500A.140
+    V2500A.155
+    V2500A.172
+    V2500B.12
+    V2500B.22
+    V2500B.25
+    V2500B.27
+    V2500B.28
+    V2500B.29
+    V2500B.30
+    V2500B.33
+    V2500B.34
+    V2500B.36
+    V2500B.41
+    V2500B.45
+    V2500B.46
+    V2500B.48
+    V2500B.49
+    V2500B.51
+    V2500B.53
+    V2500B.61
+    V2500B.70
+    V2500B.82
+    V2500B.85
+    V2500B.92
+    V2500B.101
+    V2500B.104
+    V2500B.125
+    V2500B.140
+    V2500B.155
+    V2500B.172
+    V3300.2
+    V3320.2
+    V3350.2
+    V3350.8
+    V4410.2
+    V4410.4
+    V6400.1
+    V6400.7
+    V6400.16
+    V6400.17
+    V6400.20
+    V6400.21
+    V6400.29
+    V6400.31
+    V6400.32
+    V6400.35
+    V6400.COOL
+    V7000.8
+    V7000.9
+    V7000.17
+    V7000.19
+    V7000.21
+    V7000.22
+    V7000.26
+    V7000.27
+    V7000.36
+    V7000.41
+    V7000.48
+    V7000.50
+    V7000.58
+    V7000.59
+    V7000.63
+    V7000.65
+    V7002.2
+    V7003.2
+    V7005.3
+    V7500.1
+    V7500.24
+    V7500.29
+    V7500.31
+    V7500.COOL
+    V7600.1
+    V7600.2
+    V7600.11
+    V7600.12
+    V7600.13
+    V7600.14
+    V7600.22
+    V7600.23
+    V7600.24
+    V7600.COOL
+    V7900.9
+    V7900.13
+    V7900.20
+    V8200.1
+    V8200.7
+    V8200.9
+    V8301.2
+    X1.1
+    X1.2
+    X1.6
+    X1.7
+    X1.10
+    X1.11
+    X1.17
+    X1.31
+    X1.32
+    X1.36
+    X1.45
+    X1.50
+    X1.83
+    X1.91
+    X1.98
+    X1.99
+    X1.101
+    X1.107
+    X1.108
+    X20.17
+    X20.18
+    X20.19
+    X20.20
+    X20.21
+    X20.22;
+  gnd_sp
+    x1_sp.2;
+  H_RESET
+    P1037.1
+    R2000.2
+    V1000.9
+    V2500A.122
+    V2500B.122
+    X20.16;
+  HEATER_REG
+    C4509A.1
+    P4513.1
+    R4509B.1
+    R4525.4
+    V2500A.62
+    V2500B.62;
+  HWT
+    P6409.1
+    R6401.2
+    V2500A.90
+    V2500B.90
+    V6400.24;
+  "I$758/N$16983"
+    P4302.1
+    R4302.1
+    T4301.3;
+  "I$758/N$94666"
+    P4352.1
+    R4352.1
+    T4351.3;
+  "I$758/N$97779"
+    M4003.6
+    P4085.1
+    R4004.2;
+  "I$758/N$97781"
+    M4003.3
+    P4084.1
+    R4014.2;
+  "I$758/N$100874"
+    P4401.1
+    R4400.1
+    V4410.3;
+  "I$758/N$101080"
+    V4410.8;
+  "I$758/N$101081"
+    V4410.6;
+  "I$758/N$101082"
+    V4410.7;
+  "I$758/N$101083"
+    V4410.5;
+  "I$760/EXTMOS_93(0)"
+    P7504.1
+    S7501.1
+    V7500.33;
+  "I$760/EXTMOS_93(1)"
+    P7500.1
+    R7500.1
+    V7500.34;
+  "I$760/EXTMOS_93(2)"
+    S7502.1
+    V7500.32;
+  "I$760/N$72544"
+    P7998.1
+    R7906.2
+    V7900.14;
+  "I$760/N$74129"
+    C7024.1
+    D7005.2
+    P7019.1
+    R7013.1
+    V7000.35;
+  "I$760/N$74131"
+    P7000.1
+    R7099.2
+    V7000.52;
+  "I$760/N$74151"
+    V7000.3;
+  "I$760/N$74781"
+    V7000.15;
+  "I$760/N$78582"
+    P7048.1
+    R7025.2
+    R7026.1
+    V7002.4;
+  "I$760/N$78584"
+    P7049.1
+    R7033.2
+    R7034.1
+    V7003.4;
+  "I$760/N$78587"
+    D7007.1
+    D7007.2
+    P7043.1
+    R7031.2;
+  "I$760/N$78588"
+    P7050.1
+    R7035.2
+    T7003.6;
+  "I$760/N$78589"
+    C7028.1
+    D7007.3
+    P7042.1
+    P7044.1
+    R7030.2
+    R7032.1
+    R7035.1;
+  "I$760/N$78590"
+    P7041.1
+    R7029.2
+    R7030.1
+    R7031.1
+    V7002.1;
+  "I$760/N$78599"
+    P7040.1
+    R7028.1
+    R7032.2
+    V7003.3;
+  "I$760/N$91530"
+    P7905.1
+    R7901.1
+    V7900.10;
+  "I$760/N$92804"
+    P7921.1
+    R7904.1
+    V7900.19;
+  "I$760/N$92805"
+    P7919.1
+    R7903.1
+    V7900.1;
+  "I$760/N$92806"
+    P7906.1
+    R7902.1
+    V7900.12;
+  "I$760/N$95432"
+    D7032.1
+    P7052.1
+    R5019.4
+    R7036.1;
+  "I$760/N$95635"
+    V7005.1;
+  "I$760/N$98078"
+    D7000.1
+    P7026.1
+    R7019.2
+    T7001.3;
+  "I$760/N$98487"
+    C7005.1
+    D7000.3
+    P7002.1
+    T7000.2
+    T7000.5;
+  "I$760/N$100784"
+    V7500.14;
+  "I$760/N$100996"
+    C7027.1
+    P7046.1
+    R7022A.2
+    R7022B.2
+    R7023A.1
+    R7023B.1
+    R7027.1
+    R7029.1
+    V7002.3;
+  "I$760/N$101400"
+    C6401.1
+    P6499.1
+    V6400.25;
+  "I$760/N$101407"
+    P6495.1
+    R6402.1
+    V6400.5;
+  "I$760/N$101411"
+    C6406.1
+    P6411.1
+    V6400.3;
+  "I$760/N$102212"
+    V7500.5;
+  "I$760/N$102219"
+    P7076.1
+    R7550.1
+    V7500.27;
+  "I$760/N$103666"
+    C7025.1
+    C7029.1
+    D7003.2
+    D7009.2
+    P7075.1
+    R7003.1
+    R7016.1
+    V7000.24;
+  "I$760/N$103667"
+    C7506.1
+    C7525.2
+    D7503.2
+    P7505.1
+    R7516.2
+    V7500.36;
+  "I$760/N$104073"
+    P7030.1
+    R7004.2
+    R7007.1
+    T7000.6
+    V7000.20;
+  "I$760/N$104479"
+    P7031.1
+    R7005.1
+    R7010.2
+    T7000.3
+    V7000.23;
+  "I$760/N$105579"
+    V6400.33;
+  "I$760/N$106036"
+    C6401.2
+    C6405.1
+    D6402.2
+    P6410.1
+    V6400.26
+    V6400.34;
+  "I$760/N$106704"
+    P7602.1
+    R7601.1
+    V7600.18;
+  "I$760/N$107324"
+    C7606.1
+    P7606.1
+    V7600.6;
+  "I$760/N$108803"
+    D7001.3
+    P7028.1
+    R7001.1
+    R7002.1;
+  "I$760/N$108804"
+    M7500.3
+    P7074.1
+    P7551.1
+    R7531.1
+    S7502.2;
+  "I$760/N$109615"
+    C7007.1
+    D7011.1
+    D7011.2
+    P7033.1
+    R7020.2
+    R7021.1
+    T7002.3
+    V7005.2;
+  "I$760/N$110426"
+    M7500.1
+    P7508.1
+    R7500.2
+    R7530.1;
+  "I$760/N$112356"
+    C7000.1
+    P7078.1
+    V7000.51;
+  "I$760/N$112357"
+    C7500.1
+    P7077.1
+    V7500.9;
+  "I$760/N$117393"
+    R7952.2
+    S7950.2;
+  "I$760/N$117801"
+    P7511.1
+    R7503.1
+    R7504.1
+    V7500.35;
+  "I$760/N$118003"
+    P7510.1
+    R7501.2
+    R7502.2
+    V7500.8;
+  "I$963/N$15730"
+    C8210.1
+    P8225.1
+    P8230.1
+    R8210.2
+    V8200.23;
+  "I$963/N$18257"
+    P8219.1
+    R8212.1
+    V8200.19;
+  "I$963/N$18258"
+    P8216.1
+    R8208.1
+    V8200.4;
+  "I$963/N$18259"
+    P8209.1
+    R8205.2
+    V8200.2;
+  "I$963/N$18260"
+    P8212.1
+    R8206.2
+    V8200.3;
+  "I$963/N$18262"
+    P8211.1
+    R8202.1
+    V8200.18;
+  "I$963/N$18265"
+    C8210.2
+    P8274.1
+    V8200.5;
+  "I$963/N$20347"
+    P8227.1
+    P8228.1
+    R8215A.2
+    R8215B.2
+    R8219A.1
+    R8219B.1
+    V8200.25;
+  "I$963/N$28281"
+    P8206.1
+    R8203A.2
+    R8203B.2
+    V8200.17;
+  "I$963/N$28283"
+    P8208.1
+    R8204A.2
+    R8204B.2
+    V8200.16;
+  "I$963/N$28284"
+    C8201.1
+    P8207.1
+    R8203A.1
+    R8203B.1
+    R8204A.1
+    R8204B.1;
+  "I$963/N$32587"
+    P8215.1
+    P8217.1
+    R8209A.2
+    R8209B.2
+    V8200.21;
+  "I$963/N$79781"
+    C8200.2
+    P8203.1
+    R8207.1;
+  "I$963/N$80607"
+    C8207.1
+    P8221.1
+    R8214A.2
+    R8214B.2
+    V8200.6;
+  "I$963/N$87201"
+    P3302.1
+    R3302.1
+    T3301.6;
+  "I$963/N$87202"
+    P3301.1
+    R3301.2
+    T3301.3;
+  "I$963/N$89460"
+    C8201.2
+    P8214.1
+    V8200.20;
+  "I$963/N$89667"
+    C8207.2
+    P8226.1
+    R8217.1;
+  "I$963/N$89873"
+    C8212A.2
+    P8236.1
+    R8222A.1;
+  "I$963/N$90690"
+    C8309.1
+    D8301.2
+    P8302.1
+    R8311.1
+    R8313.2
+    V8301.4;
+  "I$963/N$90896"
+    C8311.2
+    P8303.1
+    R8309.1
+    R8310.2
+    R8312.1;
+  "I$963/N$90897"
+    P8304.1
+    R8312.2
+    V8301.3;
+  "I$963/N$91509"
+    C3352.2
+    R3357A.2
+    R3357B.2
+    R3358A.1
+    R3358B.1;
+  "I$963/N$91730"
+    C8302.1
+    P8306.1
+    R8302.2
+    R8304.2;
+  "I$963/N$91731"
+    C8309.2
+    P8301.1
+    R8304.1
+    R8308.1
+    R8313.1
+    V8301.1;
+  "I$963/N$92341"
+    L3301.4
+    P3309.1
+    V3300.7
+    V3320.13;
+  "I$963/N$92973"
+    C8212B.2
+    C8299A.1
+    P8229.1
+    P8231.1
+    P8240.1
+    R8219A.2
+    R8219B.2
+    R8220A.1
+    R8220B.1
+    R8222A.2
+    R8299B.1
+    V8200.27;
+  "I$963/N$92974"
+    C8212A.1
+    C8212B.1
+    C8299A.2
+    P8232.1
+    P8233.1
+    R8214A.1
+    R8214B.1
+    R8217.2
+    R8299B.2
+    V8200.8;
+  "I$963/N$94021"
+    L3301.3
+    P3354.1
+    V3300.6
+    V3320.12;
+  "I$963/N$94023"
+    C3302.2
+    P3307.1
+    R3301.1
+    R3302.2
+    R3307A.2
+    R3307B.2
+    R3308A.1
+    R3308B.1
+    R3323.2;
+  "I$963/N$95445"
+    P3323.1
+    R3313A.2
+    R3313B.1
+    R3321.2
+    V3300.8
+    V3320.14;
+  "I$963/N$95446"
+    P3324.1
+    R3312.2
+    R3323.1
+    V3300.5
+    V3320.11;
+  "I$964/ETK_S_BRKIN"
+    P2009.1
+    V2500A.117
+    V2500B.117
+    X20.4;
+  "I$964/ETK_S_BRKOUT"
+    P2001.1
+    R2039.2
+    V2500A.116
+    V2500B.116;
+  "I$964/ETK_S_TCK"
+    P2013.1
+    V2500A.115
+    V2500B.115
+    X20.7;
+  "I$964/ETK_S_TDI"
+    P2011.1
+    V2500A.111
+    V2500B.111
+    X20.8;
+  "I$964/ETK_S_TDO"
+    P2016.1
+    R2038.2
+    V2500A.113
+    V2500B.113;
+  "I$964/ETK_S_TMS"
+    P2012.1
+    V2500A.112
+    V2500B.112
+    X20.6;
+  "I$964/ETK_S_TRST"
+    P2015.1
+    R2011A.2
+    R2011B.2
+    V2500A.114
+    V2500B.114
+    X20.10;
+  "I$964/ETK_S_VDDSBRAM"
+    D2000.1
+    X20.26;
+  "I$964/ETK_S_VDDSBRAM_SENSE"
+    D2000.2
+    M2003.3
+    R2046.2
+    X20.9;
+  "I$964/IMMO_RC"
+    M2000.2
+    P2058.1
+    V2500A.32
+    V2500B.32;
+  "I$964/IMMO_RC_LOAD"
+    D7008.1
+    D7008.2
+    P2059.1
+    V2500A.176
+    V2500B.176;
+  "I$964/N$117500"
+    P2093.1
+    V2500A.174
+    V2500B.174;
+  "I$964/N$117668"
+    X20.1;
+  "I$964/N$117669"
+    X20.24;
+  "I$964/N$117677"
+    T2004.5
+    X20.11;
+  "I$964/N$117679"
+    X20.25;
+  "I$964/N$117680"
+    P2054.1
+    R2038.1
+    X20.5;
+  "I$964/N$117682"
+    P2055.1
+    R2039.1
+    X20.2;
+  "I$964/N$117723"
+    X20.14;
+  "I$964/N$117725"
+    X20.15;
+  "I$964/N$117728"
+    T2004.2
+    T2004.3;
+  "I$964/N$117744"
+    C2002.1
+    P2024.1
+    Q2000.1
+    R2007.2;
+  "I$964/N$124960"
+    P2094.1
+    V2500A.173
+    V2500B.173;
+  "I$964/N$126193"
+    X20.12;
+  "I$964/N$128460"
+    C2350.1
+    P2301.1
+    R2351.1
+    R2353.1
+    V2300A.5
+    V2300B.5;
+  "I$964/N$130495"
+    D7008.3
+    P2025.1
+    R2025.2;
+  "I$964/N$130496"
+    C2025.1
+    M2000.3
+    P2050.1
+    R2023.2
+    R2025.1;
+  "I$964/N$132606"
+    R2050.1
+    V2500A.159
+    V2500B.159;
+  "I$964/N$132608"
+    R2051.1
+    V2500A.157
+    V2500B.157;
+  "I$964/N$132610"
+    V2500A.14
+    V2500B.14;
+  "I$964/N$132623"
+    V2500A.15
+    V2500B.15;
+  "I$964/N$132654"
+    V2500A.165
+    V2500B.165;
+  "I$964/N$132656"
+    V2500A.162
+    V2500B.162;
+  "I$964/N$133284"
+    V2500A.128
+    V2500B.128;
+  "I$964/N$133285"
+    V2500A.138
+    V2500B.138;
+  "I$964/N$134303"
+    P2002.1
+    R2081.2
+    R2082.2
+    V2500A.91
+    V2500B.91;
+  "I$964/N$135125"
+    P2311.1
+    R2355.2
+    V2300A.6
+    V2300B.6;
+  "I$964/N$135938"
+    P2003.1
+    R2080.2
+    R2083.1
+    V2500A.89
+    V2500B.89;
+  "I$964/TEST_MODE"
+    P2008.1
+    R2010.2
+    V2500A.118
+    V2500B.118;
+  "I$964/UCS_ATIC29_3V3"
+    V2001.17
+    V2500A.75
+    V2500B.75;
+  "I$964/UCS_MU"
+    P2300.1
+    V2300A.12
+    V2300B.12
+    V2500A.127
+    V2500B.127;
+  "I$964/UEN_ATIC29_3V3"
+    P2030.1
+    R2030.2
+    V2001.15
+    V2500A.88
+    V2500B.88;
+  "I$964/UIGC_0_3V3"
+    V2001.11
+    V2500A.107
+    V2500B.107;
+  "I$964/UIGC_1_3V3"
+    V2001.13
+    V2500A.119
+    V2500B.119;
+  "I$964/UIGC_2_3V3"
+    V2001.6
+    V2500A.108
+    V2500B.108;
+  "I$964/UIGC_3_3V3"
+    V2001.8
+    V2500A.110
+    V2500B.110;
+  "I$964/UMISO_1"
+    P2061.1
+    R2021.1
+    R2022.1
+    V2500A.130
+    V2500B.130;
+  "I$964/UMOSI1"
+    V2001.4
+    V2500A.132
+    V2500B.132;
+  "I$964/UNMI"
+    P2099.1
+    R2099.1
+    V2500A.120
+    V2500B.120;
+  "I$964/USPI_CLK1"
+    P2026.1
+    R2015.2
+    V2001.2
+    V2500A.129
+    V2500B.129;
+  "I$964/VDD_SB"
+    C2015.2
+    P2053.1
+    R2045.2
+    R2046.1
+    V2500A.21
+    V2500B.21;
+  "I$964/XTAL1"
+    C2001.1
+    P2017.1
+    Q2000.2
+    V2500A.102
+    V2500B.102;
+  "I$964/XTAL2"
+    P2023.1
+    R2007.1
+    V2500A.103
+    V2500B.103;
+  "I$7750/N$22456"
+    D5001.2
+    P5020.1
+    R5047.1;
+  "I$7750/N$26829"
+    D5005.1
+    P5318.1
+    R5318.1;
+  "I$7750/N$27051"
+    D5003.2
+    P5518.1
+    R5518.1;
+  "I$7750/N$27052"
+    D5003.1
+    P5519.1
+    R5519.1;
+  "I$7750/N$27667"
+    D5001.1
+    P5017.1
+    R5024.1;
+  "I$34222/N$63461"
+    C1009.2
+    P1010.1
+    V1000.11;
+  "I$34222/N$63462"
+    C1010.1
+    P1020.1
+    V1000.10;
+  "I$34222/N$63707"
+    D1004.1
+    D1005.1
+    P1033.1;
+  "I$34222/N$63713"
+    P1007.1
+    R1015.1
+    V1000.3;
+  "I$34222/N$84381"
+    C1011.1
+    P1003.1
+    R1010.2
+    V1000.5;
+  "I$34222/N$84590"
+    P1049.1
+    R1034.1
+    R1041.2
+    V1000.37;
+  "I$34222/N$84591"
+    C1038.1
+    P1031.1
+    T1001.1
+    V1000.16;
+  "I$34222/N$84599"
+    P1011.1
+    R1004.1
+    R1005.1
+    V1000.7;
+  "I$34222/N$84810"
+    P1059.1
+    V1000.13;
+  "I$34222/N$84812"
+    C1058.1
+    P1030.1
+    T1001.3
+    V1000.25
+    V1000.26;
+  "I$34222/N$84813"
+    C1039.2
+    M1000.1
+    P1005.1
+    V1000.42;
+  "I$34222/N$85632"
+    P1060.1
+    V1000.34;
+  "I$34222/N$86241"
+    P1048.1
+    R1032.2
+    R1033.1
+    V1000.38;
+  "I$34222/N$86650"
+    C1049.2
+    P1046.1
+    R1029.2
+    R1030.1
+    R1041.1
+    V1000.39;
+  "I$34222/N$87267"
+    P1096.1
+    V1000.17;
+  "I$34222/N$87469"
+    C1019.2
+    C1023.1
+    P1086.1;
+  "I$34222/N$87472"
+    C1805.1
+    C1806.2
+    P1038.1;
+  "I$34222/N$87880"
+    P1080.1
+    V1000.43;
+  "I$34222/N$87881"
+    P1079.1
+    V1000.18;
+  "I$34222/N$87882"
+    P1078.1
+    V1000.19;
+  "I$34222/N$87883"
+    P1077.1
+    V1000.20;
+  "I$34222/N$88087"
+    D1009.3
+    D1010.3
+    P1057.1
+    R1038.1
+    R1039.1
+    R1040.1;
+  "I$34222/N$88748"
+    P1004.1
+    R1011A.1
+    R1012A.2
+    V1000.40
+    V1000.41;
+  "I$34222/N$88950"
+    C1030A.1
+    P1053.1
+    R1030B.1
+    R1039.2
+    V1000.4;
+  "I$34222/N$89153"
+    D1030.2
+    P1047.1
+    R1031.1;
+  "I$34222/N$89154"
+    D1030.1;
+  "I$34222/N$89563"
+    C1036.2
+    C1041.2
+    P1039.1;
+  "I$34222/N$89765"
+    C1040.2
+    C1042.1
+    P1040.1;
+  IGC_0
+    V2001.9
+    V7900.15;
+  IGC_1
+    V2001.7
+    V7900.16;
+  IGC_2
+    V2001.14
+    V7900.17;
+  IGC_3
+    V2001.12
+    V7900.18;
+  IN1_MTC
+    C7610.1
+    P7609.1
+    V2500A.76
+    V2500B.76
+    V7600.17;
+  IN2_MTC
+    V2500A.74
+    V2500B.74
+    V7600.8;
+  INTERLOCK_INT
+    T7002.5
+    V2500A.19
+    V2500B.19;
+  IV_0
+    V2500A.79
+    V2500B.79
+    V7000.43
+    V7500.12;
+  IV_1
+    V2500A.81
+    V2500B.81
+    V7000.42
+    V7500.17;
+  IV_2
+    V2500A.77
+    V2500B.77
+    V7000.39
+    V7500.22;
+  IV_3
+    V2500A.78
+    V2500B.78
+    V7000.6;
+  KNK_SW
+    C8304.1
+    P8315.1
+    R8307.1
+    R8308.2
+    V2500A.31
+    V2500B.31;
+  LED_STS_ACC_PWM
+    M7900.1
+    P7900.1
+    R7900.2
+    V2500A.168
+    V2500B.168
+    V7000.4;
+  LS_1_IP
+    C8288B.1
+    P8210.1
+    R8205.1
+    R8288A.1
+    V2500A.40
+    V2500B.40;
+  LS_1_RI
+    C8289B.1
+    P8213.1
+    R8206.1
+    R8289A.1
+    V2500A.39
+    V2500B.39;
+  LS_DOWN_1
+    C4302.1
+    P4304.1
+    R4303.2
+    V2500A.65
+    V2500B.65;
+  LS_DOWN_1_DIAG
+    P4310.1
+    T4301.1
+    V2500A.97
+    V2500B.97;
+  LS_UP_1
+    C4355A.1
+    P4354.1
+    R4353.2
+    R4355B.1
+    V2500A.59
+    V2500B.59;
+  LS_UP_1_DIAG
+    P4350.1
+    T4351.1
+    V2500A.135
+    V2500B.135;
+  LSH_DOWN_1
+    V2500A.158
+    V2500B.158
+    V7000.46
+    V7500.4;
+  LSH_UP_1
+    V2500A.98
+    V2500B.98
+    V7000.11
+    V7500.16;
+  MAP
+    C4505.1
+    P4505.1
+    R4025.4
+    V2500A.47
+    V2500B.47;
+  MISO
+    P2062.1
+    R2021.2
+    V2300A.15
+    V2300B.15
+    V6400.8
+    V7000.2
+    V7500.7
+    V7600.3
+    V7900.6
+    V8200.11;
+  MOSI
+    P2306.1
+    P6405.1
+    V2001.16
+    V2300A.14
+    V2300B.14
+    V6400.11
+    V7000.32
+    V7500.26
+    V7600.19
+    V7900.7
+    V8200.10;
+  "N$59053"
+    X1.28;
+  "N$59069"
+    X1.47;
+  "N$59071"
+    X1.49;
+  "N$59088"
+    X1.66;
+  "N$59094"
+    X1.72;
+  "N$59096"
+    X1.74;
+  "N$59762"
+    X1.46;
+  "N$59967"
+    X1.42;
+  "N$60815"
+    X1.22;
+  "N$60818"
+    X1.8;
+  "N$61043"
+    X1.75;
+  "N$61053"
+    X1.78;
+  "N$64986"
+    X1.118;
+  "N$67780"
+    X1.48;
+  NDIS_IV
+    C2304.1
+    P2304.1
+    P2309.1
+    R2308.1
+    V2300A.7
+    V2300B.7
+    V7000.33
+    V7500.10;
+  NGD_1_PWM
+    C4513.1
+    P4531.1
+    R4534.2
+    R4536.1
+    V2500A.86
+    V2500B.86;
+  OILP
+    V2500A.94
+    V2500B.94
+    V6400.13;
+  OPN_CS_COMP
+    D7000.2
+    P7029.1
+    V2500A.6
+    V2500B.6
+    V7005.4;
+  PEDAL_SW
+    M4003.2
+    M4003.5
+    P4080.1
+    V2500A.9
+    V2500B.9;
+  POEL_1
+    C5517.1
+    P5523.1
+    R5010.3
+    R5010.4
+    V2500A.160
+    V2500B.160;
+  POEL_2
+    C5417.1
+    P5423.1
+    R5010.1
+    R5010.2
+    V2500A.161
+    V2500B.161;
+  PORST
+    P1019.1
+    R1005.2
+    V2300A.11
+    V2300B.11
+    V2500A.121
+    V2500B.121
+    X20.23;
+  POT
+    P1052.1
+    P2302.1
+    R1036.2
+    V1000.1
+    V2300A.9
+    V2300B.9;
+  PVS_1
+    C4000.1
+    P4004.1
+    R4005.3
+    V2500A.38
+    V2500B.38;
+  PVS_2
+    C4011.1
+    P4008.1
+    R4005.1
+    V2500A.37
+    V2500B.37;
+  PWL_WDT
+    P1051.1
+    R1036.1
+    R1037.1
+    V2500A.71
+    V2500B.71;
+  RLY_AF
+    V2500A.156
+    V2500B.156
+    V7000.31;
+  RLY_BKB
+    V2500A.163
+    V2500B.163
+    V7000.55;
+  RLY_EFP_DIAG
+    C7950.1
+    P7951.1
+    R7951.1
+    R7952.1
+    V2500A.8
+    V2500B.8;
+  RLY_EFP_PWM
+    M7950.1
+    P7950.1
+    R7501.1
+    R7950.2
+    V2500A.144
+    V2500B.144
+    V7000.16;
+  RLY_MAIN
+    P7005.1
+    R7012.1
+    V2500A.18
+    V2500B.18
+    V7000.34;
+  SP_SWI
+    C5317.1
+    P5323.1
+    R5012.5
+    R5012.6
+    V2500A.147
+    V2500B.147;
+  SPARE_HEAT
+    V2500A.95
+    V2500B.95
+    V6400.23;
+  SPI_CLK
+    P6403.1
+    V2001.18
+    V2300A.13
+    V2300B.13
+    V6400.10
+    V7000.7
+    V7500.21
+    V7600.20
+    V7900.8
+    V8200.12;
+  SPVS_2_DIAG
+    C4010.1
+    P4011.1
+    R4005.4
+    V2300A.2
+    V2300B.2;
+  STR_FB
+    C7033.1
+    P7053.1
+    R5019.3
+    R5019.5
+    V2500A.17
+    V2500B.17;
+  STR_REQ
+    P7045.1
+    R7027.2
+    R7028.2
+    V2500A.167
+    V2500B.167
+    V7003.1;
+  STR_REQ_RST
+    T7003.2
+    V2500A.136
+    V2500B.136;
+  STS_SWI
+    C5028.1
+    P5023.1
+    R5019.2
+    R5019.8
+    V2500A.16
+    V2500B.16;
+  TCO_1
+    C4502.1
+    P4503.1
+    R4005.2
+    V2500A.35
+    V2500B.35;
+  TCO_2
+    C4511A.1
+    P4515.1
+    R4511B.1
+    R4525.3
+    V2500A.64
+    V2500B.64;
+  TIA
+    C4500.1
+    P4501.1
+    R4025.3
+    V2500A.42
+    V2500B.42;
+  TOG
+    C5006.1
+    P5002.1
+    R5013.2
+    R5014.1
+    V2500A.96
+    V2500B.96;
+  TPS_1
+    C4020.1
+    P4021.1
+    R4025.2
+    V2500A.44
+    V2500B.44;
+  TPS_2
+    C4030.1
+    P4031.1
+    R4025.1
+    V2500A.43
+    V2500B.43;
+  UV_EL
+    C4170.1
+    P4170.1
+    R4170.2
+    R4171.2
+    V2500A.50
+    V2500B.50;
+  UV_IGK
+    C4181.1
+    P4181.1
+    R4181.2
+    R4182.2
+    V2500A.58
+    V2500B.58;
+  V1V5
+    C1012.1
+    C1013.1
+    C2004.1
+    C2014.2
+    C2016.2
+    C2017.2
+    C2018.2
+    C2019.2
+    C2020.2
+    C2021.2
+    C2029.2
+    C2035.2
+    C2061.1
+    D1006.1
+    D1007.1
+    M1000.3
+    M2003.2
+    P1024.1
+    P1025.1
+    R1012A.1
+    R2045.1
+    R2081.1
+    R2083.2
+    V2500A.10
+    V2500A.23
+    V2500A.68
+    V2500A.84
+    V2500A.99
+    V2500A.105
+    V2500A.123
+    V2500A.153
+    V2500A.170
+    V2500B.10
+    V2500B.23
+    V2500B.68
+    V2500B.84
+    V2500B.99
+    V2500B.105
+    V2500B.123
+    V2500B.153
+    V2500B.170;
+  V3V3
+    C1003.1
+    C1004.1
+    C2003.2
+    C2005.1
+    C2007.2
+    C2008.2
+    C2009.2
+    C2010.1
+    C2011.1
+    C2012.2
+    C2013.2
+    C2022.2
+    C2024.2
+    C2027.1
+    C2028.1
+    C2031.2
+    C2036.1
+    C2060.1
+    C7030.1
+    C7034.1
+    C7050.1
+    D1002.1
+    D1007.2
+    D7011.3
+    P1012.1
+    P1017.1
+    R1001.1
+    R2000.1
+    R2010.1
+    R2015.1
+    R2030.1
+    R2080.1
+    R2082.1
+    R3312.1
+    R4301.1
+    R4351.1
+    R7019.1
+    R7025.1
+    R7033.1
+    R7602.1
+    R8310.1
+    T2004.4
+    T4301.2
+    T4351.2
+    V1000.24
+    V1000.31
+    V2500A.11
+    V2500A.20
+    V2500A.24
+    V2500A.26
+    V2500A.67
+    V2500A.69
+    V2500A.83
+    V2500A.100
+    V2500A.106
+    V2500A.124
+    V2500A.139
+    V2500A.141
+    V2500A.154
+    V2500A.171
+    V2500B.11
+    V2500B.20
+    V2500B.24
+    V2500B.26
+    V2500B.67
+    V2500B.69
+    V2500B.83
+    V2500B.100
+    V2500B.106
+    V2500B.124
+    V2500B.139
+    V2500B.141
+    V2500B.154
+    V2500B.171
+    V3320.5
+    V3350.5
+    V7002.5
+    V7003.5
+    V7005.5
+    X20.13;
+  V5V
+    C1002.1
+    C1005.1
+    C2023.2
+    C2026.2
+    C2030.1
+    C2351.1
+    C2352.1
+    C2353.1
+    C3301.1
+    C3351.1
+    C4400.1
+    C6403.1
+    C6404.1
+    C7001.1
+    C7002.1
+    C7501.1
+    C7502.1
+    C7605.1
+    C7607.1
+    C7905.1
+    C8208.2
+    C8214.2
+    C8307.1
+    D1002.2
+    D1006.2
+    D8301.1
+    D8301.3
+    M2000.1
+    M2003.1
+    P1013.1
+    P1014.1
+    P6402.1
+    P8222.1
+    R1000.1
+    R1002.1
+    R4502.1
+    R4506.1
+    R4513.1
+    R4514.1
+    R4532.1
+    R4533.1
+    R5001.1
+    R5031.1
+    R7004.1
+    R7010.1
+    R7050.1
+    R7099.1
+    T3301.2
+    T3301.4
+    V1000.27
+    V1000.28
+    V2001.20
+    V2300A.3
+    V2300A.4
+    V2300A.16
+    V2300B.3
+    V2300B.4
+    V2300B.16
+    V2500A.52
+    V2500A.54
+    V2500B.52
+    V2500B.54
+    V3300.3
+    V3320.3
+    V3350.3
+    V4410.1
+    V6400.2
+    V6400.6
+    V6400.9
+    V6400.28
+    V7000.1
+    V7000.56
+    V7500.6
+    V7500.30
+    V7600.4
+    V7600.21
+    V7900.2
+    V7900.11
+    V8200.15
+    V8200.28
+    V8301.5;
+  V_EL
+    C1806.1
+    C7003.1
+    C7503.1
+    C7606.2
+    C7608.1
+    C7609.1
+    C7615.1
+    D1030.3
+    D5001.3
+    D5003.3
+    D5005.3
+    D6402.1
+    D6404.2
+    D7001.1
+    D7002.2
+    D7004.2
+    D7601.2
+    P1802.1
+    P1803.1
+    R1032.1
+    R4170.1
+    V6400.30
+    V7000.30
+    V7500.28
+    V7600.7
+    X1.3;
+  V_EL_D5005
+    D5005.2
+    P5016.1
+    R5002.1;
+  V_IGK
+    C1020.1
+    D7001.2
+    P1094.1
+    R1010.1
+    R2351.2
+    R4181.1
+    T7001.1
+    X1.62;
+  V_OUT_1
+    C1001.1
+    C1006.1
+    R1016.3
+    S1006.1
+    S1009.1
+    S1010.1
+    S1012.1
+    S1013.1
+    V1000.29;
+  V_OUT_1_DIAG
+    C1022.1
+    P1035.1
+    R1016.5
+    R1016.6
+    V2500A.66
+    V2500B.66;
+  V_OUT_2
+    C1000.1
+    C1007.1
+    P1018.1
+    R1016.2
+    S1005.1
+    S1007.1
+    S1008.1
+    S1011.1
+    V1000.30;
+  V_OUT_2_DIAG
+    C1021.1
+    P1036.1
+    R1016.7
+    R1016.8
+    V2500A.60
+    V2500B.60;
+  V_VB
+    C1008.1
+    C1018.1
+    C1036.1
+    C1040.1
+    D1003.2
+    M1000.2
+    P1006.1
+    R3320.2
+    T1001.2
+    V1000.15;
+  V_VB_PROT
+    C3320.1
+    C3321.1
+    P3320.1
+    R3320.1
+    V3320.9
+    V3320.10;
+  VEH_SPEED
+    C5013.1
+    P5015.1
+    R5012.7
+    R5012.8
+    V2500A.145
+    V2500B.145;
+  VVT_IN_1
+    V2500A.152
+    V2500B.152
+    V7000.37;
+  WD_RST
+    P1099.1
+    R1014.1
+    T2004.6
+    V1000.2;
+  x1_sp
+    x1_sp.1;
+
+DEVICES
+  C1000
+    1.V_OUT_2
+    2.GND_KNK_1;
+  C1001
+    1.V_OUT_1
+    2.GND_KNK_1;
+  C1002
+    1.V5V
+    2.GND_KNK_1;
+  C1003
+    1.V3V3
+    2.GND_KNK_1;
+  C1004
+    1.V3V3
+    2.GND_KNK_1;
+  C1005
+    1.V5V
+    2.GND_KNK_1;
+  C1006
+    1.V_OUT_1
+    2.GND_KNK_1;
+  C1007
+    1.V_OUT_2
+    2.GND_KNK_1;
+  C1008
+    1.V_VB
+    2.GND_KNK_1;
+  C1009
+    1.GND_KNK_1
+    2."I$34222/N$63461";
+  C1010
+    1."I$34222/N$63462"
+    2.GND_KNK_1;
+  C1011
+    1."I$34222/N$84381"
+    2.GND_KNK_1;
+  C1012
+    1.V1V5
+    2.GND_KNK_1;
+  C1013
+    1.V1V5
+    2.GND_KNK_1;
+  C1014
+    1.C5V2_K
+    2.GND_KNK_1;
+  C1015
+    1.C5V1_K
+    2.GND_KNK_1;
+  C1018
+    1.V_VB
+    2.GND_KNK_1;
+  C1019
+    1.CVB
+    2."I$34222/N$87469";
+  C1020
+    1.V_IGK
+    2.GND_KNK_1;
+  C1021
+    1.V_OUT_2_DIAG
+    2.GND_KNK_1;
+  C1022
+    1.V_OUT_1_DIAG
+    2.GND_KNK_1;
+  C1023
+    1."I$34222/N$87469"
+    2.GND_KNK_1;
+  C1029
+    1.CBLS
+    2.GND_KNK_1;
+  C1030A
+    1."I$34222/N$88950"
+    2.GND_KNK_1;
+  C1031
+    1.C5V1_PVS_2
+    2.GND_KNK_1;
+  C1032
+    1.GND_KNK_1
+    2.C5V2_PVS_1;
+  C1033
+    1.C5V2_A1
+    2.GND_KNK_1;
+  C1034
+    1.C5V2_A
+    2.GND_KNK_1;
+  C1035
+    1.C5V1_TPS
+    2.GND_KNK_1;
+  C1036
+    1.V_VB
+    2."I$34222/N$89563";
+  C1037
+    1.C5V1_A11
+    2.GND_KNK_1;
+  C1038
+    1."I$34222/N$84591"
+    2.GND_KNK_1;
+  C1039
+    1.GND_KNK_1
+    2."I$34222/N$84813";
+  C1040
+    1.V_VB
+    2."I$34222/N$89765";
+  C1041
+    1.GND_KNK_1
+    2."I$34222/N$89563";
+  C1042
+    1."I$34222/N$89765"
+    2.GND_KNK_1;
+  C1043
+    1.C5V1_NGD
+    2.GND_KNK_1;
+  C1049
+    1.GND_KNK_1
+    2."I$34222/N$86650";
+  C1058
+    1."I$34222/N$84812"
+    2.GND_KNK_1;
+  C1805
+    1."I$34222/N$87472"
+    2.GND_KNK_1;
+  C1806
+    1.V_EL
+    2."I$34222/N$87472";
+  C2001
+    1."I$964/XTAL1"
+    2.GND_KNK_1;
+  C2002
+    1."I$964/N$117744"
+    2.GND_KNK_1;
+  C2003
+    1.GND_KNK_1
+    2.V3V3;
+  C2004
+    1.V1V5
+    2.GND_KNK_1;
+  C2005
+    1.V3V3
+    2.GND_KNK_1;
+  C2007
+    1.GND_KNK_1
+    2.V3V3;
+  C2008
+    1.GND_KNK_1
+    2.V3V3;
+  C2009
+    1.GND_KNK_1
+    2.V3V3;
+  C2010
+    1.V3V3
+    2.GND_KNK_1;
+  C2011
+    1.V3V3
+    2.GND_KNK_1;
+  C2012
+    1.GND_KNK_1
+    2.V3V3;
+  C2013
+    1.GND_KNK_1
+    2.V3V3;
+  C2014
+    1.GND_KNK_1
+    2.V1V5;
+  C2015
+    1.GND_KNK_1
+    2."I$964/VDD_SB";
+  C2016
+    1.GND_KNK_1
+    2.V1V5;
+  C2017
+    1.GND_KNK_1
+    2.V1V5;
+  C2018
+    1.GND_KNK_1
+    2.V1V5;
+  C2019
+    1.GND_KNK_1
+    2.V1V5;
+  C2020
+    1.GND_KNK_1
+    2.V1V5;
+  C2021
+    1.GND_KNK_1
+    2.V1V5;
+  C2022
+    1.GND_KNK_1
+    2.V3V3;
+  C2023
+    1.GND_KNK_1
+    2.V5V;
+  C2024
+    1.GND_KNK_1
+    2.V3V3;
+  C2025
+    1."I$964/N$130496"
+    2.GND_KNK_1;
+  C2026
+    1.GND_KNK_1
+    2.V5V;
+  C2027
+    1.V3V3
+    2.GND_KNK_1;
+  C2028
+    1.V3V3
+    2.GND_KNK_1;
+  C2029
+    1.GND_KNK_1
+    2.V1V5;
+  C2030
+    1.V5V
+    2.GND_KNK_1;
+  C2031
+    1.GND_KNK_1
+    2.V3V3;
+  C2035
+    1.GND_KNK_1
+    2.V1V5;
+  C2036
+    1.V3V3
+    2.GND_KNK_1;
+  C2060
+    1.V3V3
+    2.GND_KNK_1;
+  C2061
+    1.V1V5
+    2.GND_KNK_1;
+  C2303
+    1.EN_MTC
+    2.GND_KNK_1;
+  C2304
+    1.NDIS_IV
+    2.GND_KNK_1;
+  C2350
+    1."I$964/N$128460"
+    2.GND_KNK_1;
+  C2351
+    1.V5V
+    2.GND_KNK_1;
+  C2352
+    1.V5V
+    2.GND_KNK_1;
+  C2353
+    1.V5V
+    2.GND_KNK_1;
+  C3301
+    1.V5V
+    2.GND_KNK_1;
+  C3302
+    1.GND_KNK_1
+    2."I$963/N$94023";
+  C3303B
+    1.CDT_CAN_1P
+    2.GND_KNK_1;
+  C3304B
+    1.CDT_CAN_1M
+    2.GND_KNK_1;
+  C3320
+    1.V_VB_PROT
+    2.GND_KNK_1;
+  C3321
+    1.V_VB_PROT
+    2.GND_KNK_1;
+  C3351
+    1.V5V
+    2.GND_KNK_1;
+  C3352
+    1.GND_KNK_1
+    2."I$963/N$91509";
+  C3353B
+    1.CDT_CAN_2P
+    2.GND_KNK_1;
+  C3354B
+    1.CDT_CAN_2M
+    2.GND_KNK_1;
+  C4000
+    1.PVS_1
+    2.GND_KNK_1;
+  C4003
+    1.CPVS_1
+    2.GND_KNK_1;
+  C4010
+    1.SPVS_2_DIAG
+    2.GND_KNK_1;
+  C4011
+    1.PVS_2
+    2.GND_KNK_1;
+  C4014
+    1.CPVS_2
+    2.GND_KNK_1;
+  C4020
+    1.TPS_1
+    2.GND_KNK_1;
+  C4023
+    1.CTPS_1
+    2.GND_KNK_1;
+  C4030
+    1.TPS_2
+    2.GND_KNK_1;
+  C4033
+    1.CTPS_2
+    2.GND_KNK_1;
+  C4170
+    1.UV_EL
+    2.GND_KNK_1;
+  C4181
+    1.UV_IGK
+    2.GND_KNK_1;
+  C4301
+    1.CLS_DOWN_1
+    2.GND_KNK_1;
+  C4302
+    1.LS_DOWN_1
+    2.GND_KNK_1;
+  C4351
+    1.CLS_UP_1
+    2.GND_KNK_1;
+  C4355A
+    1.LS_UP_1
+    2.GND_KNK_1;
+  C4400
+    1.V5V
+    2.GND_KNK_1;
+  C4401A
+    1.AMP
+    2.GND_KNK_1;
+  C4500
+    1.TIA
+    2.GND_KNK_1;
+  C4501
+    1.CTCO_1
+    2.GND_KNK_1;
+  C4502
+    1.TCO_1
+    2.GND_KNK_1;
+  C4505
+    1.MAP
+    2.GND_KNK_1;
+  C4509A
+    1.HEATER_REG
+    2.GND_KNK_1;
+  C4510
+    1.CTCO_2
+    2.GND_KNK_1;
+  C4511A
+    1.TCO_2
+    2.GND_KNK_1;
+  C4512
+    1.CFPS
+    2.GND_KNK_1;
+  C4513
+    1.NGD_1_PWM
+    2.GND_KNK_1;
+  C4514
+    1.CHEATER_REG
+    2.GND_KNK_1;
+  C4515
+    1.CTIA
+    2.GND_KNK_1;
+  C4515A
+    1.FPS
+    2.GND_KNK_1;
+  C4517
+    1.CMAP
+    2.GND_KNK_1;
+  C4520
+    1.CBKB_FB
+    2.GND_KNK_1;
+  C4521A
+    1.BKB_FB
+    2.GND_KNK_1;
+  C4524
+    1.CEGR_FB
+    2.GND_KNK_1;
+  C4529A
+    1.EGR_FB
+    2.GND_KNK_1;
+  C4530
+    1.CNGD_1
+    2.GND_KNK_1;
+  C5000
+    1.CAM_1
+    2.GND_KNK_1;
+  C5001
+    1.CCRU_MAIN
+    2.GND_KNK_1;
+  C5002
+    1.CTOG
+    2.GND_KNK_1;
+  C5003
+    1.CBTS
+    2.GND_KNK_1;
+  C5004
+    1.CCS_1
+    2.GND_KNK_1;
+  C5005
+    1.CS_1
+    2.GND_KNK_1;
+  C5006
+    1.TOG
+    2.GND_KNK_1;
+  C5007
+    1.CRU_MAIN
+    2.GND_KNK_1;
+  C5008
+    1.BTS
+    2.GND_KNK_1;
+  C5009
+    1.CDFM
+    2.GND_KNK_1;
+  C5012
+    1.DFM
+    2.GND_KNK_1;
+  C5013
+    1.VEH_SPEED
+    2.GND_KNK_1;
+  C5015
+    1.CRK
+    2.GND_KNK_1;
+  C5017
+    1."/ACC_IN"
+    2.GND_KNK_1;
+  C5018
+    1.CVEH_SPEED
+    2.GND_KNK_1;
+  C5024
+    1.CCAM_1
+    2.GND_KNK_1;
+  C5025
+    1.CCRK
+    2.GND_KNK_1;
+  C5027
+    1.CSTS_SWI
+    2.GND_KNK_1;
+  C5028
+    1.STS_SWI
+    2.GND_KNK_1;
+  C5111
+    1.CACIN
+    2.GND_KNK_1;
+  C5117
+    1.ACIN
+    2.GND_KNK_1;
+  C5211
+    1.CACP
+    2.GND_KNK_1;
+  C5217
+    1.ACP
+    2.GND_KNK_1;
+  C5311
+    1.CSP_SWI
+    2.GND_KNK_1;
+  C5317
+    1.SP_SWI
+    2.GND_KNK_1;
+  C5411
+    1.CPOEL_2
+    2.GND_KNK_1;
+  C5417
+    1.POEL_2
+    2.GND_KNK_1;
+  C5511
+    1.CPOEL_1
+    2.GND_KNK_1;
+  C5517
+    1.POEL_1
+    2.GND_KNK_1;
+  C6401
+    1."I$760/N$101400"
+    2."I$760/N$106036";
+  C6403
+    1.V5V
+    2.GND_KNK_1;
+  C6404
+    1.V5V
+    2.GND_KNK_1;
+  C6405
+    1."I$760/N$106036"
+    2.GND_KNK_1;
+  C6406
+    1."I$760/N$101411"
+    2.GND_KNK_1;
+  C6407
+    1.CSPARE_HEAT
+    2.GND_KNK_1;
+  C6408
+    1.CEGR
+    2.GND_KNK_1;
+  C6409
+    1.CHWT
+    2.GND_KNK_1;
+  C6410
+    1.CESV_CWP
+    2.GND_KNK_1;
+  C6411
+    1.COILP
+    2.GND_KNK_1;
+  C7000
+    1."I$760/N$112356"
+    2.GND_KNK_1;
+  C7001
+    1.V5V
+    2.GND_KNK_1;
+  C7002
+    1.V5V
+    2.GND_KNK_1;
+  C7003
+    1.V_EL
+    2.GND_KNK_1;
+  C7005
+    1."I$760/N$98487"
+    2.GND_KNK_1;
+  C7006
+    1.CPN
+    2.GND_KNK_1;
+  C7007
+    1."I$760/N$109615"
+    2.GND_KNK_1;
+  C7008A
+    1.CIV_0
+    2.GND_KNK_1;
+  C7008B
+    1.CIV_0
+    2.GND_KNK_1;
+  C7009A
+    1.CLSH_UP_1
+    2.GND_KNK_1;
+  C7009B
+    1.CLSH_UP_1
+    2.GND_KNK_1;
+  C7010A
+    1.CLSH_DOWN_1
+    2.GND_KNK_1;
+  C7010B
+    1.CLSH_DOWN_1
+    2.GND_KNK_1;
+  C7011A
+    1.CIV_1
+    2.GND_KNK_1;
+  C7011B
+    1.CIV_1
+    2.GND_KNK_1;
+  C7012A
+    1.CIV_2
+    2.GND_KNK_1;
+  C7012B
+    1.CIV_2
+    2.GND_KNK_1;
+  C7013
+    1.CIV_3
+    2.GND_KNK_1;
+  C7014
+    1.CVVT_IN_1
+    2.GND_KNK_1;
+  C7015A
+    1.CCPS
+    2.GND_KNK_1;
+  C7015B
+    1.CCPS
+    2.GND_KNK_1;
+  C7016A
+    1.CRLY_MAIN
+    2.GND_KNK_1;
+  C7016B
+    1.CRLY_MAIN
+    2.GND_KNK_1;
+  C7017
+    1.CRLY_AF
+    2.GND_KNK_1;
+  C7018
+    1.CECF_1
+    2.GND_KNK_1;
+  C7019
+    1.CLED_STS_ACC_PWM
+    2.GND_KNK_1;
+  C7020A
+    1.CRLY_EFP_PWM
+    2.GND_KNK_1;
+  C7020B
+    1.CRLY_EFP_PWM
+    2.GND_KNK_1;
+  C7021
+    1.CRLY_BKB
+    2.GND_KNK_1;
+  C7022
+    1.CRLY_ST_1
+    2.GND_KNK_1;
+  C7023
+    1.CRLY_ST_2
+    2.GND_KNK_1;
+  C7024
+    1."I$760/N$74129"
+    2.CRLY_MAIN;
+  C7025
+    1."I$760/N$103666"
+    2.CRLY_MAIN;
+  C7026
+    1.CSTR_SWI
+    2.GND_KNK_1;
+  C7027
+    1."I$760/N$100996"
+    2.GND_KNK_1;
+  C7028
+    1."I$760/N$78589"
+    2.GND_KNK_1;
+  C7029
+    1."I$760/N$103666"
+    2.CRLY_ST_2;
+  C7030
+    1.V3V3
+    2.GND_KNK_1;
+  C7031
+    1.CSTR_FB
+    2.GND_KNK_1;
+  C7032
+    1.CSTR_FB
+    2.GND_KNK_1;
+  C7033
+    1.STR_FB
+    2.GND_KNK_1;
+  C7034
+    1.V3V3
+    2.GND_KNK_1;
+  C7050
+    1.V3V3
+    2.GND_KNK_1;
+  C7500
+    1."I$760/N$112357"
+    2.GND_KNK_1;
+  C7501
+    1.V5V
+    2.GND_KNK_1;
+  C7502
+    1.V5V
+    2.GND_KNK_1;
+  C7503
+    1.V_EL
+    2.GND_KNK_1;
+  C7505
+    1.CCPS
+    2.GND_KNK_1;
+  C7506
+    1."I$760/N$103667"
+    2.GND_KNK_1;
+  C7525
+    1.CRLY_MAIN
+    2."I$760/N$103667";
+  C7602
+    1.CMTCP
+    2.GND_KNK_1;
+  C7603
+    1.CMTCM
+    2.GND_KNK_1;
+  C7605
+    1.V5V
+    2.GND_KNK_1;
+  C7606
+    1."I$760/N$107324"
+    2.V_EL;
+  C7607
+    1.V5V
+    2.GND_KNK_1;
+  C7608
+    1.V_EL
+    2.GND_KNK_1;
+  C7609
+    1.V_EL
+    2.GND_KNK_1;
+  C7610
+    1.IN1_MTC
+    2.GND_KNK_1;
+  C7611
+    1.CMTCP
+    2.GND_KNK_1;
+  C7612
+    1.CMTCM
+    2.GND_KNK_1;
+  C7615
+    1.V_EL
+    2.GND_KNK_1;
+  C7901
+    1.CIGC_0
+    2.GND_KNK_1;
+  C7902
+    1.CIGC_1
+    2.GND_KNK_1;
+  C7903
+    1.CIGC_2
+    2.GND_KNK_1;
+  C7904
+    1.CIGC_3
+    2.GND_KNK_1;
+  C7905
+    1.V5V
+    2.GND_KNK_1;
+  C7950
+    1.RLY_EFP_DIAG
+    2.GND_KNK_1;
+  C8200
+    1.CLS_UP
+    2."I$963/N$79781";
+  C8201
+    1."I$963/N$28284"
+    2."I$963/N$89460";
+  C8205
+    1.CLS_UP
+    2.GND_KNK_1;
+  C8207
+    1."I$963/N$80607"
+    2."I$963/N$89667";
+  C8208
+    1.GND_KNK_1
+    2.V5V;
+  C8210
+    1."I$963/N$15730"
+    2."I$963/N$18265";
+  C8212A
+    1."I$963/N$92974"
+    2."I$963/N$89873";
+  C8212B
+    1."I$963/N$92974"
+    2."I$963/N$92973";
+  C8213
+    1.CLS_UP_1_IP
+    2.GND_KNK_1;
+  C8214
+    1.GND_KNK_1
+    2.V5V;
+  C8216
+    1.CLS_1_RC
+    2.GND_KNK_1;
+  C8235
+    1.CVGND_LS_UP_1
+    2.GND_KNK_1;
+  C8288B
+    1.LS_1_IP
+    2.GND_KNK_1;
+  C8289B
+    1.LS_1_RI
+    2.GND_KNK_1;
+  C8299A
+    1."I$963/N$92973"
+    2."I$963/N$92974";
+  C8302
+    1."I$963/N$91730"
+    2.GND_KNK_1;
+  C8304
+    1.KNK_SW
+    2.GND_KNK_1;
+  C8305
+    1.CKNK_1
+    2.GND_KNK_1;
+  C8307
+    1.V5V
+    2.GND_KNK_1;
+  C8309
+    1."I$963/N$90690"
+    2."I$963/N$91731";
+  C8311
+    1.GND_KNK_1
+    2."I$963/N$90896";
+  R3303A
+    1.GND_KNK_1
+    2.CDT_CAN_1P;
+  R3304A
+    1.GND_KNK_1
+    2.CDT_CAN_1M;
+  R3353A
+    1.GND_KNK_1
+    2.CDT_CAN_2P;
+  R3354A
+    1.GND_KNK_1
+    2.CDT_CAN_2M;
+  P1003
+    1."I$34222/N$84381";
+  P1004
+    1."I$34222/N$88748";
+  P1005
+    1."I$34222/N$84813";
+  P1006
+    1.V_VB;
+  P1007
+    1."I$34222/N$63713";
+  P1010
+    1."I$34222/N$63461";
+  P1011
+    1."I$34222/N$84599";
+  P1012
+    1.V3V3;
+  P1013
+    1.V5V;
+  P1014
+    1.V5V;
+  P1015
+    1.C5V1_TPS;
+  P1016
+    1.5V_RESET;
+  P1017
+    1.V3V3;
+  P1018
+    1.V_OUT_2;
+  P1019
+    1.PORST;
+  P1020
+    1."I$34222/N$63462";
+  P1024
+    1.V1V5;
+  P1025
+    1.V1V5;
+  P1030
+    1."I$34222/N$84812";
+  P1031
+    1."I$34222/N$84591";
+  P1033
+    1."I$34222/N$63707";
+  P1035
+    1.V_OUT_1_DIAG;
+  P1036
+    1.V_OUT_2_DIAG;
+  P1037
+    1.H_RESET;
+  P1038
+    1."I$34222/N$87472";
+  P1039
+    1."I$34222/N$89563";
+  P1040
+    1."I$34222/N$89765";
+  P1044
+    1.5V_RESET_TO_UC;
+  P1046
+    1."I$34222/N$86650";
+  P1047
+    1."I$34222/N$89153";
+  P1048
+    1."I$34222/N$86241";
+  P1049
+    1."I$34222/N$84590";
+  P1050
+    1.BLS;
+  P1051
+    1.PWL_WDT;
+  P1052
+    1.POT;
+  P1053
+    1."I$34222/N$88950";
+  P1057
+    1."I$34222/N$88087";
+  P1059
+    1."I$34222/N$84810";
+  P1060
+    1."I$34222/N$85632";
+  P1077
+    1."I$34222/N$87883";
+  P1078
+    1."I$34222/N$87882";
+  P1079
+    1."I$34222/N$87881";
+  P1080
+    1."I$34222/N$87880";
+  P1086
+    1."I$34222/N$87469";
+  P1094
+    1.V_IGK;
+  P1095
+    1.CSTR_SWI;
+  P1096
+    1."I$34222/N$87267";
+  P1097
+    1.CVB;
+  P1098
+    1.CBLS;
+  P1099
+    1.WD_RST;
+  P1802
+    1.V_EL;
+  P1803
+    1.V_EL;
+  P1830
+    1.GND_KNK_1;
+  P1831
+    1.GND_KNK_1;
+  P1832
+    1.GND_KNK_1;
+  P1833
+    1.GND_KNK_1;
+  P1834
+    1.GND_KNK_1;
+  P1835
+    1.GND_KNK_1;
+  P1836
+    1.GND_KNK_1;
+  P1837
+    1.GND_KNK_1;
+  P1838
+    1.GND_KNK_1;
+  P1839
+    1.GND_KNK_1;
+  P2001
+    1."I$964/ETK_S_BRKOUT";
+  P2002
+    1."I$964/N$134303";
+  P2003
+    1."I$964/N$135938";
+  P2008
+    1."I$964/TEST_MODE";
+  P2009
+    1."I$964/ETK_S_BRKIN";
+  P2011
+    1."I$964/ETK_S_TDI";
+  P2012
+    1."I$964/ETK_S_TMS";
+  P2013
+    1."I$964/ETK_S_TCK";
+  P2015
+    1."I$964/ETK_S_TRST";
+  P2016
+    1."I$964/ETK_S_TDO";
+  P2017
+    1."I$964/XTAL1";
+  P2023
+    1."I$964/XTAL2";
+  P2024
+    1."I$964/N$117744";
+  P2025
+    1."I$964/N$130495";
+  P2026
+    1."I$964/USPI_CLK1";
+  P2030
+    1."I$964/UEN_ATIC29_3V3";
+  P2050
+    1."I$964/N$130496";
+  P2053
+    1."I$964/VDD_SB";
+  P2054
+    1."I$964/N$117680";
+  P2055
+    1."I$964/N$117682";
+  P2058
+    1."I$964/IMMO_RC";
+  P2059
+    1."I$964/IMMO_RC_LOAD";
+  P2061
+    1."I$964/UMISO_1";
+  P2062
+    1.MISO;
+  P2093
+    1."I$964/N$117500";
+  P2094
+    1."I$964/N$124960";
+  P2099
+    1."I$964/UNMI";
+  P2300
+    1."I$964/UCS_MU";
+  P2301
+    1."I$964/N$128460";
+  P2302
+    1.POT;
+  P2304
+    1.NDIS_IV;
+  P2306
+    1.MOSI;
+  P2309
+    1.NDIS_IV;
+  P2310
+    1.EN_MTC;
+  P2311
+    1."I$964/N$135125";
+  P3300
+    1.CAN_1_RXD;
+  P3301
+    1."I$963/N$87202";
+  P3302
+    1."I$963/N$87201";
+  P3303
+    1.CAN_1_TXD;
+  P3307
+    1."I$963/N$94023";
+  P3309
+    1."I$963/N$92341";
+  P3320
+    1.V_VB_PROT;
+  P3321
+    1.CAN_WKU_EN;
+  P3322
+    1.CAN_WKU_STB;
+  P3323
+    1."I$963/N$95445";
+  P3324
+    1."I$963/N$95446";
+  P3325
+    1.CAN_WKU_ATIC91;
+  P3326
+    1.CAN_WKU;
+  P3327
+    1.CAN_WKU_ERR;
+  P3350
+    1.CAN_2_RXD;
+  P3353
+    1.CAN_2_TXD;
+  P3354
+    1."I$963/N$94021";
+  P3394
+    1.CDT_CAN_1M;
+  P3395
+    1.CDT_CAN_1P;
+  P3396
+    1.CDT_CAN_2M;
+  P3397
+    1.CDT_CAN_2P;
+  P3398
+    1.CDT_CAN_1M;
+  P3399
+    1.CDT_CAN_1P;
+  P4004
+    1.PVS_1;
+  P4008
+    1.PVS_2;
+  P4011
+    1.SPVS_2_DIAG;
+  P4021
+    1.TPS_1;
+  P4031
+    1.TPS_2;
+  P4080
+    1.PEDAL_SW;
+  P4084
+    1."I$758/N$97781";
+  P4085
+    1."I$758/N$97779";
+  P4086
+    1.CLS_DOWN_1;
+  P4087
+    1.CLS_UP_1;
+  P4088
+    1.CEGR_FB;
+  P4089
+    1.CFPS;
+  P4090
+    1.CMAP;
+  P4091
+    1.CTPS_2;
+  P4092
+    1.CTPS_1;
+  P4093
+    1.CTCO_2;
+  P4094
+    1.CHEATER_REG;
+  P4095
+    1.CTIA;
+  P4096
+    1.CBKB_FB;
+  P4097
+    1.CTCO_1;
+  P4098
+    1.CPVS_2;
+  P4099
+    1.CPVS_1;
+  P4170
+    1.UV_EL;
+  P4181
+    1.UV_IGK;
+  P4302
+    1."I$758/N$16983";
+  P4304
+    1.LS_DOWN_1;
+  P4310
+    1.LS_DOWN_1_DIAG;
+  P4350
+    1.LS_UP_1_DIAG;
+  P4352
+    1."I$758/N$94666";
+  P4354
+    1.LS_UP_1;
+  P4401
+    1."I$758/N$100874";
+  P4402
+    1.AMP;
+  P4501
+    1.TIA;
+  P4503
+    1.TCO_1;
+  P4505
+    1.MAP;
+  P4511
+    1.FPS;
+  P4513
+    1.HEATER_REG;
+  P4515
+    1.TCO_2;
+  P4525
+    1.EGR_FB;
+  P4529
+    1.BKB_FB;
+  P4531
+    1.NGD_1_PWM;
+  P5001
+    1.CAM_1;
+  P5002
+    1.TOG;
+  P5003
+    1.CRU_MAIN;
+  P5004
+    1.BTS;
+  P5005
+    1.CS_1;
+  P5010
+    1.DFM;
+  P5012
+    1."/ACC_IN";
+  P5015
+    1.VEH_SPEED;
+  P5016
+    1.V_EL_D5005;
+  P5017
+    1."I$7750/N$27667";
+  P5019
+    1.CRK;
+  P5020
+    1."I$7750/N$22456";
+  P5023
+    1.STS_SWI;
+  P5090
+    1.CNGD_1;
+  P5091
+    1.CSTS_SWI;
+  P5092
+    1.CCRK;
+  P5093
+    1.CCAM_1;
+  P5094
+    1.CTOG;
+  P5095
+    1.CVEH_SPEED;
+  P5096
+    1.CDFM;
+  P5097
+    1.CBTS;
+  P5098
+    1.CCRU_MAIN;
+  P5099
+    1.CCS_1;
+  P5121
+    1.CACIN;
+  P5123
+    1.ACIN;
+  P5221
+    1.CACP;
+  P5223
+    1.ACP;
+  P5311
+    1.CSP_SWI;
+  P5318
+    1."I$7750/N$26829";
+  P5321
+    1.CPOEL_1;
+  P5323
+    1.SP_SWI;
+  P5411
+    1.CPOEL_2;
+  P5423
+    1.POEL_2;
+  P5518
+    1."I$7750/N$27051";
+  P5519
+    1."I$7750/N$27052";
+  P5523
+    1.POEL_1;
+  P6401
+    1.5V_RESET;
+  P6402
+    1.V5V;
+  P6403
+    1.SPI_CLK;
+  P6404
+    1.CS_ATIC113;
+  P6405
+    1.MOSI;
+  P6407
+    1.GND_KNK_1;
+  P6408
+    1.EGR;
+  P6409
+    1.HWT;
+  P6410
+    1."I$760/N$106036";
+  P6411
+    1."I$760/N$101411";
+  P6412
+    1.COILP;
+  P6413
+    1.CESV_CWP;
+  P6414
+    1.CEGR;
+  P6415
+    1.CHWT;
+  P6416
+    1.CSPARE_HEAT;
+  P6495
+    1."I$760/N$101407";
+  P6499
+    1."I$760/N$101400";
+  P7000
+    1."I$760/N$74131";
+  P7002
+    1."I$760/N$98487";
+  P7005
+    1.RLY_MAIN;
+  P7019
+    1."I$760/N$74129";
+  P7026
+    1."I$760/N$98078";
+  P7028
+    1."I$760/N$108803";
+  P7029
+    1.OPN_CS_COMP;
+  P7030
+    1."I$760/N$104073";
+  P7031
+    1."I$760/N$104479";
+  P7033
+    1."I$760/N$109615";
+  P7040
+    1."I$760/N$78599";
+  P7041
+    1."I$760/N$78590";
+  P7042
+    1."I$760/N$78589";
+  P7043
+    1."I$760/N$78587";
+  P7044
+    1."I$760/N$78589";
+  P7045
+    1.STR_REQ;
+  P7046
+    1."I$760/N$100996";
+  P7048
+    1."I$760/N$78582";
+  P7049
+    1."I$760/N$78584";
+  P7050
+    1."I$760/N$78588";
+  P7051
+    1.DIS_ATIC92_94;
+  P7052
+    1."I$760/N$95432";
+  P7053
+    1.STR_FB;
+  P7059
+    1.CSTR_SWI;
+  P7074
+    1."I$760/N$108804";
+  P7075
+    1."I$760/N$103666";
+  P7076
+    1."I$760/N$102219";
+  P7077
+    1."I$760/N$112357";
+  P7078
+    1."I$760/N$112356";
+  P7082
+    1.CRLY_ST_2;
+  P7083
+    1.CRLY_ST_1;
+  P7084
+    1.CRLY_BKB;
+  P7085
+    1.CRLY_EFP_PWM;
+  P7086
+    1.CLED_STS_ACC_PWM;
+  P7087
+    1.CECF_1;
+  P7088
+    1.CRLY_AF;
+  P7089
+    1.CRLY_MAIN;
+  P7090
+    1.CCPS;
+  P7091
+    1.CVVT_IN_1;
+  P7092
+    1.CIV_3;
+  P7093
+    1.CIV_2;
+  P7094
+    1.CIV_1;
+  P7095
+    1.CIV_0;
+  P7096
+    1.CLSH_UP_1;
+  P7097
+    1.CLSH_DOWN_1;
+  P7098
+    1.CSTR_FB;
+  P7099
+    1.CPN;
+  P7500
+    1."I$760/EXTMOS_93(1)";
+  P7504
+    1."I$760/EXTMOS_93(0)";
+  P7505
+    1."I$760/N$103667";
+  P7508
+    1."I$760/N$110426";
+  P7510
+    1."I$760/N$118003";
+  P7511
+    1."I$760/N$117801";
+  P7512
+    1.ECF_1;
+  P7522
+    1.5V_RESET;
+  P7523
+    1.CS_ATIC92_94;
+  P7551
+    1."I$760/N$108804";
+  P7602
+    1."I$760/N$106704";
+  P7605
+    1.DI_MTC;
+  P7606
+    1."I$760/N$107324";
+  P7607
+    1.CMTCP;
+  P7608
+    1.CMTCM;
+  P7609
+    1.IN1_MTC;
+  P7620
+    1.CS_MTC;
+  P7900
+    1.LED_STS_ACC_PWM;
+  P7905
+    1."I$760/N$91530";
+  P7906
+    1."I$760/N$92806";
+  P7919
+    1."I$760/N$92805";
+  P7921
+    1."I$760/N$92804";
+  P7950
+    1.RLY_EFP_PWM;
+  P7951
+    1.RLY_EFP_DIAG;
+  P7994
+    1.CIGC_0;
+  P7995
+    1.CIGC_3;
+  P7996
+    1.CIGC_2;
+  P7997
+    1.CIGC_1;
+  P7998
+    1."I$760/N$72544";
+  P7999
+    1.CS_ATIC29;
+  P8201
+    1.CS_ATIC42;
+  P8203
+    1."I$963/N$79781";
+  P8206
+    1."I$963/N$28281";
+  P8207
+    1."I$963/N$28284";
+  P8208
+    1."I$963/N$28283";
+  P8209
+    1."I$963/N$18259";
+  P8210
+    1.LS_1_IP;
+  P8211
+    1."I$963/N$18262";
+  P8212
+    1."I$963/N$18260";
+  P8213
+    1.LS_1_RI;
+  P8214
+    1."I$963/N$89460";
+  P8215
+    1."I$963/N$32587";
+  P8216
+    1."I$963/N$18258";
+  P8217
+    1."I$963/N$32587";
+  P8218
+    1.CLS_UP;
+  P8219
+    1."I$963/N$18257";
+  P8220
+    1.CLS_UP;
+  P8221
+    1."I$963/N$80607";
+  P8222
+    1.V5V;
+  P8223
+    1.CVGND_LS_UP_1;
+  P8224
+    1.CVGND_LS_UP_1;
+  P8225
+    1."I$963/N$15730";
+  P8226
+    1."I$963/N$89667";
+  P8227
+    1."I$963/N$20347";
+  P8228
+    1."I$963/N$20347";
+  P8229
+    1."I$963/N$92973";
+  P8230
+    1."I$963/N$15730";
+  P8231
+    1."I$963/N$92973";
+  P8232
+    1."I$963/N$92974";
+  P8233
+    1."I$963/N$92974";
+  P8234
+    1.CLS_UP_1_IP;
+  P8235
+    1.CLS_UP_1_IP;
+  P8236
+    1."I$963/N$89873";
+  P8237
+    1.CLS_1_RC;
+  P8240
+    1."I$963/N$92973";
+  P8274
+    1."I$963/N$18265";
+  P8282
+    1.CLS_1_RC;
+  P8301
+    1."I$963/N$91731";
+  P8302
+    1."I$963/N$90690";
+  P8303
+    1."I$963/N$90896";
+  P8304
+    1."I$963/N$90897";
+  P8306
+    1."I$963/N$91730";
+  P8315
+    1.KNK_SW;
+  P8399
+    1.CKNK_1;
+  X1
+    1.GND_KNK_1
+    2.GND_KNK_1
+    3.V_EL
+    4.CLSH_UP_1
+    5.CLSH_DOWN_1
+    6.GND_KNK_1
+    7.GND_KNK_1
+    8."N$60818"
+    9.CVEH_SPEED
+    10.GND_KNK_1
+    11.GND_KNK_1
+    12.CLS_UP_1
+    13.CDFM
+    17.GND_KNK_1
+    18.C5V2_PVS_1
+    19.C5V1_PVS_2
+    20.CDT_CAN_1P
+    21.CDT_CAN_1M
+    22."N$60815"
+    23.CRLY_MAIN
+    24.CHWT
+    25.CTCO_2
+    26.CHEATER_REG
+    27.CBKB_FB
+    28."N$59053"
+    29.CSP_SWI
+    30.CACIN
+    31.GND_KNK_1
+    32.GND_KNK_1
+    36.GND_KNK_1
+    37.CLS_DOWN_1
+    38.CLS_UP
+    39.CNGD_1
+    40.CSTS_SWI
+    41.CPOEL_1
+    42."N$59967"
+    43.CPN
+    44.C5V1_NGD
+    45.GND_KNK_1
+    46."N$59762"
+    47."N$59069"
+    48."N$67780"
+    49."N$59071"
+    50.GND_KNK_1
+    51.CPVS_1
+    52.CLS_1_RC
+    53.CBLS
+    54.CLS_UP_1_IP
+    55.CSTR_SWI
+    56.CVGND_LS_UP_1
+    57.CRLY_ST_1
+    58.CDT_CAN_2P
+    59.CDT_CAN_2M
+    60.CRLY_ST_2
+    61.CRLY_AF
+    62.V_IGK
+    63.CBTS
+    64.CPVS_2
+    65.CCS_1
+    66."N$59088"
+    67.CSTR_FB
+    68.C5V2_K
+    69.CCRU_MAIN
+    70.C5V1_K
+    71.CRLY_BKB
+    72."N$59094"
+    73.CVB
+    74."N$59096"
+    75."N$61043"
+    76.CLED_STS_ACC_PWM
+    77.CECF_1
+    78."N$61053"
+    79.CSPARE_HEAT
+    80.CRLY_EFP_PWM
+    81.CACP
+    82.CFPS
+    83.GND_KNK_1
+    84.C5V1_A11
+    85.CIV_2
+    86.CIV_3
+    87.CIV_1
+    88.CIV_0
+    89.C5V1_TPS
+    90.CTPS_1
+    91.GND_KNK_1
+    92.CTPS_2
+    93.CTIA
+    94.CEGR_FB
+    95.CMAP
+    96.C5V2_A
+    97.C5V2_A1
+    98.GND_KNK_1
+    99.GND_KNK_1
+    100.CIGC_2
+    101.GND_KNK_1
+    102.CSHIELD_KNK_1
+    103.CIGC_3
+    104.CTCO_1
+    105.CCAM_1
+    106.CCRK
+    107.GND_KNK_1
+    108.GND_KNK_1
+    109.CKNK_1
+    110.CTOG
+    111.CCPS
+    112.CIGC_0
+    113.CIGC_1
+    114.CESV_CWP
+    115.CVVT_IN_1
+    116.COILP
+    117.CEGR
+    118."N$64986"
+    119.CMTCP
+    120.CPOEL_2
+    121.CMTCM;
+  X20
+    1."I$964/N$117668"
+    2."I$964/N$117682"
+    3.CAL_WAKEUP
+    4."I$964/ETK_S_BRKIN"
+    5."I$964/N$117680"
+    6."I$964/ETK_S_TMS"
+    7."I$964/ETK_S_TCK"
+    8."I$964/ETK_S_TDI"
+    9."I$964/ETK_S_VDDSBRAM_SENSE"
+    10."I$964/ETK_S_TRST"
+    11."I$964/N$117677"
+    12."I$964/N$126193"
+    13.V3V3
+    14."I$964/N$117723"
+    15."I$964/N$117725"
+    16.H_RESET
+    17.GND_KNK_1
+    18.GND_KNK_1
+    19.GND_KNK_1
+    20.GND_KNK_1
+    21.GND_KNK_1
+    22.GND_KNK_1
+    23.PORST
+    24."I$964/N$117669"
+    25."I$964/N$117679"
+    26."I$964/ETK_S_VDDSBRAM";
+  R1030B
+    1."I$34222/N$88950"
+    2.GND_KNK_1;
+  R1040
+    1."I$34222/N$88087"
+    2.CSTR_SWI;
+  R2045
+    1.V1V5
+    2."I$964/VDD_SB";
+  R2046
+    1."I$964/VDD_SB"
+    2."I$964/ETK_S_VDDSBRAM_SENSE";
+  R2080
+    1.V3V3
+    2."I$964/N$135938";
+  R2081
+    1.V1V5
+    2."I$964/N$134303";
+  R2082
+    1.V3V3
+    2."I$964/N$134303";
+  R2083
+    1."I$964/N$135938"
+    2.V1V5;
+  R3312
+    1.V3V3
+    2."I$963/N$95446";
+  R3313A
+    1.GND_KNK_1
+    2."I$963/N$95445";
+  R3321
+    1.CAN_WKU_STB
+    2."I$963/N$95445";
+  R3323
+    1."I$963/N$95446"
+    2."I$963/N$94023";
+  R4355B
+    1.LS_UP_1
+    2.GND_KNK_1;
+  R4401B
+    1.AMP
+    2.GND_KNK_1;
+  R4509B
+    1.HEATER_REG
+    2.GND_KNK_1;
+  R4511B
+    1.TCO_2
+    2.GND_KNK_1;
+  R4515B
+    1.FPS
+    2.GND_KNK_1;
+  R4521B
+    1.BKB_FB
+    2.GND_KNK_1;
+  R4529B
+    1.EGR_FB
+    2.GND_KNK_1;
+  R6401
+    1.EGR
+    2.HWT;
+  R6404
+    1.CEGR
+    2.CHWT;
+  R7027
+    1."I$760/N$100996"
+    2.STR_REQ;
+  R7501
+    1.RLY_EFP_PWM
+    2."I$760/N$118003";
+  R7502
+    1.ECF_1
+    2."I$760/N$118003";
+  R7503
+    1."I$760/N$117801"
+    2.CRLY_EFP_PWM;
+  R7504
+    1."I$760/N$117801"
+    2.CECF_1;
+  R8288A
+    1.LS_1_IP
+    2.GND_KNK_1;
+  R8289A
+    1.LS_1_RI
+    2.GND_KNK_1;
+  R8304
+    1."I$963/N$91731"
+    2."I$963/N$91730";
+  S1005
+    1.V_OUT_2
+    2.C5V2_A;
+  S1006
+    1.V_OUT_1
+    2.C5V1_TPS;
+  S1007
+    1.V_OUT_2
+    2.C5V2_K;
+  S1008
+    1.V_OUT_2
+    2.C5V2_PVS_1;
+  S1009
+    1.V_OUT_1
+    2.C5V1_K;
+  S1010
+    1.V_OUT_1
+    2.C5V1_PVS_2;
+  S1011
+    1.V_OUT_2
+    2.C5V2_A1;
+  S1012
+    1.V_OUT_1
+    2.C5V1_A11;
+  S1013
+    1.V_OUT_1
+    2.C5V1_NGD;
+  S7501
+    1."I$760/EXTMOS_93(0)"
+    2.CLSH_UP_1;
+  S7502
+    1."I$760/EXTMOS_93(2)"
+    2."I$760/N$108804";
+  S7503
+    1.ACC_IN
+    2.CLED_STS_ACC_PWM;
+  S7950
+    1.CRLY_EFP_PWM
+    2."I$760/N$117393";
+  S8301
+    1.CSHIELD_KNK_1
+    2.GND_KNK_1;
+  x1_sp
+    1.x1_sp
+    2.gnd_sp;
+  D1002
+    1.V3V3
+    2.V5V;
+  D1003
+    1.CVB
+    2.V_VB;
+  D1004
+    1."I$34222/N$63707"
+    2.CVB;
+  D1005
+    1."I$34222/N$63707"
+    2.GND_KNK_1;
+  D1006
+    1.V1V5
+    2.V5V;
+  D1007
+    1.V1V5
+    2.V3V3;
+  D1009
+    1.CSTR_SWI
+    2.CAL_WAKEUP
+    3."I$34222/N$88087";
+  D1010
+    1.CAN_WKU_ATIC91
+    2.CAN_WKU_ATIC91
+    3."I$34222/N$88087";
+  D1030
+    1."I$34222/N$89154"
+    2."I$34222/N$89153"
+    3.V_EL;
+  D2000
+    1."I$964/ETK_S_VDDSBRAM"
+    2."I$964/ETK_S_VDDSBRAM_SENSE";
+  D5001
+    1."I$7750/N$27667"
+    2."I$7750/N$22456"
+    3.V_EL;
+  D5003
+    1."I$7750/N$27052"
+    2."I$7750/N$27051"
+    3.V_EL;
+  D5005
+    1."I$7750/N$26829"
+    2.V_EL_D5005
+    3.V_EL;
+  D6402
+    1.V_EL
+    2."I$760/N$106036";
+  D6404
+    1.CEGR
+    2.V_EL;
+  D7000
+    1."I$760/N$98078"
+    2.OPN_CS_COMP
+    3."I$760/N$98487";
+  D7001
+    1.V_EL
+    2.V_IGK
+    3."I$760/N$108803";
+  D7002
+    1.CLSH_UP_1
+    2.V_EL;
+  D7003
+    1.CRLY_MAIN
+    2."I$760/N$103666";
+  D7004
+    1.CVVT_IN_1
+    2.V_EL;
+  D7005
+    1.CRLY_MAIN
+    2."I$760/N$74129";
+  D7007
+    1."I$760/N$78587"
+    2."I$760/N$78587"
+    3."I$760/N$78589";
+  D7008
+    1."I$964/IMMO_RC_LOAD"
+    2."I$964/IMMO_RC_LOAD"
+    3."I$964/N$130495";
+  D7009
+    1.CRLY_ST_2
+    2."I$760/N$103666";
+  D7011
+    1."I$760/N$109615"
+    2."I$760/N$109615"
+    3.V3V3;
+  D7032
+    1."I$760/N$95432"
+    2."$NONE$"
+    3."$NONE$"
+    4.CSTR_FB;
+  D7503
+    1.CRLY_MAIN
+    2."I$760/N$103667";
+  D7601
+    1.GND_KNK_1
+    2.V_EL;
+  D8301
+    1.V5V
+    2."I$963/N$90690"
+    3.V5V;
+  L3301
+    1.CDT_CAN_1P
+    2.CDT_CAN_1M
+    3."I$963/N$94021"
+    4."I$963/N$92341";
+  M1000
+    1."I$34222/N$84813"
+    2.V_VB
+    3.V1V5;
+  M2000
+    1.V5V
+    2."I$964/IMMO_RC"
+    3."I$964/N$130496";
+  M2003
+    1.V5V
+    2.V1V5
+    3."I$964/ETK_S_VDDSBRAM_SENSE";
+  M4003
+    1.GND_KNK_1
+    2.PEDAL_SW
+    3."I$758/N$97781"
+    4.GND_KNK_1
+    5.PEDAL_SW
+    6."I$758/N$97779";
+  M7500
+    1."I$760/N$110426"
+    2.CLSH_UP_1
+    3."I$760/N$108804";
+  M7900
+    1.LED_STS_ACC_PWM
+    2.CLED_STS_ACC_PWM
+    3.GND_KNK_1
+    4.GND_KNK_1;
+  M7950
+    1.RLY_EFP_PWM
+    2.CRLY_EFP_PWM
+    3.GND_KNK_1
+    4.GND_KNK_1;
+  Q2000
+    1."I$964/N$117744"
+    2."I$964/XTAL1";
+  R1016
+    1.GND_KNK_1
+    2.V_OUT_2
+    3.V_OUT_1
+    4.GND_KNK_1
+    5.V_OUT_1_DIAG
+    6.V_OUT_1_DIAG
+    7.V_OUT_2_DIAG
+    8.V_OUT_2_DIAG;
+  R4005
+    1.PVS_2
+    2.TCO_1
+    3.PVS_1
+    4.SPVS_2_DIAG
+    5.CPVS_2
+    6.CPVS_1
+    7.CTCO_1
+    8.CPVS_2;
+  R4025
+    1.TPS_2
+    2.TPS_1
+    3.TIA
+    4.MAP
+    5.CMAP
+    6.CTIA
+    7.CTPS_1
+    8.CTPS_2;
+  R4525
+    1.EGR_FB
+    2.FPS
+    3.TCO_2
+    4.HEATER_REG
+    5.CHEATER_REG
+    6.CTCO_2
+    7.CFPS
+    8.CEGR_FB;
+  R5007
+    1.CS_1
+    2.CS_1
+    3.CRU_MAIN
+    4.CRU_MAIN
+    5.GND_KNK_1
+    6.CCRU_MAIN
+    7.CCS_1
+    8.GND_KNK_1;
+  R5008
+    1.BTS
+    2.BTS
+    3.DFM
+    4.DFM
+    5.CDFM
+    6.GND_KNK_1
+    7.GND_KNK_1
+    8.CBTS;
+  R5010
+    1.POEL_2
+    2.POEL_2
+    3.POEL_1
+    4.POEL_1
+    5.CPOEL_1
+    6.GND_KNK_1
+    7.GND_KNK_1
+    8.CPOEL_2;
+  R5011
+    1.CACP
+    2.GND_KNK_1
+    3.GND_KNK_1
+    4.CACIN
+    5.ACIN
+    6.ACIN
+    7.ACP
+    8.ACP;
+  R5012
+    1.CVEH_SPEED
+    2.GND_KNK_1
+    3.GND_KNK_1
+    4.CSP_SWI
+    5.SP_SWI
+    6.SP_SWI
+    7.VEH_SPEED
+    8.VEH_SPEED;
+  R5019
+    1.CSTS_SWI
+    2.STS_SWI
+    3.STR_FB
+    4."I$760/N$95432"
+    5.STR_FB
+    6.GND_KNK_1
+    7.GND_KNK_1
+    8.STS_SWI;
+  T1001
+    1."I$34222/N$84591"
+    2.V_VB
+    3."I$34222/N$84812";
+  T2004
+    1.GND_KNK_1
+    2."I$964/N$117728"
+    3."I$964/N$117728"
+    4.V3V3
+    5."I$964/N$117677"
+    6.WD_RST;
+  T3301
+    1.GND_KNK_1
+    2.V5V
+    3."I$963/N$87202"
+    4.V5V
+    5.GND_KNK_1
+    6."I$963/N$87201";
+  T4301
+    1.LS_DOWN_1_DIAG
+    2.V3V3
+    3."I$758/N$16983";
+  T4351
+    1.LS_UP_1_DIAG
+    2.V3V3
+    3."I$758/N$94666";
+  T7000
+    1.GND_KNK_1
+    2."I$760/N$98487"
+    3."I$760/N$104479"
+    4.GND_KNK_1
+    5."I$760/N$98487"
+    6."I$760/N$104073";
+  T7001
+    1.V_IGK
+    2.GND_KNK_1
+    3."I$760/N$98078";
+  T7002
+    1."$NONE$"
+    2."$NONE$"
+    3."I$760/N$109615"
+    4.GND_KNK_1
+    5.INTERLOCK_INT
+    6."$NONE$";
+  T7003
+    1.GND_KNK_1
+    2.STR_REQ_RST
+    3."$NONE$"
+    4."$NONE$"
+    5."$NONE$"
+    6."I$760/N$78588";
+  V1000
+    1.POT
+    2.WD_RST
+    3."I$34222/N$63713"
+    4."I$34222/N$88950"
+    5."I$34222/N$84381"
+    6.GND_KNK_1
+    7."I$34222/N$84599"
+    8.5V_RESET
+    9.H_RESET
+    10."I$34222/N$63462"
+    11."I$34222/N$63461"
+    12.GND_KNK_1
+    13."I$34222/N$84810"
+    14.GND_KNK_1
+    15.V_VB
+    16."I$34222/N$84591"
+    17."I$34222/N$87267"
+    18."I$34222/N$87881"
+    19."I$34222/N$87882"
+    20."I$34222/N$87883"
+    21.GND_KNK_1
+    22.GND_KNK_1
+    23.GND_KNK_1
+    24.V3V3
+    25."I$34222/N$84812"
+    26."I$34222/N$84812"
+    27.V5V
+    28.V5V
+    29.V_OUT_1
+    30.V_OUT_2
+    31.V3V3
+    32.GND_KNK_1
+    33.GND_KNK_1
+    34."I$34222/N$85632"
+    35.GND_KNK_1
+    36.GND_KNK_1
+    37."I$34222/N$84590"
+    38."I$34222/N$86241"
+    39."I$34222/N$86650"
+    40."I$34222/N$88748"
+    41."I$34222/N$88748"
+    42."I$34222/N$84813"
+    43."I$34222/N$87880"
+    44.GND_KNK_1
+    COOL.GND_KNK_1;
+  V2001
+    1.GND_KNK_1
+    2."I$964/USPI_CLK1"
+    3.CS_ATIC29
+    4."I$964/UMOSI1"
+    5.EN_ATIC29
+    6."I$964/UIGC_2_3V3"
+    7.IGC_1
+    8."I$964/UIGC_3_3V3"
+    9.IGC_0
+    10.GND_KNK_1
+    11."I$964/UIGC_0_3V3"
+    12.IGC_3
+    13."I$964/UIGC_1_3V3"
+    14.IGC_2
+    15."I$964/UEN_ATIC29_3V3"
+    16.MOSI
+    17."I$964/UCS_ATIC29_3V3"
+    18.SPI_CLK
+    19.GND_KNK_1
+    20.V5V;
+  V2300A
+    1.GND_KNK_1
+    2.SPVS_2_DIAG
+    3.V5V
+    4.V5V
+    5."I$964/N$128460"
+    6."I$964/N$135125"
+    7.NDIS_IV
+    8.EN_MTC
+    9.POT
+    10.5V_RESET
+    11.PORST
+    12."I$964/UCS_MU"
+    13.SPI_CLK
+    14.MOSI
+    15.MISO
+    16.V5V;
+  V2300B
+    1.GND_KNK_1
+    2.SPVS_2_DIAG
+    3.V5V
+    4.V5V
+    5."I$964/N$128460"
+    6."I$964/N$135125"
+    7.NDIS_IV
+    8.EN_MTC
+    9.POT
+    10.5V_RESET
+    11.PORST
+    12."I$964/UCS_MU"
+    13.SPI_CLK
+    14.MOSI
+    15.MISO
+    16.V5V;
+  V2500A
+    1.CAN_WKU
+    2.CS_1
+    3.CRK
+    4.ESV_CWP
+    5.CAN_WKU_ERR
+    6.OPN_CS_COMP
+    7.BTS
+    8.RLY_EFP_DIAG
+    9.PEDAL_SW
+    10.V1V5
+    11.V3V3
+    12.GND_KNK_1
+    13.CRU_MAIN
+    14."I$964/N$132610"
+    15."I$964/N$132623"
+    16.STS_SWI
+    17.STR_FB
+    18.RLY_MAIN
+    19.INTERLOCK_INT
+    20.V3V3
+    21."I$964/VDD_SB"
+    22.GND_KNK_1
+    23.V1V5
+    24.V3V3
+    25.GND_KNK_1
+    26.V3V3
+    27.GND_KNK_1
+    28.GND_KNK_1
+    29.GND_KNK_1
+    30.GND_KNK_1
+    31.KNK_SW
+    32."I$964/IMMO_RC"
+    33.GND_KNK_1
+    34.GND_KNK_1
+    35.TCO_1
+    36.GND_KNK_1
+    37.PVS_2
+    38.PVS_1
+    39.LS_1_RI
+    40.LS_1_IP
+    41.GND_KNK_1
+    42.TIA
+    43.TPS_2
+    44.TPS_1
+    45.GND_KNK_1
+    46.GND_KNK_1
+    47.MAP
+    48.GND_KNK_1
+    49.GND_KNK_1
+    50.UV_EL
+    51.GND_KNK_1
+    52.V5V
+    53.GND_KNK_1
+    54.V5V
+    55.AMP
+    56.BKB_FB
+    57.EGR_FB
+    58.UV_IGK
+    59.LS_UP_1
+    60.V_OUT_2_DIAG
+    61.GND_KNK_1
+    62.HEATER_REG
+    63.FPS
+    64.TCO_2
+    65.LS_DOWN_1
+    66.V_OUT_1_DIAG
+    67.V3V3
+    68.V1V5
+    69.V3V3
+    70.GND_KNK_1
+    71.PWL_WDT
+    72.CAN_WKU_STB
+    73.CAN_WKU_EN
+    74.IN2_MTC
+    75."I$964/UCS_ATIC29_3V3"
+    76.IN1_MTC
+    77.IV_2
+    78.IV_3
+    79.IV_0
+    80.DI_MTC
+    81.IV_1
+    82.GND_KNK_1
+    83.V3V3
+    84.V1V5
+    85.GND_KNK_1
+    86.NGD_1_PWM
+    87.EGR
+    88."I$964/UEN_ATIC29_3V3"
+    89."I$964/N$135938"
+    90.HWT
+    91."I$964/N$134303"
+    92.GND_KNK_1
+    93.BLS
+    94.OILP
+    95.SPARE_HEAT
+    96.TOG
+    97.LS_DOWN_1_DIAG
+    98.LSH_UP_1
+    99.V1V5
+    100.V3V3
+    101.GND_KNK_1
+    102."I$964/XTAL1"
+    103."I$964/XTAL2"
+    104.GND_KNK_1
+    105.V1V5
+    106.V3V3
+    107."I$964/UIGC_0_3V3"
+    108."I$964/UIGC_2_3V3"
+    109.CAM_1
+    110."I$964/UIGC_3_3V3"
+    111."I$964/ETK_S_TDI"
+    112."I$964/ETK_S_TMS"
+    113."I$964/ETK_S_TDO"
+    114."I$964/ETK_S_TRST"
+    115."I$964/ETK_S_TCK"
+    116."I$964/ETK_S_BRKOUT"
+    117."I$964/ETK_S_BRKIN"
+    118."I$964/TEST_MODE"
+    119."I$964/UIGC_1_3V3"
+    120."I$964/UNMI"
+    121.PORST
+    122.H_RESET
+    123.V1V5
+    124.V3V3
+    125.GND_KNK_1
+    126.CS_MTC
+    127."I$964/UCS_MU"
+    128."I$964/N$133284"
+    129."I$964/USPI_CLK1"
+    130."I$964/UMISO_1"
+    131.CS_ATIC113
+    132."I$964/UMOSI1"
+    133.CAN_2_TXD
+    134.CAN_2_RXD
+    135.LS_UP_1_DIAG
+    136.STR_REQ_RST
+    137.5V_RESET_TO_UC
+    138."I$964/N$133285"
+    139.V3V3
+    140.GND_KNK_1
+    141.V3V3
+    142.CAN_1_TXD
+    143.CAN_1_RXD
+    144.RLY_EFP_PWM
+    145.VEH_SPEED
+    146."/ACC_IN"
+    147.SP_SWI
+    148.CPS
+    149.ECF_1
+    150.ACP
+    151.ACIN
+    152.VVT_IN_1
+    153.V1V5
+    154.V3V3
+    155.GND_KNK_1
+    156.RLY_AF
+    157."I$964/N$132608"
+    158.LSH_DOWN_1
+    159."I$964/N$132606"
+    160.POEL_1
+    161.POEL_2
+    162."I$964/N$132656"
+    163.RLY_BKB
+    164.CS_ATIC92_94
+    165."I$964/N$132654"
+    166.DFM
+    167.STR_REQ
+    168.LED_STS_ACC_PWM
+    169.DIS_ATIC92_94
+    170.V1V5
+    171.V3V3
+    172.GND_KNK_1
+    173."I$964/N$124960"
+    174."I$964/N$117500"
+    175.CS_ATIC42
+    176."I$964/IMMO_RC_LOAD";
+  V2500B
+    1.CAN_WKU
+    2.CS_1
+    3.CRK
+    4.ESV_CWP
+    5.CAN_WKU_ERR
+    6.OPN_CS_COMP
+    7.BTS
+    8.RLY_EFP_DIAG
+    9.PEDAL_SW
+    10.V1V5
+    11.V3V3
+    12.GND_KNK_1
+    13.CRU_MAIN
+    14."I$964/N$132610"
+    15."I$964/N$132623"
+    16.STS_SWI
+    17.STR_FB
+    18.RLY_MAIN
+    19.INTERLOCK_INT
+    20.V3V3
+    21."I$964/VDD_SB"
+    22.GND_KNK_1
+    23.V1V5
+    24.V3V3
+    25.GND_KNK_1
+    26.V3V3
+    27.GND_KNK_1
+    28.GND_KNK_1
+    29.GND_KNK_1
+    30.GND_KNK_1
+    31.KNK_SW
+    32."I$964/IMMO_RC"
+    33.GND_KNK_1
+    34.GND_KNK_1
+    35.TCO_1
+    36.GND_KNK_1
+    37.PVS_2
+    38.PVS_1
+    39.LS_1_RI
+    40.LS_1_IP
+    41.GND_KNK_1
+    42.TIA
+    43.TPS_2
+    44.TPS_1
+    45.GND_KNK_1
+    46.GND_KNK_1
+    47.MAP
+    48.GND_KNK_1
+    49.GND_KNK_1
+    50.UV_EL
+    51.GND_KNK_1
+    52.V5V
+    53.GND_KNK_1
+    54.V5V
+    55.AMP
+    56.BKB_FB
+    57.EGR_FB
+    58.UV_IGK
+    59.LS_UP_1
+    60.V_OUT_2_DIAG
+    61.GND_KNK_1
+    62.HEATER_REG
+    63.FPS
+    64.TCO_2
+    65.LS_DOWN_1
+    66.V_OUT_1_DIAG
+    67.V3V3
+    68.V1V5
+    69.V3V3
+    70.GND_KNK_1
+    71.PWL_WDT
+    72.CAN_WKU_STB
+    73.CAN_WKU_EN
+    74.IN2_MTC
+    75."I$964/UCS_ATIC29_3V3"
+    76.IN1_MTC
+    77.IV_2
+    78.IV_3
+    79.IV_0
+    80.DI_MTC
+    81.IV_1
+    82.GND_KNK_1
+    83.V3V3
+    84.V1V5
+    85.GND_KNK_1
+    86.NGD_1_PWM
+    87.EGR
+    88."I$964/UEN_ATIC29_3V3"
+    89."I$964/N$135938"
+    90.HWT
+    91."I$964/N$134303"
+    92.GND_KNK_1
+    93.BLS
+    94.OILP
+    95.SPARE_HEAT
+    96.TOG
+    97.LS_DOWN_1_DIAG
+    98.LSH_UP_1
+    99.V1V5
+    100.V3V3
+    101.GND_KNK_1
+    102."I$964/XTAL1"
+    103."I$964/XTAL2"
+    104.GND_KNK_1
+    105.V1V5
+    106.V3V3
+    107."I$964/UIGC_0_3V3"
+    108."I$964/UIGC_2_3V3"
+    109.CAM_1
+    110."I$964/UIGC_3_3V3"
+    111."I$964/ETK_S_TDI"
+    112."I$964/ETK_S_TMS"
+    113."I$964/ETK_S_TDO"
+    114."I$964/ETK_S_TRST"
+    115."I$964/ETK_S_TCK"
+    116."I$964/ETK_S_BRKOUT"
+    117."I$964/ETK_S_BRKIN"
+    118."I$964/TEST_MODE"
+    119."I$964/UIGC_1_3V3"
+    120."I$964/UNMI"
+    121.PORST
+    122.H_RESET
+    123.V1V5
+    124.V3V3
+    125.GND_KNK_1
+    126.CS_MTC
+    127."I$964/UCS_MU"
+    128."I$964/N$133284"
+    129."I$964/USPI_CLK1"
+    130."I$964/UMISO_1"
+    131.CS_ATIC113
+    132."I$964/UMOSI1"
+    133.CAN_2_TXD
+    134.CAN_2_RXD
+    135.LS_UP_1_DIAG
+    136.STR_REQ_RST
+    137.5V_RESET_TO_UC
+    138."I$964/N$133285"
+    139.V3V3
+    140.GND_KNK_1
+    141.V3V3
+    142.CAN_1_TXD
+    143.CAN_1_RXD
+    144.RLY_EFP_PWM
+    145.VEH_SPEED
+    146."/ACC_IN"
+    147.SP_SWI
+    148.CPS
+    149.ECF_1
+    150.ACP
+    151.ACIN
+    152.VVT_IN_1
+    153.V1V5
+    154.V3V3
+    155.GND_KNK_1
+    156.RLY_AF
+    157."I$964/N$132608"
+    158.LSH_DOWN_1
+    159."I$964/N$132606"
+    160.POEL_1
+    161.POEL_2
+    162."I$964/N$132656"
+    163.RLY_BKB
+    164.CS_ATIC92_94
+    165."I$964/N$132654"
+    166.DFM
+    167.STR_REQ
+    168.LED_STS_ACC_PWM
+    169.DIS_ATIC92_94
+    170.V1V5
+    171.V3V3
+    172.GND_KNK_1
+    173."I$964/N$124960"
+    174."I$964/N$117500"
+    175.CS_ATIC42
+    176."I$964/IMMO_RC_LOAD";
+  V3300
+    1.CAN_1_TXD
+    2.GND_KNK_1
+    3.V5V
+    4.CAN_1_RXD
+    5."I$963/N$95446"
+    6."I$963/N$94021"
+    7."I$963/N$92341"
+    8."I$963/N$95445";
+  V3320
+    1.CAN_1_TXD
+    2.GND_KNK_1
+    3.V5V
+    4.CAN_1_RXD
+    5.V3V3
+    6.CAN_WKU_EN
+    7.CAN_WKU_ATIC91
+    8.CAN_WKU_ERR
+    9.V_VB_PROT
+    10.V_VB_PROT
+    11."I$963/N$95446"
+    12."I$963/N$94021"
+    13."I$963/N$92341"
+    14."I$963/N$95445";
+  V3350
+    1.CAN_2_TXD
+    2.GND_KNK_1
+    3.V5V
+    4.CAN_2_RXD
+    5.V3V3
+    6.CDT_CAN_2M
+    7.CDT_CAN_2P
+    8.GND_KNK_1;
+  V4410
+    1.V5V
+    2.GND_KNK_1
+    3."I$758/N$100874"
+    4.GND_KNK_1
+    5."I$758/N$101083"
+    6."I$758/N$101081"
+    7."I$758/N$101082"
+    8."I$758/N$101080";
+  V6400
+    1.GND_KNK_1
+    2.V5V
+    3."I$760/N$101411"
+    4.5V_RESET
+    5."I$760/N$101407"
+    6.V5V
+    7.GND_KNK_1
+    8.MISO
+    9.V5V
+    10.SPI_CLK
+    11.MOSI
+    12.CS_ATIC113
+    13.OILP
+    14.ESV_CWP
+    15.CESV_CWP
+    16.GND_KNK_1
+    17.GND_KNK_1
+    18.COILP
+    19.CHWT
+    20.GND_KNK_1
+    21.GND_KNK_1
+    22.CEGR
+    23.SPARE_HEAT
+    24.HWT
+    25."I$760/N$101400"
+    26."I$760/N$106036"
+    27.EGR
+    28.V5V
+    29.GND_KNK_1
+    30.V_EL
+    31.GND_KNK_1
+    32.GND_KNK_1
+    33."I$760/N$105579"
+    34."I$760/N$106036"
+    35.GND_KNK_1
+    36.CSPARE_HEAT
+    COOL.GND_KNK_1;
+  V7000
+    1.V5V
+    2.MISO
+    3."I$760/N$74151"
+    4.LED_STS_ACC_PWM
+    5.CIV_3
+    6.IV_3
+    7.SPI_CLK
+    8.GND_KNK_1
+    9.GND_KNK_1
+    10.CS_ATIC92_94
+    11.LSH_UP_1
+    12.CVVT_IN_1
+    13.CCPS
+    14.CPS
+    15."I$760/N$74781"
+    16.RLY_EFP_PWM
+    17.GND_KNK_1
+    18.CRLY_ST_1
+    19.GND_KNK_1
+    20."I$760/N$104073"
+    21.GND_KNK_1
+    22.GND_KNK_1
+    23."I$760/N$104479"
+    24."I$760/N$103666"
+    25.CLSH_UP_1
+    26.GND_KNK_1
+    27.GND_KNK_1
+    28.CLSH_UP_1
+    29.CRLY_AF
+    30.V_EL
+    31.RLY_AF
+    32.MOSI
+    33.NDIS_IV
+    34.RLY_MAIN
+    35."I$760/N$74129"
+    36.GND_KNK_1
+    37.VVT_IN_1
+    38.DIS_ATIC92_94
+    39.IV_2
+    40.CIV_2
+    41.GND_KNK_1
+    42.IV_1
+    43.IV_0
+    44.CIV_1
+    45.CIV_0
+    46.LSH_DOWN_1
+    47.5V_RESET
+    48.GND_KNK_1
+    49.CRLY_EFP_PWM
+    50.GND_KNK_1
+    51."I$760/N$112356"
+    52."I$760/N$74131"
+    53.CRLY_BKB
+    54.CRLY_BKB
+    55.RLY_BKB
+    56.V5V
+    57.CLSH_DOWN_1
+    58.GND_KNK_1
+    59.GND_KNK_1
+    60.CLSH_DOWN_1
+    61.CECF_1
+    62.ECF_1
+    63.GND_KNK_1
+    64.CLED_STS_ACC_PWM
+    65.GND_KNK_1;
+  V7002
+    1."I$760/N$78590"
+    2.GND_KNK_1
+    3."I$760/N$100996"
+    4."I$760/N$78582"
+    5.V3V3;
+  V7003
+    1.STR_REQ
+    2.GND_KNK_1
+    3."I$760/N$78599"
+    4."I$760/N$78584"
+    5.V3V3;
+  V7005
+    1."I$760/N$95635"
+    2."I$760/N$109615"
+    3.GND_KNK_1
+    4.OPN_CS_COMP
+    5.V3V3;
+  V7500
+    1.GND_KNK_1
+    2.CLSH_DOWN_1
+    3.CLSH_DOWN_1
+    4.LSH_DOWN_1
+    5."I$760/N$102212"
+    6.V5V
+    7.MISO
+    8."I$760/N$118003"
+    9."I$760/N$112357"
+    10.NDIS_IV
+    11.5V_RESET
+    12.IV_0
+    13.CIV_0
+    14."I$760/N$100784"
+    15.DIS_ATIC92_94
+    16.LSH_UP_1
+    17.IV_1
+    18.CIV_1
+    19.CIV_2
+    20.CS_ATIC92_94
+    21.SPI_CLK
+    22.IV_2
+    23.CCPS
+    24.GND_KNK_1
+    25.CPS
+    26.MOSI
+    27."I$760/N$102219"
+    28.V_EL
+    29.GND_KNK_1
+    30.V5V
+    31.GND_KNK_1
+    32."I$760/EXTMOS_93(2)"
+    33."I$760/EXTMOS_93(0)"
+    34."I$760/EXTMOS_93(1)"
+    35."I$760/N$117801"
+    36."I$760/N$103667"
+    COOL.GND_KNK_1;
+  V7600
+    1.GND_KNK_1
+    2.GND_KNK_1
+    3.MISO
+    4.V5V
+    5.CS_MTC
+    6."I$760/N$107324"
+    7.V_EL
+    8.IN2_MTC
+    9.CMTCP
+    10.DI_MTC
+    11.GND_KNK_1
+    12.GND_KNK_1
+    13.GND_KNK_1
+    14.GND_KNK_1
+    15.EN_MTC
+    16.CMTCM
+    17.IN1_MTC
+    18."I$760/N$106704"
+    19.MOSI
+    20.SPI_CLK
+    21.V5V
+    22.GND_KNK_1
+    23.GND_KNK_1
+    24.GND_KNK_1
+    COOL.GND_KNK_1;
+  V7900
+    1."I$760/N$92805"
+    2.V5V
+    3.5V_RESET
+    4.EN_ATIC29
+    5.CS_ATIC29
+    6.MISO
+    7.MOSI
+    8.SPI_CLK
+    9.GND_KNK_1
+    10."I$760/N$91530"
+    11.V5V
+    12."I$760/N$92806"
+    13.GND_KNK_1
+    14."I$760/N$72544"
+    15.IGC_0
+    16.IGC_1
+    17.IGC_2
+    18.IGC_3
+    19."I$760/N$92804"
+    20.GND_KNK_1;
+  V8200
+    1.GND_KNK_1
+    2."I$963/N$18259"
+    3."I$963/N$18260"
+    4."I$963/N$18258"
+    5."I$963/N$18265"
+    6."I$963/N$80607"
+    7.GND_KNK_1
+    8."I$963/N$92974"
+    9.GND_KNK_1
+    10.MOSI
+    11.MISO
+    12.SPI_CLK
+    13.CS_ATIC42
+    14.5V_RESET
+    15.V5V
+    16."I$963/N$28283"
+    17."I$963/N$28281"
+    18."I$963/N$18262"
+    19."I$963/N$18257"
+    20."I$963/N$89460"
+    21."I$963/N$32587"
+    22.CLS_UP
+    23."I$963/N$15730"
+    24.CLS_UP_1_IP
+    25."I$963/N$20347"
+    26.CLS_1_RC
+    27."I$963/N$92973"
+    28.V5V;
+  V8301
+    1."I$963/N$91731"
+    2.GND_KNK_1
+    3."I$963/N$90897"
+    4."I$963/N$90690"
+    5.V5V;
+  R1000
+    1.V5V
+    2.5V_RESET;
+  R1001
+    1.V3V3
+    2.GND_KNK_1;
+  R1002
+    1.V5V
+    2.GND_KNK_1;
+  R1004
+    1."I$34222/N$84599"
+    2.GND_KNK_1;
+  R1005
+    1."I$34222/N$84599"
+    2.PORST;
+  R1010
+    1.V_IGK
+    2."I$34222/N$84381";
+  R1011A
+    1."I$34222/N$88748"
+    2.GND_KNK_1;
+  R1012A
+    1.V1V5
+    2."I$34222/N$88748";
+  R1014
+    1.WD_RST
+    2.GND_KNK_1;
+  R1015
+    1."I$34222/N$63713"
+    2.GND_KNK_1;
+  R1026
+    1.5V_RESET
+    2.5V_RESET_TO_UC;
+  R1027
+    1.5V_RESET_TO_UC
+    2.GND_KNK_1;
+  R1029
+    1.CBLS
+    2."I$34222/N$86650";
+  R1030
+    1."I$34222/N$86650"
+    2.GND_KNK_1;
+  R1031
+    1."I$34222/N$89153"
+    2.CBLS;
+  R1032
+    1.V_EL
+    2."I$34222/N$86241";
+  R1033
+    1."I$34222/N$86241"
+    2.GND_KNK_1;
+  R1034
+    1."I$34222/N$84590"
+    2.BLS;
+  R1035
+    1.BLS
+    2.GND_KNK_1;
+  R1036
+    1.PWL_WDT
+    2.POT;
+  R1037
+    1.PWL_WDT
+    2.GND_KNK_1;
+  R1038
+    1."I$34222/N$88087"
+    2.GND_KNK_1;
+  R1039
+    1."I$34222/N$88087"
+    2."I$34222/N$88950";
+  R1041
+    1."I$34222/N$86650"
+    2."I$34222/N$84590";
+  R2000
+    1.V3V3
+    2.H_RESET;
+  R2007
+    1."I$964/XTAL2"
+    2."I$964/N$117744";
+  R2010
+    1.V3V3
+    2."I$964/TEST_MODE";
+  R2011A
+    1.GND_KNK_1
+    2."I$964/ETK_S_TRST";
+  R2011B
+    1.GND_KNK_1
+    2."I$964/ETK_S_TRST";
+  R2015
+    1.V3V3
+    2."I$964/USPI_CLK1";
+  R2021
+    1."I$964/UMISO_1"
+    2.MISO;
+  R2022
+    1."I$964/UMISO_1"
+    2.GND_KNK_1;
+  R2023
+    1.GND_KNK_1
+    2."I$964/N$130496";
+  R2025
+    1."I$964/N$130496"
+    2."I$964/N$130495";
+  R2030
+    1.V3V3
+    2."I$964/UEN_ATIC29_3V3";
+  R2038
+    1."I$964/N$117680"
+    2."I$964/ETK_S_TDO";
+  R2039
+    1."I$964/N$117682"
+    2."I$964/ETK_S_BRKOUT";
+  R2050
+    1."I$964/N$132606"
+    2.GND_KNK_1;
+  R2051
+    1."I$964/N$132608"
+    2.GND_KNK_1;
+  R2099
+    1."I$964/UNMI"
+    2.GND_KNK_1;
+  R2308
+    1.NDIS_IV
+    2.GND_KNK_1;
+  R2351
+    1."I$964/N$128460"
+    2.V_IGK;
+  R2353
+    1."I$964/N$128460"
+    2.GND_KNK_1;
+  R2355
+    1.GND_KNK_1
+    2."I$964/N$135125";
+  R3301
+    1."I$963/N$94023"
+    2."I$963/N$87202";
+  R3302
+    1."I$963/N$87201"
+    2."I$963/N$94023";
+  R3307A
+    1.CDT_CAN_1P
+    2."I$963/N$94023";
+  R3307B
+    1.CDT_CAN_1P
+    2."I$963/N$94023";
+  R3308A
+    1."I$963/N$94023"
+    2.CDT_CAN_1M;
+  R3308B
+    1."I$963/N$94023"
+    2.CDT_CAN_1M;
+  R3313B
+    1."I$963/N$95445"
+    2.GND_KNK_1;
+  R3320
+    1.V_VB_PROT
+    2.V_VB;
+  R3322
+    1.CAN_WKU_EN
+    2.GND_KNK_1;
+  R3324
+    1.CAN_WKU_ATIC91
+    2.CAN_WKU;
+  R3325
+    1.CAN_WKU
+    2.GND_KNK_1;
+  R3357A
+    1.CDT_CAN_2P
+    2."I$963/N$91509";
+  R3357B
+    1.CDT_CAN_2P
+    2."I$963/N$91509";
+  R3358A
+    1."I$963/N$91509"
+    2.CDT_CAN_2M;
+  R3358B
+    1."I$963/N$91509"
+    2.CDT_CAN_2M;
+  R4003A
+    1.CPVS_1
+    2.GND_KNK_1;
+  R4003B
+    1.CPVS_1
+    2.GND_KNK_1;
+  R4004
+    1.CPVS_1
+    2."I$758/N$97779";
+  R4013A
+    1.CPVS_2
+    2.GND_KNK_1;
+  R4013B
+    1.CPVS_2
+    2.GND_KNK_1;
+  R4014
+    1.CPVS_2
+    2."I$758/N$97781";
+  R4023
+    1.CTPS_1
+    2.GND_KNK_1;
+  R4036
+    1.CTPS_2
+    2.GND_KNK_1;
+  R4170
+    1.V_EL
+    2.UV_EL;
+  R4171
+    1.GND_KNK_1
+    2.UV_EL;
+  R4181
+    1.V_IGK
+    2.UV_IGK;
+  R4182
+    1.GND_KNK_1
+    2.UV_IGK;
+  R4301
+    1.V3V3
+    2.CLS_DOWN_1;
+  R4302
+    1."I$758/N$16983"
+    2.CLS_DOWN_1;
+  R4303
+    1.CLS_DOWN_1
+    2.LS_DOWN_1;
+  R4304
+    1.CLS_DOWN_1
+    2.GND_KNK_1;
+  R4351
+    1.V3V3
+    2.CLS_UP_1;
+  R4352
+    1."I$758/N$94666"
+    2.CLS_UP_1;
+  R4353
+    1.CLS_UP_1
+    2.LS_UP_1;
+  R4354
+    1.CLS_UP_1
+    2.GND_KNK_1;
+  R4400
+    1."I$758/N$100874"
+    2.AMP;
+  R4502
+    1.V5V
+    2.CTCO_1;
+  R4505
+    1.CHEATER_REG
+    2.GND_KNK_1;
+  R4506
+    1.V5V
+    2.CTIA;
+  R4507
+    1.CMAP
+    2.GND_KNK_1;
+  R4513
+    1.V5V
+    2.CFPS;
+  R4514
+    1.V5V
+    2.CTCO_2;
+  R4524
+    1.CEGR_FB
+    2.GND_KNK_1;
+  R4526
+    1.CBKB_FB
+    2.BKB_FB;
+  R4528
+    1.CBKB_FB
+    2.GND_KNK_1;
+  R4532
+    1.V5V
+    2.CNGD_1;
+  R4533
+    1.V5V
+    2.CNGD_1;
+  R4534
+    1.CNGD_1
+    2.NGD_1_PWM;
+  R4536
+    1.NGD_1_PWM
+    2.GND_KNK_1;
+  R5000
+    1.CCAM_1
+    2.CAM_1;
+  R5001
+    1.V5V
+    2.CCAM_1;
+  R5002
+    1.V_EL_D5005
+    2.CTOG;
+  R5003
+    1.GND_KNK_1
+    2.CAM_1;
+  R5013
+    1.CTOG
+    2.TOG;
+  R5014
+    1.TOG
+    2.GND_KNK_1;
+  R5017
+    1."/ACC_IN"
+    2.ACC_IN;
+  R5018
+    1."/ACC_IN"
+    2.GND_KNK_1;
+  R5021
+    1.CCS_1
+    2.GND_KNK_1;
+  R5022
+    1.CBTS
+    2.GND_KNK_1;
+  R5023
+    1.CCRU_MAIN
+    2.GND_KNK_1;
+  R5024
+    1."I$7750/N$27667"
+    2.CDFM;
+  R5028
+    1.CSTS_SWI
+    2.GND_KNK_1;
+  R5030
+    1.CCRK
+    2.CRK;
+  R5031
+    1.V5V
+    2.CCRK;
+  R5032
+    1.GND_KNK_1
+    2.CRK;
+  R5047
+    1."I$7750/N$22456"
+    2.CVEH_SPEED;
+  R5117
+    1.CACIN
+    2.GND_KNK_1;
+  R5217
+    1.CACP
+    2.GND_KNK_1;
+  R5318
+    1."I$7750/N$26829"
+    2.CSP_SWI;
+  R5518
+    1."I$7750/N$27051"
+    2.CPOEL_1;
+  R5519
+    1."I$7750/N$27052"
+    2.CPOEL_2;
+  R6402
+    1."I$760/N$101407"
+    2.GND_KNK_1;
+  R7001
+    1."I$760/N$108803"
+    2.CPN;
+  R7002
+    1."I$760/N$108803"
+    2.CPN;
+  R7003
+    1."I$760/N$103666"
+    2.CRLY_ST_2;
+  R7004
+    1.V5V
+    2."I$760/N$104073";
+  R7005
+    1."I$760/N$104479"
+    2.GND_KNK_1;
+  R7007
+    1."I$760/N$104073"
+    2.GND_KNK_1;
+  R7010
+    1.V5V
+    2."I$760/N$104479";
+  R7011
+    1.CSTR_SWI
+    2.GND_KNK_1;
+  R7012
+    1.RLY_MAIN
+    2.GND_KNK_1;
+  R7013
+    1."I$760/N$74129"
+    2.CRLY_MAIN;
+  R7015
+    1.CSTR_SWI
+    2.GND_KNK_1;
+  R7016
+    1."I$760/N$103666"
+    2.CRLY_MAIN;
+  R7019
+    1.V3V3
+    2."I$760/N$98078";
+  R7020
+    1.CPN
+    2."I$760/N$109615";
+  R7021
+    1."I$760/N$109615"
+    2.GND_KNK_1;
+  R7022A
+    1.CSTR_SWI
+    2."I$760/N$100996";
+  R7022B
+    1.CSTR_SWI
+    2."I$760/N$100996";
+  R7023A
+    1."I$760/N$100996"
+    2.GND_KNK_1;
+  R7023B
+    1."I$760/N$100996"
+    2.GND_KNK_1;
+  R7025
+    1.V3V3
+    2."I$760/N$78582";
+  R7026
+    1."I$760/N$78582"
+    2.GND_KNK_1;
+  R7028
+    1."I$760/N$78599"
+    2.STR_REQ;
+  R7029
+    1."I$760/N$100996"
+    2."I$760/N$78590";
+  R7030
+    1."I$760/N$78590"
+    2."I$760/N$78589";
+  R7031
+    1."I$760/N$78590"
+    2."I$760/N$78587";
+  R7032
+    1."I$760/N$78589"
+    2."I$760/N$78599";
+  R7033
+    1.V3V3
+    2."I$760/N$78584";
+  R7034
+    1."I$760/N$78584"
+    2.GND_KNK_1;
+  R7035
+    1."I$760/N$78589"
+    2."I$760/N$78588";
+  R7036
+    1."I$760/N$95432"
+    2.GND_KNK_1;
+  R7050
+    1.V5V
+    2.DIS_ATIC92_94;
+  R7099
+    1.V5V
+    2."I$760/N$74131";
+  R7500
+    1."I$760/EXTMOS_93(1)"
+    2."I$760/N$110426";
+  R7516
+    1.CRLY_MAIN
+    2."I$760/N$103667";
+  R7530
+    1."I$760/N$110426"
+    2.GND_KNK_1;
+  R7531
+    1."I$760/N$108804"
+    2.GND_KNK_1;
+  R7550
+    1."I$760/N$102219"
+    2.GND_KNK_1;
+  R7601
+    1."I$760/N$106704"
+    2.GND_KNK_1;
+  R7602
+    1.V3V3
+    2.DI_MTC;
+  R7603
+    1.EN_MTC
+    2.GND_KNK_1;
+  R7900
+    1.GND_KNK_1
+    2.LED_STS_ACC_PWM;
+  R7901
+    1."I$760/N$91530"
+    2.CIGC_0;
+  R7902
+    1."I$760/N$92806"
+    2.CIGC_1;
+  R7903
+    1."I$760/N$92805"
+    2.CIGC_2;
+  R7904
+    1."I$760/N$92804"
+    2.CIGC_3;
+  R7906
+    1.GND_KNK_1
+    2."I$760/N$72544";
+  R7950
+    1.GND_KNK_1
+    2.RLY_EFP_PWM;
+  R7951
+    1.RLY_EFP_DIAG
+    2.GND_KNK_1;
+  R7952
+    1.RLY_EFP_DIAG
+    2."I$760/N$117393";
+  R8202
+    1."I$963/N$18262"
+    2.GND_KNK_1;
+  R8203A
+    1."I$963/N$28284"
+    2."I$963/N$28281";
+  R8203B
+    1."I$963/N$28284"
+    2."I$963/N$28281";
+  R8204A
+    1."I$963/N$28284"
+    2."I$963/N$28283";
+  R8204B
+    1."I$963/N$28284"
+    2."I$963/N$28283";
+  R8205
+    1.LS_1_IP
+    2."I$963/N$18259";
+  R8206
+    1.LS_1_RI
+    2."I$963/N$18260";
+  R8207
+    1."I$963/N$79781"
+    2.CLS_UP_1_IP;
+  R8208
+    1."I$963/N$18258"
+    2.GND_KNK_1;
+  R8209A
+    1.CVGND_LS_UP_1
+    2."I$963/N$32587";
+  R8209B
+    1.CVGND_LS_UP_1
+    2."I$963/N$32587";
+  R8210
+    1.CVGND_LS_UP_1
+    2."I$963/N$15730";
+  R8212
+    1."I$963/N$18257"
+    2.GND_KNK_1;
+  R8213
+    1.CVGND_LS_UP_1
+    2.CLS_UP;
+  R8214A
+    1."I$963/N$92974"
+    2."I$963/N$80607";
+  R8214B
+    1."I$963/N$92974"
+    2."I$963/N$80607";
+  R8215A
+    1.CLS_UP_1_IP
+    2."I$963/N$20347";
+  R8215B
+    1.CLS_UP_1_IP
+    2."I$963/N$20347";
+  R8217
+    1."I$963/N$89667"
+    2."I$963/N$92974";
+  R8219A
+    1."I$963/N$20347"
+    2."I$963/N$92973";
+  R8219B
+    1."I$963/N$20347"
+    2."I$963/N$92973";
+  R8220A
+    1."I$963/N$92973"
+    2.CLS_1_RC;
+  R8220B
+    1."I$963/N$92973"
+    2.CLS_1_RC;
+  R8222A
+    1."I$963/N$89873"
+    2."I$963/N$92973";
+  R8299B
+    1."I$963/N$92973"
+    2."I$963/N$92974";
+  R8302
+    1.CKNK_1
+    2."I$963/N$91730";
+  R8303
+    1.CKNK_1
+    2.GND_KNK_1;
+  R8307
+    1.KNK_SW
+    2.GND_KNK_1;
+  R8308
+    1."I$963/N$91731"
+    2.KNK_SW;
+  R8309
+    1."I$963/N$90896"
+    2.GND_KNK_1;
+  R8310
+    1.V3V3
+    2."I$963/N$90896";
+  R8311
+    1."I$963/N$90690"
+    2.CKNK_1;
+  R8312
+    1."I$963/N$90896"
+    2."I$963/N$90897";
+  R8313
+    1."I$963/N$91731"
+    2."I$963/N$90690";
+
+END BOARD
+
+
+END
